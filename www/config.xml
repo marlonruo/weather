@@ -4,13 +4,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.wfc2015"
-		versionCode = "12" 
+		versionCode = "1" 
         version   = "1.1">
 
-    <name>WFC 2015</name>
+    <name>Pixel Weather</name>
 
     <description>
-        WFC 2015
+        Pixel Weather
     </description>
 
     <author href="http://www.marlonruo.com" email="marlon_ru@hotmail.com">
