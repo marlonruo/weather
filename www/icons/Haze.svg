@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="56px" height="56px" viewBox="0 0 56 56" enable-background="new 0 0 56 56" xml:space="preserve">
+<g>
+	<rect opacity="0" fill="#FFFFFF" width="56" height="56"/>
+	<rect x="7.5" y="32" fill="#FFFFFF" width="10" height="2"/>
+	<rect x="39.5" y="32" fill="#FFFFFF" width="8" height="2"/>
+	<rect x="19.496" y="31.999" fill="#F9EF6B" width="18" height="2"/>
+	<rect x="7.5" y="36" fill="#FFFFFF" width="14" height="2"/>
+	<rect x="33.5" y="36" fill="#FFFFFF" width="14" height="2"/>
+	<rect x="23.496" y="35.999" fill="#F9EF6B" width="8" height="2"/>
+	<rect x="7.5" y="40" fill="#FFFFFF" width="40" height="2"/>
+	<g>
+		<rect x="26" y="10" fill="#FBE200" width="2" height="8"/>
+		<rect x="39" y="28" fill="#FBE200" width="8" height="2"/>
+		<rect x="7" y="28" fill="#FBE200" width="8" height="2"/>
+		
+			<rect x="15.392" y="16.393" transform="matrix(-0.7074 0.7069 -0.7069 -0.7074 41.6961 21.5235)" fill="#FBE200" width="2.002" height="6.001"/>
+		
+			<rect x="36.607" y="16.393" transform="matrix(-0.7069 -0.7074 0.7074 -0.7069 50.4733 59.7021)" fill="#FBE200" width="2" height="6"/>
+		<path fill="#FBE200" d="M35.941,29.001c-0.037-0.34-0.1-0.673-0.174-1C34.857,23.994,31.281,21,27,21s-7.857,2.994-8.766,7.001
+			c-0.076,0.327-0.139,0.66-0.176,1C18.023,29.329,18,29.662,18,30v0.001h18V30C36,29.662,35.979,29.329,35.941,29.001z"/>
+	</g>
+</g>
+</svg>
