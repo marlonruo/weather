@@ -379,10 +379,10 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
   <img src="imagenes/fondo5.jpg" height="100%" alt="fondo" style="position:absolute"/>
   
-<div id="tt1" class="texto2" style="top:5.2%; left:14%; font-weight:500; text-transform: uppercase"></div>
+<div id="tt1" class="texto2" style="top:5.2%; left:14%; font-weight:500; text-transform: uppercase; width:86%; text-align:left"></div>
   <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600; letter-spacing:1.5px;"></div>
   
-  <div id="ubica" class="texto2" style="top:13%; left:14%; font-weight:500; text-transform: uppercase">a</div>
+  <div id="ubi" class="texto2" style="top:13%; left:14%; font-weight:500; text-transform: uppercase">a</div>
   
   
   <iframe id="pollo" src="animaciones/an1.html" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:14%; margin-left:-395px; overflow:hidden; visibility:hidden" scrolling="no" onload="this.style.visibility='visible';"></iframe>
@@ -475,14 +475,14 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 				var $window = $(window);
 				var width = $window.width();
 				var height = $window.height();
-				$('#tt1').css('font-size', height/33+'px')
+				$('#tt1').css('font-size', height/36+'px')
 				$('#tt2').css('font-size', height/62+'px')
 				$('#grados').css('font-size', height/4.5+'px')
 				$('.dias').css('font-size', height/55+'px')
 				setInterval(function () {
 					if ((width != $window.width()) || (height != $window.height())) {
 						ancho = $("#mapa1").width()
-						$('#tt1').css('font-size', height/33+'px')
+						$('#tt1').css('font-size', height/36+'px')
 						$('#tt2').css('font-size', height/62+'px')
 						$('#grados').css('font-size', height/4.5+'px')
 						$('.dias').css('font-size', height/55+'px')
@@ -500,24 +500,12 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 			
 			
 var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-		  
 		  $('#ubi').html(position.coords.latitude)
 };
 
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-		  
 		  $('#ubi').html("error")
 }
 
