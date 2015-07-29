@@ -5,46 +5,6 @@ document.addEventListener('deviceready',function() {
       AUTH0_DOMAIN
     );
 
-    var userProfile;
-
-    $('.btn-login').click(function(e) {
-      e.preventDefault();
-      lock.show(function(err, profile, token) {
-        if (err) {
-          // Error callback
-          console.log("There was an error");
-          alert("There was an error logging in");
-        } else {
-          // Success calback
-
-          // Save the JWT token.
-          localStorage.setItem('userToken', token);
-
-          // Save the profile
-          userProfile = profile;
-
-          //$('.login-box').hide();
-          //$('.logged-in-box').show();
-          //$('.nickname').text(profile.nickname);
-          //$('.nickname').text(profile.name);
-		  //$('.correo').text(profile.email);
-          //$('.avatar').attr('src', profile.picture);
-		  
-		  			localStorage.setItem("nombre", profile.name);
-					localStorage.setItem("email", profile.email);
-					
-		  			window.location.href = '#exito'
-					$('#exito').fadeIn(400)
-					$('#login').fadeOut(400)
-					ini_exi()
-					document.getElementById('escribirtxt').src = "http://marlonruo.com/wfc2015/phps/enviar2.php?nombre="+profile.name+"&email="+profile.email;
-					document.getElementById('if_qr').src = "http://marlonruo.com/wfc2015/qr.php?datos="+"<b>"+profile.name+"</b><br> Phone: <a href='tel:'></a><br> Mail: <a href='mailto:"+profile.email+"'>"+profile.email+"</a>"
-					allText = "<b>"+profile.name+"</b><br> Phone: <a href='tel:'></a><br> Mail: <a href='mailto:"+profile.email+"'>"+profile.email+"</a>"
-		  
-		  
-        }
-      });
-    });
 
     $.ajaxSetup({
       'beforeSend': function(xhr) {
