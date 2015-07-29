@@ -60,12 +60,11 @@
 
 
     <gap:plugin name="org.apache.cordova.device-orientation" />
-    <gap:plugin name="fi.avaus.cordova.geolocation" version="0.3.11" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
-	
 	
 
     <!-- Third party plugins -->
