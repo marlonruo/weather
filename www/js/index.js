@@ -43,16 +43,47 @@ var app = {
 //   the current GPS coordinates
 //
 function onSuccess(position) {
+	
+	var pos1
+	var pos2
+	var pos3
     var element = document.getElementById('ubi');
     element.innerHTML = position.coords.latitude+", "+position.coords.longitude
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
 		
-	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%2219.5787916,-99.2462466%22%20and%20gflags=%22R%22&format=json", "",
+	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%22"+cordenadas+"%22%20and%20gflags=%22R%22&format=json", "",
     function (data0)
     {
-		alert(data0.query.results.Result.line3)
-		$('#tt1').html(data0.query.results.Result.line3)
+		pos1 = data0.query.results.Result.city
+		pos2 = data0.query.results.Result.state
+		pos3 = data0.query.results.Result.country
+		
+		var Result1 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+pos1+", "+pos2+", "+pos3+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+		function (data1)
+		{
+			$('#tt1').html(data1.query.results.channel.location.city)
+			$('#tt2').html("<span style='text-transform: uppercase'>"+data1.query.results.channel.item.forecast[0].day+" "+data1.query.results.channel.item.forecast[0].date+"</span>, "+data1.query.results.channel.item.forecast[0].text)
+			$('#grados').html(data1.query.results.channel.item.condition.temp+'°')
+			grados = data1.query.results.channel.item.condition.temp
+			
+			$('#dia1').html(data1.query.results.channel.item.forecast[0].day)
+			$('#ic1').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[0].code+'.svg');
+			
+			$('#dia2').html(data1.query.results.channel.item.forecast[1].day)
+			$('#ic2').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[1].code+'.svg');
+			
+			$('#dia3').html(data1.query.results.channel.item.forecast[2].day)
+			$('#ic3').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[2].code+'.svg');
+			
+			$('#dia4').html(data1.query.results.channel.item.forecast[3].day)
+			$('#ic4').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[3].code+'.svg');
+			
+			$('#dia5').html(data1.query.results.channel.item.forecast[4].day)
+			$('#ic5').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[4].code+'.svg');
+			//$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
+			 $('#icono').attr('src', 'iconos/'+data1.query.results.channel.item.condition.code+'.svg');
+		});
     });		
 	
 		
