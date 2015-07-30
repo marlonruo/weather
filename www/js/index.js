@@ -44,21 +44,31 @@ var app = {
 //
 function onSuccess(position) {
     var element = document.getElementById('ubi');
-    element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
-                        'Longitude: ' + position.coords.longitude     + '<br />' +
-                        '<hr />'      + element.innerHTML;
+    element.innerHTML = position.coords.latitude+", "+position.coords.longitude
+	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
+		
+		
+	var Result0 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22atizapan%20mexico%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+    function (data0)
+    {
+		$('#tt1').html(data0.query.results.Result.line3)
+    });		
+	
+		
+												
+			
+						
 }
 
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
+    
 }
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true });
 
     },
     // Update DOM on a Received Event
