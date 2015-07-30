@@ -56,10 +56,9 @@ function onSuccess(position) {
     function (data0)
     {
 		pos1 = data0.query.results.Result.city
-		pos2 = data0.query.results.Result.state
-		pos3 = data0.query.results.Result.country
+		pos2 = data0.query.results.Result.countrycode
 		
-		var Result1 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+pos1+", "+pos2+", "+pos3+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+		var Result1 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+pos1+", "+pos2+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
 		function (data1)
 		{
 			$('#tt1').html(data1.query.results.channel.location.city)
