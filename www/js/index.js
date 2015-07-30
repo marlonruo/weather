@@ -58,9 +58,8 @@ function onError(error) {
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-alert("bb")
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 3000, enableHighAccuracy: true });
-		alert("aa")
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
