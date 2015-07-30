@@ -48,9 +48,10 @@ function onSuccess(position) {
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
 		
-	var Result0 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22atizapan%20mexico%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%2219.5787916,-99.2462466%22%20and%20gflags=%22R%22&format=json", "",
     function (data0)
     {
+		alert(data0.query.results.Result.line3)
 		$('#tt1').html(data0.query.results.Result.line3)
     });		
 	
