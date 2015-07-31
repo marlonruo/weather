@@ -47,16 +47,19 @@ function onSuccess(position) {
 	var pos1
 	var pos2
 	var pos3
-    var element = document.getElementById('ubi');
-    element.innerHTML = position.coords.latitude+", "+position.coords.longitude
+    $('#ubi').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
+	navigator.geolocation.clearWatch(watchID);
 		
 	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%22"+cordenadas+"%22%20and%20gflags=%22R%22&format=json", "",
     function (data0)
     {
 		pos1 = data0.query.results.Result.city
 		pos2 = data0.query.results.Result.countrycode
+		
+		localStorage.setItem("ciudad", data0.query.results.Result.city);
+		localStorage.setItem("codigo", data0.query.results.Result.countrycode);
 		
 		var Result1 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+pos1+", "+pos2+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
 		function (data1)
@@ -81,7 +84,14 @@ function onSuccess(position) {
 			$('#dia5').html(data1.query.results.channel.item.forecast[4].day)
 			$('#ic5').attr('src', 'iconos/'+data1.query.results.channel.item.forecast[4].code+'.svg');
 			//$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
+			var ico = data1.query.results.channel.item.condition.code
 			 $('#icono').attr('src', 'iconos/'+data1.query.results.channel.item.condition.code+'.svg');
+			 
+			 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
+				$('#pollo').attr('src', 'animaciones/an'+data1.query.results.channel.item.condition.code+'/an1.html');
+			 }else{
+				$('#pollo').attr('src', 'animaciones/an1/an1.html');
+			 }
 		});
     });		
 	
@@ -99,7 +109,7 @@ function onError(error) {
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
 
     },
     // Update DOM on a Received Event
