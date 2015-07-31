@@ -142,58 +142,19 @@ var ico11
 var ico12
 var ico13
 var grados
-var ciudad
-var codigo
 function DocReady()
 {
 	
-	$('#tt1').html(localStorage.getItem("ciudad"))
-	ciudad = localStorage.getItem("ciudad")
-	codigo = localStorage.getItem("codigo")
+	$('#tt1').html(localStorage.getItem("ciudad")+", "+localStorage.getItem("ciudad"))
 
-				
-					if(document.getElementById("#tt1").innerHTML==""){
-						var Result = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22paris%20francia%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+			
+	
+	
+	
+     var Result = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22paris%20francia%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
     function (data)
     {
-		$('#tt1').html(data.query.results.channel.location.city)
-		$('#tt2').html("<span style='text-transform: uppercase'>"+data.query.results.channel.item.forecast[0].day+" "+data.query.results.channel.item.forecast[0].date+"</span>, "+data.query.results.channel.item.forecast[0].text)
-		$('#grados').html(data.query.results.channel.item.condition.temp+'°')
-		grados = data.query.results.channel.item.condition.temp
-		
-		$('#dia1').html(data.query.results.channel.item.forecast[0].day)
-		$('#ic1').attr('src', 'iconos/'+data.query.results.channel.item.forecast[0].code+'.svg');
-		
-		$('#dia2').html(data.query.results.channel.item.forecast[1].day)
-		$('#ic2').attr('src', 'iconos/'+data.query.results.channel.item.forecast[1].code+'.svg');
-		
-		$('#dia3').html(data.query.results.channel.item.forecast[2].day)
-		$('#ic3').attr('src', 'iconos/'+data.query.results.channel.item.forecast[2].code+'.svg');
-		
-		$('#dia4').html(data.query.results.channel.item.forecast[3].day)
-		$('#ic4').attr('src', 'iconos/'+data.query.results.channel.item.forecast[3].code+'.svg');
-		
-		$('#dia5').html(data.query.results.channel.item.forecast[4].day)
-		$('#ic5').attr('src', 'iconos/'+data.query.results.channel.item.forecast[4].code+'.svg');
-        //$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
-		 var ico = data.query.results.channel.item.condition.code
-		 $('#icono').attr('src', 'iconos/'+data.query.results.channel.item.condition.code+'.svg');
-		 
-		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
-		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/an1/an1.html');
-		 }
-    });
-					}else{
-						
-						
-						
-						
-						var Result = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+ciudad+",%20"+codigo+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
-    function (data)
-    {
-		$('#tt1').html(data.query.results.channel.location.city)
+		//$('#tt1').html(data.query.results.channel.location.city)
 		$('#tt2').html("<span style='text-transform: uppercase'>"+data.query.results.channel.item.forecast[0].day+" "+data.query.results.channel.item.forecast[0].date+"</span>, "+data.query.results.channel.item.forecast[0].text)
 		$('#grados').html(data.query.results.channel.item.condition.temp+'°')
 		grados = data.query.results.channel.item.condition.temp
@@ -226,11 +187,6 @@ function DocReady()
 	
 	
 	
-					}
-				
-	
-	
-     
 	
 	var total=0
 	var Result1 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22los%20angeles%22)&format=json", "",
