@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.pixelweather"
-		versionCode = "1" 
-        version   = "1.1">
+		versionCode = "1.2" 
+        version   = "1.2">
 
     <name>Pixel Weather</name>
 
@@ -64,7 +64,6 @@
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
-	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
 	
 
     <!-- Third party plugins -->
@@ -75,9 +74,6 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
-
-
-	 
 
 	
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />

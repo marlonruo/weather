@@ -142,6 +142,8 @@ var ico11
 var ico12
 var ico13
 var grados
+var gg = localStorage.getItem('grados')
+
 function DocReady()
 {
 	$('#tt1').html(localStorage.getItem('ciudad'))
@@ -175,11 +177,19 @@ function DocReady()
         //$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
 		 var ico = data.query.results.channel.item.condition.code
 		 $('#icono').attr('src', 'iconos/'+data.query.results.channel.item.condition.code+'.svg');
+		 $('#pollo').css('opacity','0.0')
+		 $('#pollo').animate({opacity:'1'}, 800);
 		 
 		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
 		 }else{
 		 	$('#pollo').attr('src', 'animaciones/an1/an1.html');
+		 }
+		 
+		 if(gg==1){
+		 	gr = (grados -32)/1.8
+			gr = Math.round(gr)
+			$('#grados').html(gr+'°')
 		 }
     });
 	
@@ -211,11 +221,19 @@ function DocReady()
         //$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
 		 var ico = data.query.results.channel.item.condition.code
 		 $('#icono').attr('src', 'iconos/'+data.query.results.channel.item.condition.code+'.svg');
-		 
+		 $('#pollo').css('opacity','0.0')
+		 $('#pollo').animate({opacity:'1'}, 800);
+			
 		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
 		 }else{
 		 	$('#pollo').attr('src', 'animaciones/an1/an1.html');
+		 }
+		 
+		 if(gg==1){
+		 	gr = (grados -32)/1.8
+			gr = Math.round(gr)
+			$('#grados').html(gr+'°')
 		 }
     });
 	 
@@ -379,6 +397,7 @@ function DocReady()
 			$('#un2').css('visibility', 'visible')
 			$('#grados').html(grados+'°')
 			cen=0
+			localStorage.setItem("grados", 0);
 			}else{
 			$('#un1').css('visibility', 'visible')
 			$('#un2').css('visibility', 'hidden')
@@ -386,6 +405,7 @@ function DocReady()
 			gr = Math.round(gr)
 			$('#grados').html(gr+'°')
 			cen=1
+			localStorage.setItem("grados", 1);
 			}
 		})
 		
@@ -509,7 +529,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   <img src="imagenes/fondo5.jpg" height="100%" alt="fondo" style="position:absolute"/>
   
 <div id="tt1" class="texto2" style="top:5.2%; left:14%; font-weight:500; text-transform: uppercase; width:86%; text-align:left"></div>
-  <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600; letter-spacing:1.5px;"></div>
+  <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600;"></div>
   
   <div id="ubi" class="texto2" style="top:13%; left:14%; font-weight:500">positioning</div>
   
@@ -524,7 +544,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   }
   </script>
   
-  <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:14%; margin-left:-395px; overflow:hidden; visibility:hidden" scrolling="no" onload="this.style.visibility='visible';"></iframe>
+  <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:14%; margin-left:-395px; overflow:hidden; visibility:hidden; margin-bottom:-70px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
   
   <img id="menu" src="imagenes/menu.png" style="position:absolute; top:7%; left:5%; height:3%; cursor:pointer"/>
   <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:6.5%; right:5%; height:4%; cursor:pointer"/>
@@ -609,7 +629,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             
 
 			function inicio(){
-
+			$('#pollo').transit({scale: '.75'}, 0);
+			$('#pollo').css('opacity','0.0')
+			$('#pollo').animate({opacity:'1'}, 800);
 			$(function() {
 				var $window = $(window);
 				var width = $window.width();

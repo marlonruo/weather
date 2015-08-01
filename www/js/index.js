@@ -86,12 +86,19 @@ function onSuccess(position) {
 			//$("body").append("SuntSet: " + data.query.results.channel.astronomy.sunset + "<br />");
 			var ico = data1.query.results.channel.item.condition.code
 			 $('#icono').attr('src', 'iconos/'+data1.query.results.channel.item.condition.code+'.svg');
-			 
+			 $('#pollo').animate({opacity:'0.0'}, 0);
+			 $('#pollo').animate({opacity:'1'}, 800);
 			 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 				$('#pollo').attr('src', 'animaciones/an'+data1.query.results.channel.item.condition.code+'/an1.html');
 			 }else{
 				$('#pollo').attr('src', 'animaciones/an1/an1.html');
 			 }
+			 
+			 if(gg==1){
+		 		gr = (grados -32)/1.8
+				gr = Math.round(gr)
+				$('#grados').html(gr+'°')
+		 	 }
 		});
     });		
 	
