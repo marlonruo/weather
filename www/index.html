@@ -178,7 +178,7 @@ function DocReady()
 		 var ico = data.query.results.channel.item.condition.code
 		 $('#icono').attr('src', 'iconos/'+data.query.results.channel.item.condition.code+'.svg');
 		 $('#pollo').css('opacity','0.0')
-		 $('#pollo').animate({opacity:'1'}, 800);
+		 $('#pollo').delay(500).animate({opacity:'1'}, 800);
 		 
 		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
@@ -222,7 +222,7 @@ function DocReady()
 		 var ico = data.query.results.channel.item.condition.code
 		 $('#icono').attr('src', 'iconos/'+data.query.results.channel.item.condition.code+'.svg');
 		 $('#pollo').css('opacity','0.0')
-		 $('#pollo').animate({opacity:'1'}, 800);
+		 $('#pollo').delay(500).animate({opacity:'1'}, 800);
 			
 		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
@@ -391,6 +391,12 @@ function DocReady()
     <script>
 		var cen=0
 		var gr
+		
+		if(gg==1){
+			$('#un1').css('visibility', 'visible')
+			$('#un2').css('visibility', 'hidden')
+		}
+		
      	$('#u1').click(function(){
 			if(cen==1){
 			$('#un1').css('visibility', 'hidden')
@@ -447,7 +453,7 @@ function DocReady()
     var tile_height = alto; 
     var easing = false;
 
-    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%"><img class="icono1" src="iconos/'+ico1+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:19%; top:29%"><img id="icono2" src="iconos/'+ico2+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Winnipeg</div></div><div class="globito3" style="left:19%; top:42%"><img id="icono3" src="iconos/'+ico3+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%"><img id="icono4" src="iconos/'+ico4+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:25%; top:55%"><img id="icono5" src="iconos/'+ico5+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Lima</div></div><div class="globito1" style="left:32%; top:60%"><img id="icono6" src="iconos/'+ico6+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%"><img id="icono7" src="iconos/'+ico7+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%"><img id="icono8" src="iconos/'+ico8+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%"><img id="icono9" src="iconos/'+ico9+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%"><img id="icono10" src="iconos/'+ico10+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%"><img id="icono11" src="iconos/'+ico11+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">Delhi</div></div><div class="globito2" style="left:81%; top:35%"><img id="icono12" src="iconos/'+ico12+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%"><img id="icono13" src="iconos/'+ico13+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div>'
+    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%"><img class="icono1" src="iconos/'+ico1+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:20%; top:29%"><img id="icono2" src="iconos/'+ico2+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Winnipeg</div></div><div class="globito3" style="left:19%; top:42%"><img id="icono3" src="iconos/'+ico3+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%"><img id="icono4" src="iconos/'+ico4+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:25%; top:55%"><img id="icono5" src="iconos/'+ico5+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Lima</div></div><div class="globito1" style="left:32%; top:60%"><img id="icono6" src="iconos/'+ico6+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%"><img id="icono7" src="iconos/'+ico7+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%"><img id="icono8" src="iconos/'+ico8+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%"><img id="icono9" src="iconos/'+ico9+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%"><img id="icono10" src="iconos/'+ico10+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%"><img id="icono11" src="iconos/'+ico11+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">Delhi</div></div><div class="globito2" style="left:81%; top:35%"><img id="icono12" src="iconos/'+ico12+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%"><img id="icono13" src="iconos/'+ico13+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div>'
     var images = [img1];
 
    /*
@@ -528,7 +534,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
   <img src="imagenes/fondo5.jpg" height="100%" alt="fondo" style="position:absolute"/>
   
-<div id="tt1" class="texto2" style="top:5.2%; left:14%; font-weight:500; text-transform: uppercase; width:86%; text-align:left"></div>
+<div id="tt1" class="texto2" style="top:5.5%; left:14%; font-weight:500; text-transform: uppercase; width:86%; text-align:left"></div>
   <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600;"></div>
   
   <div id="ubi" class="texto2" style="top:13%; left:14%; font-weight:500">positioning</div>
@@ -544,16 +550,20 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   }
   </script>
   
-  <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:14%; margin-left:-395px; overflow:hidden; visibility:hidden; margin-bottom:-70px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
+  <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:14%; margin-left:-395px; overflow:hidden; visibility:hidden; margin-bottom:-125px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
   
   <img id="menu" src="imagenes/menu.png" style="position:absolute; top:7%; left:5%; height:3%; cursor:pointer"/>
   <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:6.5%; right:5%; height:4%; cursor:pointer"/>
   
-  <div id="grados" class="texto4" style="top:19%; left:15%; color:#ffffcc"></div>
-  <img id="icono" height="18%" style="position:absolute; right:15%; top:22%;"/>
+  <div id="menu1" style="position:absolute; left:0%; top:3%; height:11%; width:70px; cursor:pointer"></div>
+  <div id="mundo1" style="position:absolute; right:0%; top:3%; height:11%; width:70px; cursor:pointer"></div>
   
   
-  <div style="position:absolute; width:100%; height:14%; top:86%; background-color:rgba(0,0,0,0.2)); border-top: 1px solid #FFFFFF;">
+  <div id="grados" class="texto4" style="top:18%; left:15%; color:#ffffcc"></div>
+  <img id="icono" height="18%" style="position:absolute; right:15%; top:19%;"/>
+  
+  
+  <div style="position:absolute; width:100%; height:14%; top:86%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
   	<div class="dias">
     	<span id="dia1" style="position:absolute"></span>
     	<img id="ic1" height="50%" style="position:absolute; top:30%; left:45%"/>
@@ -590,7 +600,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <script type="text/javascript">
 
 			var lugar=1
-			$('#menu').click(function(){
+			$('#menu, #menu1').click(function(){
 				if(lugar==1){
 				$('#clima').animate({left:'90%'}, 800);
 				$('#menu').animate({left:'2%'}, 800);
@@ -603,7 +613,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 				lugar=1
 				}
 			})
-			$('#mundo').click(function(){
+			$('#mundo, #mundo1').click(function(){
 				if(lugar==1){
 				
 				
@@ -629,23 +639,25 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             
 
 			function inicio(){
-			$('#pollo').transit({scale: '.75'}, 0);
+			$('#pollo').transit({scale: '.55'}, 0);
 			$('#pollo').css('opacity','0.0')
 			$('#pollo').animate({opacity:'1'}, 800);
 			$(function() {
 				var $window = $(window);
 				var width = $window.width();
 				var height = $window.height();
-				$('#tt1').css('font-size', height/36+'px')
+				$('#tt1').css('font-size', height/33+'px')
+				$('#ubi').css('font-size', height/62+'px')
 				$('#tt2').css('font-size', height/62+'px')
-				$('#grados').css('font-size', height/4.5+'px')
+				$('#grados').css('font-size', height/5+'px')
 				$('.dias').css('font-size', height/55+'px')
 				setInterval(function () {
 					if ((width != $window.width()) || (height != $window.height())) {
 						ancho = $("#mapa1").width()
-						$('#tt1').css('font-size', height/36+'px')
+						$('#tt1').css('font-size', height/33+'px')
+						$('#ubi').css('font-size', height/62+'px')
 						$('#tt2').css('font-size', height/62+'px')
-						$('#grados').css('font-size', height/4.5+'px')
+						$('#grados').css('font-size', height/5+'px')
 						$('.dias').css('font-size', height/55+'px')
 						
 						$(".mapas").css('width', ($("#mapa1").width())+'px')
@@ -659,7 +671,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 			}
 			
 			
-			
+			StatusBar.styleLightContent();
 
 //
 
