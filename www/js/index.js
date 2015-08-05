@@ -65,7 +65,7 @@ function onSuccess(position) {
 		function (data1)
 		{
 			$('#tt1').html(data1.query.results.channel.location.city)
-			$('#tt2').html("<span style='text-transform: uppercase'>"+data1.query.results.channel.item.forecast[0].day+" "+data1.query.results.channel.item.forecast[0].date+"</span>, "+data.query.results.channel.item.condition.text)
+			$('#tt2').html("<span style='text-transform: uppercase'>"+data1.query.results.channel.item.forecast[0].day+" "+data1.query.results.channel.item.forecast[0].date+"</span>, "+data1.query.results.channel.item.condition.text)
 			$('#grados').html(data1.query.results.channel.item.condition.temp+'°')
 			grados = data1.query.results.channel.item.condition.temp
 			
