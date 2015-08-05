@@ -65,7 +65,7 @@ function onSuccess(position) {
 		function (data1)
 		{
 			$('#tt1').html(data1.query.results.channel.location.city)
-			$('#tt2').html("<span style='text-transform: uppercase'>"+data1.query.results.channel.item.forecast[0].day+" "+data1.query.results.channel.item.forecast[0].date+"</span>, "+data1.query.results.channel.item.forecast[0].text)
+			$('#tt2').html("<span style='text-transform: uppercase'>"+data1.query.results.channel.item.forecast[0].day+" "+data1.query.results.channel.item.forecast[0].date+"</span>, "+data.query.results.channel.item.condition.text)
 			$('#grados').html(data1.query.results.channel.item.condition.temp+'°')
 			grados = data1.query.results.channel.item.condition.temp
 			
@@ -87,7 +87,7 @@ function onSuccess(position) {
 			var ico = data1.query.results.channel.item.condition.code
 			 $('#icono').attr('src', 'iconos/'+data1.query.results.channel.item.condition.code+'.svg');
 			 $('#pollo').animate({opacity:'0.0'}, 0);
-			 $('#pollo').animate({opacity:'1'}, 800);
+			 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
 			 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
 				$('#pollo').attr('src', 'animaciones/an'+data1.query.results.channel.item.condition.code+'/an1.html');
 			 }else{
