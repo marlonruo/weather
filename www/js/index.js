@@ -50,6 +50,8 @@ function onSuccess(position) {
     $('#ubi').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
+	navigator.geolocation.clearWatch(watchID);
+		
 	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%22"+cordenadas+"%22%20and%20gflags=%22R%22&format=json", "",
     function (data0)
     {
