@@ -118,7 +118,7 @@
     
 </head>
 
-<body onLoad="inicio()" style="overflow:hidden">
+<body onLoad="inicio()" style="overflow:hidden; background-color:#000">
 
 
 
@@ -191,6 +191,29 @@ function DocReady()
 			gr = Math.round(gr)
 			$('#grados').html(gr+'°')
 		 }
+		 
+		 
+		 if(ico==1 || ico==2 || ico==3 || ico==4 || ico==27 || ico==29 || ico==31 || ico==33 || ico==34 || ico==45 || ico==3200){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo5').fadeIn()
+		 	$('#clima').css('background-color','#022f4b')
+		 }else if(ico==0 || ico==5 || ico==6 || ico==7 || ico==8 || ico==9 || ico==10 || ico==13 || ico==14 || ico==15 || ico==16 || ico==17 || ico==18 || ico==20 || ico==22 || ico==35 || ico==37 || ico==38 || ico==39 || ico==40 || ico==41 || ico==42 || ico==43 || ico==46 || ico==47){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo6').fadeIn()
+		 	$('#clima').css('background-color','#3f5b76')
+		 }else if(ico==11 || ico==12 || ico==19 || ico==21 || ico==23 || ico==24 || ico==25 || ico==26 || ico==28 || ico==30 || ico==44){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo4').fadeIn()
+		 	$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==36){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo1').fadeIn()
+		 	$('#clima').css('background-color','#be1414')
+		 }else if(ico==32){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo2').fadeIn()
+		 	$('#clima').css('background-color','#ea6f44')
+		 }
     });
 	
 	 }else{
@@ -235,6 +258,29 @@ function DocReady()
 			gr = Math.round(gr)
 			$('#grados').html(gr+'°')
 		 }
+		 
+		 
+		 if(ico==1 || ico==2 || ico==3 || ico==4 || ico==27 || ico==29 || ico==31 || ico==33 || ico==34 || ico==45 || ico==3200){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo5').fadeIn()
+		 	$('#clima').css('background-color','#022f4b')
+		 }else if(ico==0 || ico==5 || ico==6 || ico==7 || ico==8 || ico==9 || ico==10 || ico==13 || ico==14 || ico==15 || ico==16 || ico==17 || ico==18 || ico==20 || ico==22 || ico==35 || ico==37 || ico==38 || ico==39 || ico==40 || ico==41 || ico==42 || ico==43 || ico==46 || ico==47){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo6').fadeIn()
+		 	$('#clima').css('background-color','#3f5b76')
+		 }else if(ico==11 || ico==12 || ico==19 || ico==21 || ico==23 || ico==24 || ico==25 || ico==26 || ico==28 || ico==30 || ico==44){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo4').fadeIn()
+		 	$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==36){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo1').fadeIn()
+		 	$('#clima').css('background-color','#be1414')
+		 }else if(ico==32){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo3').fadeIn()
+		 	$('#clima').css('background-color','#eab344')
+		 }
     });
 	 
 	 }
@@ -251,7 +297,7 @@ function DocReady()
 			infi()
 		}
     });
-	var Result2 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22winnipegs%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+	var Result2 = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Hawaii%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
     function (data2)
     {
 		ico2 = data2.query.results.channel.item.condition.code
@@ -367,26 +413,32 @@ function DocReady()
 
 <!--///////////INICIO///////////-->
 <div style="width:100%; height:100%; position:absolute; overflow:hidden">
-<div id="fondo" style="width:100%; height:110%; position:absolute">
-<div id="todo" style="position:absolute; width:100%; height:91%; overflow:hidden;">
+<div id="fondo" style="width:100%; height:115%; position:absolute">
+<div id="todo" style="position:absolute; width:100%; height:87%;">
+
+<div style="width:100%; height:24px; position:absolute; z-index:1000; top:0px; left:0px; margin-top:-24px; background-image:url(imagenes/cuadro.png); background-size:auto 100%">
+<img id="refre" src="imagenes/refresh_icon.svg" style="position:absolute; left:50%; margin-left:-50px; bottom:0px; margin-bottom:40px;" width="12px"/>
+<img src="imagenes/refresh_text.svg" style="position:absolute; left:50%; margin-left:-30px; bottom:0px; margin-bottom:40px;" width="70px"/>
+
+
+
+</div>
+
 
 
 <div id="opciones" style="visibility:hidden"> 
+  
 
-	<div style="width:70%; height:1px; background-color:#FFFFFF; position:absolute; left:7%; top:41%; opacity:0.8"></div>
-    <div style="width:70%; height:1px; background-color:#FFFFFF; position:absolute; left:7%; top:48%; opacity:0.8"></div>
-    <div style="width:70%; height:1px; background-color:#FFFFFF; position:absolute; left:7%; top:55%; opacity:0.8"></div>
-    <div style="width:70%; height:1px; background-color:#FFFFFF; position:absolute; left:7%; top:62%; opacity:0.8"></div>
 
-    <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:6%; top:35%"/> 
-	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:6%; top:42%; visibility:hidden"/>
-    <img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:6%; top:42%"/>
-    <img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:6%; top:49%"/>
-    <img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:6%; top:56%"/>
-    <img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:6%; top:63%"/>
+    <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:18%"/> 
+	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:26%; visibility:hidden"/>
+    <img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:26%"/>
+    <img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:34%"/>
+    <img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:42%"/>
+    <img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:50%"/>
     
     
-    <div id="u1" style="position:absolute; top:42%; height:6%; width:100%; cursor:pointer"></div>
+    <div id="u1" style="position:absolute; top:26%; height:7%; width:100%; cursor:pointer"></div>
     
     
     <script>
@@ -420,7 +472,12 @@ function DocReady()
      
      
     
-    <img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:12%; top:83%; margin-left:-50px; left:46%"/>
+    <img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:11%; top:85%; margin-left:-40px; left:50%"/>
+    
+    
+    <img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/>
+    
+    
 </div>
 
    
@@ -454,7 +511,7 @@ function DocReady()
     var tile_height = alto; 
     var easing = false;
 
-    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%"><img class="icono1" src="iconos/'+ico1+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:20%; top:29%"><img id="icono2" src="iconos/'+ico2+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Winnipeg</div></div><div class="globito3" style="left:19%; top:42%"><img id="icono3" src="iconos/'+ico3+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%"><img id="icono4" src="iconos/'+ico4+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:25%; top:55%"><img id="icono5" src="iconos/'+ico5+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Lima</div></div><div class="globito1" style="left:32%; top:60%"><img id="icono6" src="iconos/'+ico6+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%"><img id="icono7" src="iconos/'+ico7+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%"><img id="icono8" src="iconos/'+ico8+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%"><img id="icono9" src="iconos/'+ico9+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%"><img id="icono10" src="iconos/'+ico10+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%"><img id="icono11" src="iconos/'+ico11+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">Delhi</div></div><div class="globito2" style="left:81%; top:35%"><img id="icono12" src="iconos/'+ico12+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%"><img id="icono13" src="iconos/'+ico13+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div>'
+    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%"><img class="icono1" src="iconos/'+ico1+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:7%; top:43.5%"><img id="icono2" src="iconos/'+ico2+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Hawaii</div></div><div class="globito3" style="left:19%; top:42%"><img id="icono3" src="iconos/'+ico3+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%"><img id="icono4" src="iconos/'+ico4+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:25%; top:55%"><img id="icono5" src="iconos/'+ico5+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Lima</div></div><div class="globito1" style="left:32%; top:60%"><img id="icono6" src="iconos/'+ico6+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%"><img id="icono7" src="iconos/'+ico7+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%"><img id="icono8" src="iconos/'+ico8+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%"><img id="icono9" src="iconos/'+ico9+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%"><img id="icono10" src="iconos/'+ico10+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%"><img id="icono11" src="iconos/'+ico11+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">Delhi</div></div><div class="globito2" style="left:81%; top:35%"><img id="icono12" src="iconos/'+ico12+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%"><img id="icono13" src="iconos/'+ico13+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div>'
     var images = [img1];
 
    /*
@@ -529,16 +586,21 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 
 
-<div id="clima" style="background-color:#033451"> 
+<div id="clima" style="background-color:#000"> 
 <!--033451
 #a90808-->
 
-  <img src="imagenes/fondo5.jpg" height="100%" alt="fondo" style="position:absolute"/>
+  <img id="fondo1" src="imagenes/fondo1.png" height="100%" style="position:absolute; display:none"/>
+  <img id="fondo2" src="imagenes/fondo2.png" height="100%" style="position:absolute; display:none"/>
+  <img id="fondo3" src="imagenes/fondo3.png" height="100%" style="position:absolute; display:none"/>
+  <img id="fondo4" src="imagenes/fondo4.png" height="100%" style="position:absolute; display:none"/>
+  <img id="fondo5" src="imagenes/fondo5.png" height="100%" style="position:absolute; display:none"/>
+  <img id="fondo6" src="imagenes/fondo6.png" height="100%" style="position:absolute; display:none"/>
   
-<div id="tt1" class="texto2" style="top:5.5%; left:14%; font-weight:500; text-transform: uppercase; width:86%; text-align:left"></div>
-  <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600;"></div>
+<div id="tt1" class="texto2" style="top:5.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
+  <div id="tt2" class="texto2" style="top:9%; left:14%; font-weight:600; visibility:hidden"></div>
   
-  <div id="ubi" class="texto2" style="top:13%; left:14%; font-weight:500">positioning</div>
+  <div id="ubi" class="texto2" style="top:13%; left:14%; font-weight:500; visibility:hidden">positioning</div>
   
   <script>
   ani()
@@ -555,8 +617,8 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   
   <div style="width:100%; height:80%; position:absolute; top:20%"></div>
   
-  <img id="menu" src="imagenes/menu.png" style="position:absolute; top:7%; left:5%; height:3%; cursor:pointer"/>
-  <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:6.5%; right:5%; height:4%; cursor:pointer"/>
+  <img id="menu" src="imagenes/menu.png" style="position:absolute; top:7%; left:5%; height:3%; cursor:pointer; visibility:hidden"/>
+  <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:6.5%; right:5%; height:4%; cursor:pointer; visibility:hidden"/>
   
   <div id="menu1" style="position:absolute; left:0%; top:3%; height:11%; width:70px; cursor:pointer"></div>
   <div id="mundo1" style="position:absolute; right:0%; top:3%; height:11%; width:70px; cursor:pointer"></div>
@@ -592,7 +654,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 </div>
 
-<!--///////////LOGIN///////////-->
+
 
  
 <script type="text/javascript" src="cordova.js"></script> 
@@ -645,6 +707,16 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 			$('#pollo').transit({scale: '.55'}, 0);
 			$('#pollo').css('opacity','0.0')
 			$('#pollo').animate({opacity:'1'}, 800);
+			
+			setTimeout("$('#tt1').css('visibility', 'visible')", 800)
+			setTimeout("$('#ubi').css('visibility', 'visible')", 800)
+			setTimeout("$('#tt2').css('visibility', 'visible')", 800)
+			setTimeout("$('#menu').css('visibility', 'visible')", 800)
+			setTimeout("$('#mundo').css('visibility', 'visible')", 800)
+			
+
+			
+			
 			$(function() {
 				var $window = $(window);
 				var width = $window.width();
@@ -707,7 +779,7 @@ $(function() {
 			arriba = document.getElementById("todo").offsetTop
 			if(arriba>=20 && una == 0){
 				una=1
-				var Result = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22japon%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
+				var Result = $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+localStorage.getItem('ciudad')+"%20"+localStorage.getItem('codigo')+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "",
     function (data)
     {
 		$('#tt1').html(data.query.results.channel.location.city)
@@ -745,6 +817,28 @@ $(function() {
 		 	gr = (grados -32)/1.8
 			gr = Math.round(gr)
 			$('#grados').html(gr+'°')
+		 }
+		 
+		 if(ico==1 || ico==2 || ico==3 || ico==4 || ico==27 || ico==29 || ico==31 || ico==33 || ico==34 || ico==45 || ico==3200){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo5').fadeIn()
+		 	$('#clima').css('background-color','#022f4b')
+		 }else if(ico==0 || ico==5 || ico==6 || ico==7 || ico==8 || ico==9 || ico==10 || ico==13 || ico==14 || ico==15 || ico==16 || ico==17 || ico==18 || ico==20 || ico==22 || ico==35 || ico==37 || ico==38 || ico==39 || ico==40 || ico==41 || ico==42 || ico==43 || ico==46 || ico==47){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo6').fadeIn()
+		 	$('#clima').css('background-color','#3f5b76')
+		 }else if(ico==11 || ico==12 || ico==19 || ico==21 || ico==23 || ico==24 || ico==25 || ico==26 || ico==28 || ico==30 || ico==44){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo4').fadeIn()
+		 	$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==36){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo1').fadeIn()
+		 	$('#clima').css('background-color','#be1414')
+		 }else if(ico==32){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo3').fadeIn()
+		 	$('#clima').css('background-color','#eab344')
 		 }
     });
 			}

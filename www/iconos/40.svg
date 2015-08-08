@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="56px" height="56px" viewBox="0 0 56 56" enable-background="new 0 0 56 56" xml:space="preserve">
-<g>
-	<rect opacity="0" fill="#FFFFFF" width="56" height="56"/>
-	<path fill="#FFFFFF" d="M41.631,20.646c0.035-0.3,0.045-0.609,0.045-0.918c0-5.375-4.355-9.728-9.729-9.728
-		c-4.168,0-7.717,2.628-9.1,6.317c-0.916-1.007-2.223-1.647-3.691-1.647c-2.768,0-5.01,2.241-5.01,5.008
-		c0,0.327,0.034,0.644,0.097,0.955c-3.691,0.61-6.517,3.792-6.517,7.653c0,4.301,3.483,7.782,7.781,7.782h24.708
-		c4.3,0,7.783-3.481,7.783-7.782C48,24.473,45.25,21.316,41.631,20.646z"/>
-	<g>
-		<g>
-			<rect x="22" y="41.25" fill="#9FC9EB" width="2" height="6.75"/>
+	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0;fill:#FFFFFF;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#9FC9EB;}
+</style>
+<rect id="XMLID_16_" x="0" class="st0" width="56" height="56"/>
+<g id="XMLID_2_">
+	<g id="XMLID_14_">
+		<path id="XMLID_15_" class="st1" d="M19.2,37.5h-3.3c-4,0-7.2-3.2-7.2-7.2c0-3.6,2.6-6.5,6-7.1c-0.1-0.3-0.1-0.6-0.1-0.9
+			c0-2.6,2.1-4.6,4.6-4.6c1.4,0,2.6,0.6,3.4,1.5c1.3-3.4,4.6-5.8,8.4-5.8c5,0,9,4,9,9c0,0.3,0,0.6,0,0.8c3.3,0.6,5.9,3.5,5.9,7.1
+			c0,4-3.2,7.2-7.2,7.2h-10H19.2z"/>
+	</g>
+	<g id="XMLID_9_">
+		<g id="XMLID_10_">
+			<rect id="XMLID_13_" x="40.7" y="39.4" class="st2" width="2" height="6.6"/>
 		</g>
 	</g>
-	<g>
-		<g>
-			<rect x="30" y="41.25" fill="#9FC9EB" width="2" height="6.75"/>
-		</g>
-	</g>
-	<rect x="26" y="38" fill="#9FC9EB" width="2" height="8"/>
-	<rect x="34" y="38" fill="#9FC9EB" width="2" height="8"/>
-	<rect x="18" y="38" fill="#9FC9EB" width="2" height="8"/>
+	<rect id="XMLID_8_" x="16.7" y="39.4" class="st2" width="2" height="6.6"/>
+	<rect id="XMLID_7_" x="22.7" y="39.4" class="st2" width="2" height="4"/>
+	<rect id="XMLID_5_" x="28.7" y="39.4" class="st2" width="2" height="6.6"/>
+	<rect id="XMLID_4_" x="34.7" y="39.4" class="st2" width="2" height="4"/>
+	<rect id="XMLID_3_" x="10.7" y="39.4" class="st2" width="2" height="4"/>
 </g>
 </svg>

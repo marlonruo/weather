@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="56px" height="56px" viewBox="0 0 56 56" enable-background="new 0 0 56 56" xml:space="preserve">
-<g>
-	<rect opacity="0" fill="#FFFFFF" width="56" height="56"/>
-	<rect x="40" y="38" fill="#9FC9EB" width="2" height="10"/>
-	<rect x="36" y="34" fill="#9FC9EB" width="2" height="8"/>
-	<rect x="32" y="38" fill="#9FC9EB" width="2" height="6"/>
-	<rect x="28" y="42" fill="#9FC9EB" width="2" height="6"/>
-	<g>
-		<path fill="#FFFFFF" d="M41.631,16.646c0.035-0.301,0.045-0.609,0.045-0.918C41.676,10.354,37.32,6,31.947,6
-			c-4.168,0-7.717,2.628-9.1,6.316c-0.916-1.007-2.223-1.646-3.691-1.646c-2.768,0-5.01,2.24-5.01,5.008
-			c0,0.328,0.034,0.645,0.097,0.955c-3.691,0.61-6.517,3.793-6.517,7.653c0,4.301,3.483,7.782,7.781,7.782h3.776l3.466-5.829
-			l0.582-0.978h1.138h4.808h3.532l-1.816,3.028l-2.267,3.778h0.078h11.412c4.3,0,7.783-3.481,7.783-7.782
-			C48,20.473,45.25,17.316,41.631,16.646z"/>
-	</g>
-	<g>
-		<polygon fill="#FBF49C" points="24.469,27.262 29.277,27.262 24.954,34.471 30,34.471 18.469,46 22.469,37.354 18.469,37.354 		
-			"/>
-	</g>
-	<rect x="14" y="34" fill="#9FC9EB" width="2" height="8"/>
-	<rect x="10" y="38" fill="#9FC9EB" width="2" height="10"/>
+	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0;fill:#FFFFFF;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#9FC9EB;}
+</style>
+<g id="XMLID_2_">
+	<rect id="XMLID_16_" x="0" class="st0" width="56" height="56"/>
+	<path id="XMLID_15_" class="st1" d="M41.6,18.6c0-0.3,0-0.6,0-0.9c0-5.4-4.4-9.7-9.7-9.7c-4.2,0-7.7,2.6-9.1,6.3
+		c-0.9-1-2.2-1.6-3.7-1.6c-2.8,0-5,2.2-5,5c0,0.3,0,0.6,0.1,1c-3.7,0.6-6.5,3.8-6.5,7.7c0,4.3,3.5,7.8,7.8,7.8h24.7
+		c4.3,0,7.8-3.5,7.8-7.8C48,22.5,45.3,19.3,41.6,18.6z"/>
+	<rect id="XMLID_14_" x="10.7" y="42" class="st1" width="4" height="4"/>
+	<rect id="XMLID_13_" x="40.7" y="38" class="st1" width="4" height="4"/>
+	<rect id="XMLID_12_" x="20.7" y="38" class="st1" width="4" height="4"/>
+	<rect id="XMLID_11_" x="30.7" y="42" class="st1" width="4" height="4"/>
+	<rect id="XMLID_10_" x="16.7" y="38" class="st2" width="2" height="8"/>
+	<rect id="XMLID_9_" x="12.7" y="38" class="st2" width="2" height="2"/>
+	<rect id="XMLID_8_" x="22.7" y="44" class="st2" width="2" height="4"/>
+	<rect id="XMLID_7_" x="30.7" y="38" class="st2" width="2" height="2"/>
+	<rect id="XMLID_6_" x="30.7" y="48" class="st2" width="2" height="2"/>
+	<rect id="XMLID_5_" x="42.7" y="44" class="st2" width="2" height="2"/>
+	<rect id="XMLID_4_" x="26.7" y="38" class="st2" width="2" height="6"/>
+	<rect id="XMLID_3_" x="36.7" y="38" class="st2" width="2" height="8"/>
 </g>
 </svg>

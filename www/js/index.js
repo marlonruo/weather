@@ -50,8 +50,6 @@ function onSuccess(position) {
     $('#ubi').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
-	navigator.geolocation.clearWatch(watchID);
-		
 	var Result0 = $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text=%22"+cordenadas+"%22%20and%20gflags=%22R%22&format=json", "",
     function (data0)
     {
@@ -99,6 +97,28 @@ function onSuccess(position) {
 				gr = Math.round(gr)
 				$('#grados').html(gr+'°')
 		 	 }
+			 
+			 if(ico==1 || ico==2 || ico==3 || ico==4 || ico==27 || ico==29 || ico==31 || ico==33 || ico==34 || ico==45 || ico==3200){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo5').fadeIn()
+		 	$('#clima').css('background-color','#022f4b')
+		 }else if(ico==0 || ico==5 || ico==6 || ico==7 || ico==8 || ico==9 || ico==10 || ico==13 || ico==14 || ico==15 || ico==16 || ico==17 || ico==18 || ico==20 || ico==22 || ico==35 || ico==37 || ico==38 || ico==39 || ico==40 || ico==41 || ico==42 || ico==43 || ico==46 || ico==47){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo6').fadeIn()
+		 	$('#clima').css('background-color','#3f5b76')
+		 }else if(ico==11 || ico==12 || ico==19 || ico==21 || ico==23 || ico==24 || ico==25 || ico==26 || ico==28 || ico==30 || ico==44){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo4').fadeIn()
+		 	$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==36){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo1').fadeIn()
+		 	$('#clima').css('background-color','#be1414')
+		 }else if(ico==32){
+		 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		 	$('#fondo3').fadeIn()
+		 	$('#clima').css('background-color','#eab344')
+		 }
 		});
     });		
 	

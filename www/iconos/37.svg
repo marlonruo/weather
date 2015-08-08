@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="56px" height="56px" viewBox="0 0 56 56" enable-background="new 0 0 56 56" xml:space="preserve">
-<g>
-	<rect opacity="0" fill="#FFFFFF" width="56" height="56"/>
-	<g>
-		<path fill="#FBE200" d="M21.369,16.243c0.896,0,1.773,0.19,2.584,0.538C23.984,16.502,24,16.219,24,15.932c0-4.418-3.582-8-8-8
-			s-8,3.582-8,8c0,3.288,1.986,6.111,4.822,7.341c0.605-0.412,1.248-0.774,1.951-1.036C15.094,18.879,17.93,16.243,21.369,16.243z"
-			/>
+	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0;fill:#FFFFFF;}
+	.st1{fill:#A1A4AC;}
+	.st2{fill:#FBF49C;}
+</style>
+<g id="XMLID_2_">
+	<rect id="XMLID_9_" x="0" class="st0" width="56" height="56"/>
+	<g id="XMLID_7_">
+		<path id="XMLID_8_" class="st1" d="M29.4,36.1L29.4,36.1h11.5c4.3,0,7.8-3.5,7.8-7.8c0-3.8-2.7-7-6.4-7.6c0-0.3,0-0.6,0-0.9
+			c0-5.4-4.4-9.7-9.7-9.7c-4.2,0-7.7,2.6-9.1,6.3c-0.9-1-2.2-1.6-3.7-1.6c-2.8,0-5,2.2-5,5c0,0.3,0,0.6,0.1,1
+			c-3.7,0.6-6.5,3.8-6.5,7.7c0,4.3,3.5,7.8,7.8,7.8H20H29.4z"/>
 	</g>
-	<g>
-		<path fill="#FFFFFF" d="M42.119,23.762c0.033-0.278,0.043-0.562,0.043-0.848c0-4.963-4.021-8.982-8.982-8.982
-			c-3.85,0-7.125,2.426-8.402,5.832c-0.846-0.93-2.053-1.521-3.408-1.521c-2.555,0-4.625,2.068-4.625,4.624
-			c0,0.303,0.031,0.595,0.09,0.882c-3.408,0.563-6.018,3.502-6.018,7.065c0,3.971,3.217,7.186,7.186,7.186h3.324l3.424-5.76
-			l0.582-0.979h1.137h4.809h3.531l-1.816,3.029L30.768,38h10.047C44.783,38,48,34.785,48,30.814
-			C48,27.294,45.461,24.38,42.119,23.762z"/>
-	</g>
-	<g>
-		<polygon fill="#FBF49C" points="26.469,33.262 31.277,33.262 26.955,40.471 32,40.471 20.469,52 24.469,43.354 20.469,43.354 		
-			"/>
+	<g id="XMLID_3_">
+		<polygon id="XMLID_13_" class="st2" points="27.5,38 29.9,38 27.8,41.5 30.2,41.5 24.7,47 26.6,42.8 24.7,42.8 		"/>
 	</g>
 </g>
 </svg>
