@@ -122,8 +122,6 @@ function DocReady()
 {
 	$('#tt0').html(localStorage.getItem('latitud'))
 
-			
-	
 	 if(document.getElementById("tt0").innerHTML=="NULL" || document.getElementById("tt0").innerHTML=="null" || document.getElementById("tt0").innerHTML==""){
 	
     var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=19.428471&lon=-99.127663&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
@@ -909,7 +907,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     <div class="dias2">
     	<span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
         <span id="gra1" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico1" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px; width:auto"/>
+    	<img id="ico1" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px"/>
+        
+        
     </div>
     
     <div class="dias2">
@@ -969,7 +969,10 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   
   <div id="grados" class="texto4" style="top:25%; left:15%; color:#ffffcc"></div>
   <img id="icono" height="18%" style="position:absolute; right:15%; top:25%;"/>
-  
+  		<script>
+        	anIco = $('#icono').height()
+			$('#icono').css('width', anIco+'px')
+        </script>
   
   <div style="position:absolute; width:100%; height:10%; top:90%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
   	<div class="dias" style="font-size:10px;">
