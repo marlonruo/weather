@@ -42,8 +42,7 @@ var app = {
 //   This method accepts a `Position` object, which contains
 //   the current GPS coordinates
 //
-var lat
-var lon
+
 function onSuccess(position) {
 	
 
