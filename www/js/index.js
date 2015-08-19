@@ -63,12 +63,14 @@ function onSuccess(position) {
 		grados = data.main.temp
 		
 		if(gg==1){
-		 	grados = (grados -32)/1.8
-		 }
+		 	var gras = (grados -32)/1.8
+		}else{
+			gras = grados
+		}
 		
 		$('#tt1').html(data.name)
 		$('#tt2').html(fecha+", "+data.weather[0].description)
-		$('#grados').html(Math.round(grados)+'°')	
+		$('#grados').html(Math.round(gras)+'°')	
 		
 		sunset = formatTime(data.sys.sunset);
 		sunset = sunset.split(':')
@@ -83,28 +85,57 @@ function onSuccess(position) {
 ico = data.weather[0].id
 cadena = data.weather[0].icon
 
-if(horasA >= horasM && hora <= horasT){
-	ico2 = ico+'d'
+if(horasA >= horasM && horasA <= horasT){
+	ico2a = ico+'d'
 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-	$('#fondo6').fadeIn()
-	$('#clima').css('background-color','#3f5b76')
+		  if(ico==202){
+		 	$('#pollo').attr('src', 'animaciones/202/an.html');
+		 }else if(ico==212){
+		 	$('#pollo').attr('src', 'animaciones/212/an.html');
+		 }else if(ico==502){
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }else if(ico==801){
+		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
+			$('#fondo4').fadeIn()
+			$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==904){
+		 	$('#pollo').attr('src', 'animaciones/904/an.html');
+			$('#fondo1').fadeIn()
+			$('#clima').css('background-color','#be1414')
+		 }else{
+		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#3f5b76')
+		 }
 }else{
-	ico2 = ico+'n'
+	ico2a = ico+'n'
 	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
 	$('#fondo5').fadeIn()
 	$('#clima').css('background-color','#022f4b')
+	
+		 if(ico==202){
+		 	$('#pollo').attr('src', 'animaciones/202/an.html');
+		 }else if(ico==212){
+		 	$('#pollo').attr('src', 'animaciones/212/an.html');
+		 }else if(ico==502){
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }else if(ico==800){
+		 	$('#pollo').attr('src', 'animaciones/800n/an.html');
+		 }else if(ico==801){
+		 	$('#pollo').attr('src', 'animaciones/801n/an.html');
+		 }else if(ico==904){
+		 	$('#pollo').attr('src', 'animaciones/904/an.html');
+		 }else{
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }
 }
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2+'.svg#svgView(preserveAspectRatio(xMidYMin meet))');
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg#svgView(preserveAspectRatio(xMidYMin meet))');
 		 $('#pollo').css('opacity','0.0')
 		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
 		 
-		 if(ico==3 || ico==27 || ico==29 || ico==31 || ico==33 || ico==38 || ico==39){
-		 	$('#pollo').attr('src', 'animaciones/an'+data.query.results.channel.item.condition.code+'/an1.html');
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/an1/an1.html');
-		 }
+		
 		
     });
 	
@@ -119,9 +150,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora1').html(hor1)
 		grados1 = dataHora.list[0].main.temp
 		if(gg==1){
-		 	grados1 = (grados1 -32)/1.8
-		 }
-		$('#gra1').html(Math.round(grados1)+'°')
+		 	var gras1 = (grados1 -32)/1.8
+		}else{
+			var gras1 = grados1
+		}
+		$('#gra1').html(Math.round(gras1)+'°')
 		hor1 = hor1.split(':')
 		var ho1= (parseInt(hor1[0])*60) + parseInt(hor1[1]) 
 		var icon1=dataHora.list[0].weather[0].id
@@ -139,9 +172,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora2').html(hor2)
 		grados2 = dataHora.list[1].main.temp
 		if(gg==1){
-		 	grados2 = (grados2 -32)/1.8
-		 }
-		$('#gra2').html(Math.round(grados2)+'°')
+		 	var gras2 = (grados2 -32)/1.8
+		}else{
+			var gras2 = grados2
+		}
+		$('#gra2').html(Math.round(gras2)+'°')
 		hor2 = hor2.split(':')
 		var ho2= (parseInt(hor2[0])*60) + parseInt(hor2[1]) 
 		var icon2=dataHora.list[1].weather[0].id
@@ -158,9 +193,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora3').html(hor3)
 		grados3 = dataHora.list[2].main.temp
 		if(gg==1){
-		 	grados3 = (grados3 -32)/1.8
-		 }
-		$('#gra3').html(Math.round(grados3)+'°')
+		 	var gras3 = (grados3 -32)/1.8
+		}else{
+			var gras3 = grados3
+		}
+		$('#gra3').html(Math.round(gras3)+'°')
 		hor3 = hor3.split(':')
 		var ho3= (parseInt(hor3[0])*60) + parseInt(hor3[1]) 
 		var icon3=dataHora.list[2].weather[0].id
@@ -177,9 +214,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora4').html(hor4)
 		grados4 = dataHora.list[3].main.temp
 		if(gg==1){
-		 	grados4 = (grados4 -32)/1.8
-		 }
-		$('#gra4').html(Math.round(grados4)+'°')
+		 	var gras4 = (grados4 -32)/1.8
+		}else{
+			var gras4 = grados4
+		}
+		$('#gra4').html(Math.round(gras4)+'°')
 		hor4 = hor4.split(':')
 		var ho4= (parseInt(hor4[0])*60) + parseInt(hor4[1]) 
 		var icon4=dataHora.list[3].weather[0].id
@@ -198,9 +237,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora5').html(hor5)
 		grados5 = dataHora.list[4].main.temp
 		if(gg==1){
-		 	grados5 = (grados5 -32)/1.8
-		 }
-		$('#gra5').html(Math.round(grados5)+'°')
+		 	var gras5 = (grados5 -32)/1.8
+		}else{
+			var gras5 = grados5
+		}
+		$('#gra5').html(Math.round(gras5)+'°')
 		hor5 = hor5.split(':')
 		var ho5= (parseInt(hor5[0])*60) + parseInt(hor5[1]) 
 		var icon5=dataHora.list[4].weather[0].id
@@ -218,9 +259,11 @@ if(horasA >= horasM && hora <= horasT){
 		$('#hora6').html(hor6)
 		grados6 = dataHora.list[5].main.temp
 		if(gg==1){
-		 	grados6 = (grados6 -32)/1.8
-		 }
-		$('#gra6').html(Math.round(grados6)+'°')
+		 	var gras6 = (grados6 -32)/1.8
+		}else{
+			var gras6 = grados6
+		}
+		$('#gra6').html(Math.round(gras6)+'°')
 		hor6 = hor6.split(':')
 		var ho6= (parseInt(hor6[0])*60) + parseInt(hor6[1]) 
 		var icon6=dataHora.list[5].weather[0].id
@@ -236,7 +279,7 @@ if(horasA >= horasM && hora <= horasT){
 	
 	
 	
-	var ResultDia = $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827&cnt=5", "",
+	var ResultDia = $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827&cnt=6", "",
     function (dataDia)
     {
 		
@@ -279,6 +322,12 @@ weekday[6] = "SAT";
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
 		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
+		
+		var milliseconds6 = dataDia.list[5].dt * 1000;
+        var date6 = new Date(milliseconds6);
+		var n6 = weekday[date6.getDay()];
+		$('#dia6').html(n6)
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
     });
 						
 }
