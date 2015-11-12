@@ -36,7 +36,6 @@
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Pixel Weather</title>
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
-
 <script src="js/jquery-1.11.2.js" type="text/javascript"></script>
 <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
 <script src="js/ui.touch.punch.js"></script>
@@ -44,17 +43,9 @@
 <script src="js/easing.js"></script>
 <script type="text/javascript" src="js/jquery.infinitedrag-extscope.js"></script>
 <script src="bootstrap.min.js"></script>
-
 </head>
 
 <body onLoad="inicio()" style="overflow:hidden; background-color:#000">
-
-
-
-
-
-
-
 <script type="text/javascript">
 
 
@@ -125,6 +116,7 @@ var sunset
 var sunrise
 var lat = localStorage.getItem('latitud')
 var lon = localStorage.getItem('longitud')
+var ttem
 function DocReady()
 {
 
@@ -136,7 +128,7 @@ function DocReady()
     function (data)
     {
 		grados = data.main.temp
-		
+		ttem = (grados -32)/1.8
 		if(gg==1){
 		 	var gras = (grados -32)/1.8
 		}else{
@@ -159,58 +151,97 @@ function DocReady()
 ico = data.weather[0].id
 cadena = data.weather[0].icon
 
+//ico='211'
+//ttem=25
+
 if(horasA >= horasM && horasA <= horasT){
-	ico2a = ico+'d'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-		  if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo4').fadeIn()
-			$('#clima').css('background-color','#2d97c7')
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-			$('#fondo1').fadeIn()
-			$('#clima').css('background-color','#be1414')
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo6').fadeIn()
-			$('#clima').css('background-color','#3f5b76')
-		 }
-}else{
-	ico2a = ico+'n'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-	$('#fondo5').fadeIn()
-	$('#clima').css('background-color','#022f4b')
 	
-		 if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==800){
-		 	$('#pollo').attr('src', 'animaciones/800n/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801n/an.html');
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }
+	if(ico=='211' || ico=='221' || ico=='521' || ico=='522' || ico=='602' || ico=='701' || ico=='711' || ico=='721'){
+		$('#fondo4').fadeIn()
+		$('#clima').css('background-color','#374d61')
+	}else if(ico=='313' || ico=='321' || ico=='500' || ico=='501' || ico=='520'   || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+		$('#fondo3').fadeIn()
+		$('#clima').css('background-color','#198ac9')
+
+	}else if(ico=='731' || ico=='751' || ico=='761' || ico=='762'){
+		$('#fondo8').fadeIn()
+		$('#clima').css('background-color','#5e2913')
+	}else if(ico=='904' || ico=='951'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else if(ico=='800'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}else if(ttem>='30'){
+			$('#fondo7').fadeIn()
+			$('#clima').css('background-color','#be1414')
+		}
+	}else if(ico=='801'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}
+	}else if(ico=='901'){
+			$('#fondo1').fadeIn()
+			$('#clima').css('background-color','#02253c')
+	}else{
+		$('#fondo2').fadeIn()
+		$('#clima').css('background-color','#064b86')
+	}
+
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+	ico2a = ico+'d'
+	}else{
+	ico2a = ico
+	}
+	
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'d'
+	
+		 
+}else{
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='956'){
+	ico2a = ico+'n'
+	}else{
+	ico2a = ico
+	}
+	$('#fondo0, #fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6, #fondo7, #fondo8').fadeOut()
+	
+	
+	if(ico=='904'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else{
+		$('#fondo1').fadeIn()
+		$('#clima').css('background-color','#02253c')
+	}
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'n'	
 }
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg#svgView(preserveAspectRatio(xMidYMin meet))');
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg');
 		 $('#pollo').css('opacity','0.0')
 		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
-		 
-		 
-		
     });
 	
 	
@@ -440,48 +471,87 @@ ico = data.weather[0].id
 cadena = data.weather[0].icon
 
 if(horasA >= horasM && horasA <= horasT){
-	ico2a = ico+'d'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-		  if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo4').fadeIn()
-			$('#clima').css('background-color','#2d97c7')
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-			$('#fondo1').fadeIn()
-			$('#clima').css('background-color','#be1414')
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo6').fadeIn()
-			$('#clima').css('background-color','#3f5b76')
-		 }
-}else{
-	ico2a = ico+'n'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-	$('#fondo5').fadeIn()
-	$('#clima').css('background-color','#022f4b')
 	
-		 if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==800){
-		 	$('#pollo').attr('src', 'animaciones/800n/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801n/an.html');
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }
+	if(ico=='211' || ico=='221' || ico=='521' || ico=='522' || ico=='602' || ico=='701' || ico=='711' || ico=='721'){
+		$('#fondo4').fadeIn()
+		$('#clima').css('background-color','#374d61')
+	}else if(ico=='313' || ico=='321' || ico=='500' || ico=='501' || ico=='520'   || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+		$('#fondo3').fadeIn()
+		$('#clima').css('background-color','#198ac9')
+
+	}else if(ico=='731' || ico=='751' || ico=='761' || ico=='762'){
+		$('#fondo8').fadeIn()
+		$('#clima').css('background-color','#5e2913')
+	}else if(ico=='904' || ico=='951'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else if(ico=='800'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}else if(ttem>='30'){
+			$('#fondo7').fadeIn()
+			$('#clima').css('background-color','#be1414')
+		}
+	}else if(ico=='801'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}
+	}else if(ico=='901'){
+			$('#fondo1').fadeIn()
+			$('#clima').css('background-color','#02253c')
+	}else{
+		$('#fondo2').fadeIn()
+		$('#clima').css('background-color','#064b86')
+	}
+
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+	ico2a = ico+'d'
+	}else{
+	ico2a = ico
+	}
+	
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'d'
+	
+		 
+}else{
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='956'){
+	ico2a = ico+'n'
+	}else{
+	ico2a = ico
+	}
+	$('#fondo0, #fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6, #fondo7, #fondo8').fadeOut()
+	
+	
+	if(ico=='904'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else{
+		$('#fondo1').fadeIn()
+		$('#clima').css('background-color','#02253c')
+	}
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'n'	
 }
 
 
@@ -1019,39 +1089,16 @@ if(cadena.indexOf('n') == -1){
 
 
 
-</script>
+</script> 
 
 <!--///////////INICIO///////////-->
 <div style="width:100%; height:100%; position:absolute; overflow:hidden">
-<div id="fondo" style="width:100%; height:115%; position:absolute">
-<div id="todo" style="position:absolute; width:100%; height:87%;">
-
-<div style="width:100%; height:24px; position:absolute; z-index:1000; top:0px; left:0px; margin-top:-24px; background-image:url(imagenes/cuadro.png); background-size:auto 100%">
-<img id="refre" src="imagenes/refresh_icon.svg" style="position:absolute; left:50%; margin-left:-50px; bottom:0px; margin-bottom:40px;" width="12px"/>
-<img src="imagenes/refresh_text.svg" style="position:absolute; left:50%; margin-left:-30px; bottom:0px; margin-bottom:40px;" width="70px"/>
-
-
-
-</div>
-
-
-
-<div id="opciones" style="visibility:hidden"> 
-  
-
-
-    <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:18%"/> 
-	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:26%; visibility:hidden"/>
-    <img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:26%"/>
-    <img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:34%"/>
-    <img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:42%"/>
-    <img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:50%"/>
-    
-    
-    <div id="u1" style="position:absolute; top:26%; height:7%; width:100%; cursor:pointer"></div>
-    
-    
-    <script>
+  <div id="fondo" style="width:100%; height:115%; position:absolute">
+    <div id="todo" style="position:absolute; width:100%; height:87%;">
+      <div style="width:100%; height:24px; position:absolute; z-index:1000; top:0px; left:0px; margin-top:-24px; background-image:url(imagenes/cuadro.png); background-size:auto 100%"> <img id="refre" src="imagenes/refresh_icon.svg" style="position:absolute; left:50%; margin-left:-50px; bottom:0px; margin-bottom:40px;" width="12px"/> <img src="imagenes/refresh_text.svg" style="position:absolute; left:50%; margin-left:-30px; bottom:0px; margin-bottom:40px;" width="70px"/> </div>
+      <div id="opciones" style="visibility:hidden"> <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:18%"/> <img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:26%; visibility:hidden"/> <img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:26%"/> <img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:34%"/> <img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:42%"/> <img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:50%"/>
+        <div id="u1" style="position:absolute; top:26%; height:7%; width:100%; cursor:pointer"></div>
+        <script>
 		var cen=0
 		var gr
 		
@@ -1110,31 +1157,13 @@ if(cadena.indexOf('n') == -1){
 			}
 		})
 		
-    </script>
-     
-     
-    
-    <img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:11%; top:85%; margin-left:-40px; left:50%"/>
-    
-    
-    <img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/>
-    
-    
-</div>
-
-   
-   
-<div id="mapa" style="visibility:hidden">
-
- <div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
-  <div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px">
-  	
-  </div>
-  </div>
-
-      
-
-    <script type="text/javascript">
+    </script> 
+        <img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:11%; top:85%; margin-left:-40px; left:50%"/> <img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> </div>
+      <div id="mapa" style="visibility:hidden">
+        <div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
+          <div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px"> </div>
+        </div>
+        <script type="text/javascript">
 	
 	
 	function infi(){
@@ -1221,75 +1250,26 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 	    });
       });
 	}
-    </script>  
-
-</div>
-
-
-
-
-<div id="clima" style="background-color:#000"> 
-<!--033451
-#a90808-->
-
-  <img id="fondo1" src="imagenes/fondo1.png" height="100%" style="position:absolute; display:none"/>
-  <img id="fondo2" src="imagenes/fondo2.png" height="100%" style="position:absolute; display:none"/>
-  <img id="fondo3" src="imagenes/fondo3.png" height="100%" style="position:absolute; display:none"/>
-  <img id="fondo4" src="imagenes/fondo4.png" height="100%" style="position:absolute; display:none"/>
-  <img id="fondo5" src="imagenes/fondo5.png" height="100%" style="position:absolute; display:none"/>
-  <img id="fondo6" src="imagenes/fondo6.png" height="100%" style="position:absolute; display:none"/>
-  
-<div id="tt0" class="texto2" style="top:0.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
-<div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
-  <div id="tt2" class="texto2" style="top:8%; left:14%; font-weight:600; visibility:hidden"></div>
-  
-  <div id="ubi" class="texto2" style="top:10%; left:14%; font-weight:500; visibility:hidden">positioning</div>
-  
-  
-  <div style="position:absolute; width:100%; height:10%; top:14%">
-  	
-    <div class="dias2">
-    	<span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra1" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico1" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px"/>
+    </script> 
+      </div>
+      <div id="clima" style="background-color:#000"> 
+        <!--033451
+#a90808--> 
         
-        
-    </div>
-    
-    <div class="dias2">
-    	<span id="hora2" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra2" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico2" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/>
-    </div>
-    
-    <div class="dias2">
-    	<span id="hora3" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra3" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico3" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/>
-    </div>
-    
-    <div class="dias2">
-    	<span id="hora4" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra4" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico4" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/>
-    </div>
-    
-    <div class="dias2">
-    	<span id="hora5" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra5" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico5" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/>
-    </div>
-    
-    <div class="dias2">
-    	<span id="hora6" style="position:absolute; width:100%; text-align:center; left:0px;"></span>
-        <span id="gra6" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span>
-    	<img id="ico6" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/>
-    </div>
-  
-  </div>
-  
-  
-  <script>
+        <img id="fondo0" src="imagenes/fondo_0.png" height="100%" style="position:absolute; display:none"/> <img id="fondo1" src="imagenes/fondo_1.png" height="100%" style="position:absolute; display:none"/> <img id="fondo2" src="imagenes/fondo_2.png" height="100%" style="position:absolute; display:none"/> <img id="fondo3" src="imagenes/fondo_3.png" height="100%" style="position:absolute; display:none"/> <img id="fondo4" src="imagenes/fondo_4.png" height="100%" style="position:absolute; display:none"/> <img id="fondo5" src="imagenes/fondo_5.png" height="100%" style="position:absolute; display:none"/> <img id="fondo6" src="imagenes/fondo_6.png" height="100%" style="position:absolute; display:none"/> <img id="fondo7" src="imagenes/fondo_7.png" height="100%" style="position:absolute; display:none"/> <img id="fondo8" src="imagenes/fondo_8.png" height="100%" style="position:absolute; display:none"/>
+        <div id="tt0" class="texto2" style="top:0.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
+        <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
+        <div id="tt2" class="texto2" style="top:8%; left:14%; font-weight:600; visibility:hidden"></div>
+        <div id="ubi" class="texto2" style="top:10%; left:14%; font-weight:500; visibility:hidden">positioning</div>
+        <div style="position:absolute; width:100%; height:10%; top:14%">
+          <div class="dias2"> <span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra1" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico1" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px"/> </div>
+          <div class="dias2"> <span id="hora2" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra2" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico2" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora3" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra3" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico3" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora4" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra4" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico4" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora5" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra5" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico5" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora6" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra6" style="position:absolute; width:100%; text-align:center; left:0px; top:25%"></span> <img id="ico6" height="45%" style="position:absolute; top:50%; left:50%; margin-left:-16px;"/> </div>
+        </div>
+        <script>
   ani()
   function ani(){
 	  setTimeout("$('#ubi').html('positioning.')", 500)
@@ -1299,60 +1279,28 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 	  setTimeout('ani()', 2500)
   }
   </script>
-  
-  <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-395px; overflow:hidden; visibility:hidden; margin-bottom:-125px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
-  
-  <div style="width:100%; height:80%; position:absolute; top:20%"></div>
-  
-  <img id="menu" src="imagenes/menu.png" style="position:absolute; top:6%; left:5%; height:3%; cursor:pointer; visibility:hidden"/>
-  <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:5.5%; right:5%; height:4%; cursor:pointer; visibility:hidden"/>
-  
-  <div id="menu1" style="position:absolute; left:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
-  <div id="mundo1" style="position:absolute; right:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
-  
-  
-  <div id="grados" class="texto4" style="top:26%; left:15%; color:#ffffcc"></div>
-  <img id="icono" style="position:absolute; right:15%; top:26%; height:18%; preserve-aspect-ratio:xMinYMax meet;" preserveAspectRatio="xMinYMax meet"/>
-  		
-  <div style="position:absolute; width:100%; height:10%; top:90%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
-  	<div class="dias" style="font-size:10px;">
-    	<span id="dia1" style="position:absolute; width:100%; left:0px; font-size:10px"></span>
-    	<img id="ic1" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-    <div class="dias" style="font-size:11px;">
-    	<span id="dia2" style="position:absolute; width:100%; left:0px; font-size:10px"></span>
-    	<img id="ic2" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-    <div class="dias" style="font-size:11px;">
-    	<span id="dia3" style="position:absolute; width:100%; left:0px; font-size:10px"></span>
-    	<img id="ic3" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-    <div class="dias" style="font-size:11px;">
-    	<span id="dia4" style="position:absolute; width:100%; left:0px; font-size:10px"></span>
-    	<img id="ic4" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-    <div class="dias" style="font-size:9px;">
-    	<span id="dia5" style="position:absolute; width:100%; left:0px; font-size:10px;"></span>
-    	<img id="ic5" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-    <div class="dias" style="font-size:9px;">
-    	<span id="dia6" style="position:absolute; width:100%; left:0px; font-size:10px;"></span>
-    	<img id="ic6" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/>
-    </div>
-  
-  </div>
-
-</div>
-
-
-
- 
-<script type="text/javascript" src="cordova.js"></script> 
-<script src="lib/lock-6.js"></script> 
-<script type="text/javascript" src="js/auth0-variables.js"></script> 
-<script type="text/javascript" src="js/app.js"></script> 
-<script type="text/javascript" src="js/index.js"></script> 
-<script type="text/javascript">
+        <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-395px; overflow:hidden; visibility:hidden; margin-bottom:-125px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
+        <div style="width:100%; height:80%; position:absolute; top:20%"></div>
+        <img id="menu" src="imagenes/menu.png" style="position:absolute; top:6%; left:5%; height:3%; cursor:pointer; visibility:hidden"/> <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:5.5%; right:5%; height:4%; cursor:pointer; visibility:hidden"/>
+        <div id="menu1" style="position:absolute; left:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
+        <div id="mundo1" style="position:absolute; right:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
+        <div id="grados" class="texto4" style="top:26%; left:15%; color:#ffffcc"></div>
+        <img id="icono" style="position:absolute; right:15%; top:26%; height:18%; preserve-aspect-ratio:xMinYMax meet;" preserveAspectRatio="xMinYMax meet"/>
+        <div style="position:absolute; width:100%; height:10%; top:90%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
+          <div class="dias" style="font-size:10px;"> <span id="dia1" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic1" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia2" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic2" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia3" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic3" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia4" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic4" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:9px;"> <span id="dia5" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img id="ic5" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:9px;"> <span id="dia6" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img id="ic6" height="65%" style="position:absolute; top:30%; left:50%; margin-left:-13px;"/> </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="cordova.js"></script> 
+      <script src="lib/lock-6.js"></script> 
+      <script type="text/javascript" src="js/auth0-variables.js"></script> 
+      <script type="text/javascript" src="js/app.js"></script> 
+      <script type="text/javascript" src="js/index.js"></script> 
+      <script type="text/javascript">
 
 			var lugar=1
 			$('#menu, #menu1').click(function(){
@@ -1441,14 +1389,10 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 			app.initialize();
 
-        </script>
-           
+        </script> 
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
-
-
 <script>
 $(function() {
            $( "#todo").draggable({ containment: '#fondo', revert: "valid",
@@ -1510,48 +1454,87 @@ ico = data.weather[0].id
 cadena = data.weather[0].icon
 
 if(horasA >= horasM && horasA <= horasT){
-	ico2a = ico+'d'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-		  if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo4').fadeIn()
-			$('#clima').css('background-color','#2d97c7')
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-			$('#fondo1').fadeIn()
-			$('#clima').css('background-color','#be1414')
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
-			$('#fondo6').fadeIn()
-			$('#clima').css('background-color','#3f5b76')
-		 }
-}else{
-	ico2a = ico+'n'
-	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
-	$('#fondo5').fadeIn()
-	$('#clima').css('background-color','#022f4b')
 	
-		 if(ico==202){
-		 	$('#pollo').attr('src', 'animaciones/202/an.html');
-		 }else if(ico==212){
-		 	$('#pollo').attr('src', 'animaciones/212/an.html');
-		 }else if(ico==502){
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }else if(ico==800){
-		 	$('#pollo').attr('src', 'animaciones/800n/an.html');
-		 }else if(ico==801){
-		 	$('#pollo').attr('src', 'animaciones/801n/an.html');
-		 }else if(ico==904){
-		 	$('#pollo').attr('src', 'animaciones/904/an.html');
-		 }else{
-		 	$('#pollo').attr('src', 'animaciones/502/an.html');
-		 }
+	if(ico=='211' || ico=='221' || ico=='521' || ico=='522' || ico=='602' || ico=='701' || ico=='711' || ico=='721'){
+		$('#fondo4').fadeIn()
+		$('#clima').css('background-color','#374d61')
+	}else if(ico=='313' || ico=='321' || ico=='500' || ico=='501' || ico=='520'   || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+		$('#fondo3').fadeIn()
+		$('#clima').css('background-color','#198ac9')
+
+	}else if(ico=='731' || ico=='751' || ico=='761' || ico=='762'){
+		$('#fondo8').fadeIn()
+		$('#clima').css('background-color','#5e2913')
+	}else if(ico=='904' || ico=='951'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else if(ico=='800'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}else if(ttem>='30'){
+			$('#fondo7').fadeIn()
+			$('#clima').css('background-color','#be1414')
+		}
+	}else if(ico=='801'){
+		if(ttem<='19.9999'){
+			$('#fondo3').fadeIn()
+			$('#clima').css('background-color','#198ac9')
+		}else if(ttem>='20' && ttem<='24.9999'){
+			$('#fondo5').fadeIn()
+			$('#clima').css('background-color','#fea904')
+		}else if(ttem>='25' && ttem<='29.9999'){
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#ff6600')
+		}
+	}else if(ico=='901'){
+			$('#fondo1').fadeIn()
+			$('#clima').css('background-color','#02253c')
+	}else{
+		$('#fondo2').fadeIn()
+		$('#clima').css('background-color','#064b86')
+	}
+
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
+	ico2a = ico+'d'
+	}else{
+	ico2a = ico
+	}
+	
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'d'
+	
+		 
+}else{
+	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='956'){
+	ico2a = ico+'n'
+	}else{
+	ico2a = ico
+	}
+	$('#fondo0, #fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6, #fondo7, #fondo8').fadeOut()
+	
+	
+	if(ico=='904'){
+		$('#fondo7').fadeIn()
+		$('#clima').css('background-color','#be1414')
+	}else if(ico=='950'){
+		$('#fondo0').fadeIn()
+		$('#clima').css('background-color','#080808')
+	}else{
+		$('#fondo1').fadeIn()
+		$('#clima').css('background-color','#02253c')
+	}
+	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
+	ico2a = ico+'n'	
 }
 
 
@@ -1761,6 +1744,5 @@ weekday[6] = "SAT";
 		}
 		
 </script>
-        
 </body>
 </html>
