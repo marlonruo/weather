@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.pixelweather"
-		versionCode = "1.5" 
-        version   = "1.5">
+		versionCode = "1.6" 
+        version   = "1.6">
 
     <name>Pixel Weather</name>
 
@@ -110,7 +110,7 @@
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>101</string>
+    <string>102</string>
     </gap:config-file>
 
     <!--
