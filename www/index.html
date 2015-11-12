@@ -446,7 +446,7 @@ weekday[6] = "SAT";
     function (data)
     {
 		grados = data.main.temp
-		
+		ttem = (grados -32)/1.8
 		if(gg==1){
 		 	var gras = (grados -32)/1.8
 		}else{
@@ -1256,7 +1256,16 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
         <!--033451
 #a90808--> 
         
-        <img id="fondo0" src="imagenes/fondo_0.png" height="100%" style="position:absolute; display:none"/> <img id="fondo1" src="imagenes/fondo_1.png" height="100%" style="position:absolute; display:none"/> <img id="fondo2" src="imagenes/fondo_2.png" height="100%" style="position:absolute; display:none"/> <img id="fondo3" src="imagenes/fondo_3.png" height="100%" style="position:absolute; display:none"/> <img id="fondo4" src="imagenes/fondo_4.png" height="100%" style="position:absolute; display:none"/> <img id="fondo5" src="imagenes/fondo_5.png" height="100%" style="position:absolute; display:none"/> <img id="fondo6" src="imagenes/fondo_6.png" height="100%" style="position:absolute; display:none"/> <img id="fondo7" src="imagenes/fondo_7.png" height="100%" style="position:absolute; display:none"/> <img id="fondo8" src="imagenes/fondo_8.png" height="100%" style="position:absolute; display:none"/>
+        <img id="fondo0" src="imagenes/fondo_0.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo1" src="imagenes/fondo_1.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo2" src="imagenes/fondo_2.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo3" src="imagenes/fondo_3.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo4" src="imagenes/fondo_4.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo5" src="imagenes/fondo_5.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo6" src="imagenes/fondo_6.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo7" src="imagenes/fondo_7.png" height="100%" style="position:absolute; display:none"/> 
+        <img id="fondo8" src="imagenes/fondo_8.png" height="100%" style="position:absolute; display:none"/>
+        
         <div id="tt0" class="texto2" style="top:0.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
         <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:86%; text-align:left"></div>
         <div id="tt2" class="texto2" style="top:8%; left:14%; font-weight:600; visibility:hidden"></div>
@@ -1430,7 +1439,7 @@ minuto= f.getMinutes()
     function (data)
     {
 		grados = data.main.temp
-		
+		ttem = (grados -32)/1.8
 		if(gg==1){
 		 	var gras = (grados -32)/1.8
 		}else{
