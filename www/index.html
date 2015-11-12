@@ -759,12 +759,12 @@ weekday[6] = "SAT";
 	 }
 	
 	
-	
 	var total=0
 	
-	var Result1 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=los%20angeles,%20us", "",
+	var Result1 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=los%20angeles,%20us&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data1)
-    {	 
+    {
+		 
 
 var icoa = data1.weather[0].id
 var cadena = data1.weather[0].icon;
@@ -783,7 +783,7 @@ if(cadena.indexOf('n') == -1){
     });
 	
 	
-	var Result2 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=honolulu,%20hawai", "",
+	var Result2 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=honolulu,%20hawai&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data2)
     {
 var icoa = data2.weather[0].id
@@ -801,7 +801,7 @@ if(cadena.indexOf('n') == -1){
     });
 	
 	
-	var Result3 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=mexico%20city", "",
+	var Result3 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=mexico%20city&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data3)
     {
 var icoa = data3.weather[0].id
@@ -819,7 +819,7 @@ if(cadena.indexOf('n') == -1){
     });
 	
 	
-	var Result4 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=new%20york", "",
+	var Result4 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=new%20york&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data4)
     {
 var icoa = data4.weather[0].id
@@ -835,7 +835,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result5 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=bogota,%20co", "",
+	var Result5 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=bogota,%20co&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data5)
     {
 var icoa = data5.weather[0].id
@@ -851,7 +851,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result6 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=sao%20paolo,%20br", "",
+	var Result6 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=sao%20paolo,%20br&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data6)
     {
 var icoa = data6.weather[0].id
@@ -867,7 +867,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result7 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=paris%20fr", "",
+	var Result7 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=paris%20fr&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data7)
     {
 var icoa = data7.weather[0].id
@@ -883,7 +883,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result8 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=cairo", "",
+	var Result8 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=cairo&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data8)
     {
 var icoa = data8.weather[0].id
@@ -899,7 +899,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result9 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=johannesburg", "",
+	var Result9 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=johannesburg&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data9)
     {
 var icoa = data9.weather[0].id
@@ -915,7 +915,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result10 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=moscow", "",
+	var Result10 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=moscow&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data10)
     {
 var icoa = data10.weather[0].id
@@ -931,7 +931,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result11 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=new%20delhi", "",
+	var Result11 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=new%20delhi&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data11)
     {
 var icoa = data11.weather[0].id
@@ -947,7 +947,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result12 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tokio%20jp", "",
+	var Result12 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tokio%20jp&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data12)
     {
 var icoa = data12.weather[0].id
@@ -963,7 +963,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-	var Result13 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=sydney,%20au", "",
+	var Result13 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=sydney,%20au&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data13)
     {
 var icoa = data13.weather[0].id
@@ -979,7 +979,7 @@ if(cadena.indexOf('n') == -1){
 			infi()
 		}
     });
-var Result14 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tanana", "",
+var Result14 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tanana&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data14)
     {
 var icoa = data14.weather[0].id
@@ -997,7 +997,7 @@ if(cadena.indexOf('n') == -1){
     });
 
 
-var Result15 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=ushuaia", "",
+var Result15 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=ushuaia&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data15)
     {
 var icoa = data15.weather[0].id
@@ -1014,7 +1014,7 @@ if(cadena.indexOf('n') == -1){
 		}
     });
 	
-var Result16 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=lisboa", "",
+var Result16 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=lisboa&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data16)
     {
 var icoa = data16.weather[0].id
@@ -1031,7 +1031,7 @@ if(cadena.indexOf('n') == -1){
 		}
     });
 	
-var Result17 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=niamey", "",
+var Result17 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=niamey&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data17)
     {
 var icoa = data17.weather[0].id
@@ -1048,7 +1048,7 @@ if(cadena.indexOf('n') == -1){
 		}
     });
 	
-var Result18 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=hong%20kong", "",
+var Result18 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=hong%20kong&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data18)
     {
 var icoa = data18.weather[0].id
@@ -1065,7 +1065,7 @@ if(cadena.indexOf('n') == -1){
 		}
     });
 	
-var Result19 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=nuuk", "",
+var Result19 = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=nuuk&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data19)
     {
 var icoa = data19.weather[0].id
@@ -1158,7 +1158,7 @@ if(cadena.indexOf('n') == -1){
 		})
 		
     </script> 
-        <img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:11%; top:85%; margin-left:-40px; left:50%"/> <img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> </div>
+        <img src="imagenes/data.svg" style="position:absolute; cursor:pointer; height:18%; top:81%; margin-left:-50px; left:47%;"/> <img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> </div>
       <div id="mapa" style="visibility:hidden">
         <div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
           <div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px"> </div>
@@ -1383,6 +1383,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 					}
 				}, 10);
 			});
+			
 			}
 
 //
