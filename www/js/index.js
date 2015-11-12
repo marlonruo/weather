@@ -86,87 +86,48 @@ ico = data.weather[0].id
 cadena = data.weather[0].icon
 
 if(horasA >= horasM && horasA <= horasT){
-	
-	if(ico=='211' || ico=='221' || ico=='521' || ico=='522' || ico=='602' || ico=='701' || ico=='711' || ico=='721'){
-		$('#fondo4').fadeIn()
-		$('#clima').css('background-color','#374d61')
-	}else if(ico=='313' || ico=='321' || ico=='500' || ico=='501' || ico=='520'   || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
-		$('#fondo3').fadeIn()
-		$('#clima').css('background-color','#198ac9')
-
-	}else if(ico=='731' || ico=='751' || ico=='761' || ico=='762'){
-		$('#fondo8').fadeIn()
-		$('#clima').css('background-color','#5e2913')
-	}else if(ico=='904' || ico=='951'){
-		$('#fondo7').fadeIn()
-		$('#clima').css('background-color','#be1414')
-	}else if(ico=='950'){
-		$('#fondo0').fadeIn()
-		$('#clima').css('background-color','#080808')
-	}else if(ico=='800'){
-		if(ttem<='19.9999'){
-			$('#fondo3').fadeIn()
-			$('#clima').css('background-color','#198ac9')
-		}else if(ttem>='20' && ttem<='24.9999'){
-			$('#fondo5').fadeIn()
-			$('#clima').css('background-color','#fea904')
-		}else if(ttem>='25' && ttem<='29.9999'){
-			$('#fondo6').fadeIn()
-			$('#clima').css('background-color','#ff6600')
-		}else if(ttem>='30'){
-			$('#fondo7').fadeIn()
-			$('#clima').css('background-color','#be1414')
-		}
-	}else if(ico=='801'){
-		if(ttem<='19.9999'){
-			$('#fondo3').fadeIn()
-			$('#clima').css('background-color','#198ac9')
-		}else if(ttem>='20' && ttem<='24.9999'){
-			$('#fondo5').fadeIn()
-			$('#clima').css('background-color','#fea904')
-		}else if(ttem>='25' && ttem<='29.9999'){
-			$('#fondo6').fadeIn()
-			$('#clima').css('background-color','#ff6600')
-		}
-	}else if(ico=='901'){
+	ico2a = ico+'d'
+	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+		  if(ico==202){
+		 	$('#pollo').attr('src', 'animaciones/202/an.html');
+		 }else if(ico==212){
+		 	$('#pollo').attr('src', 'animaciones/212/an.html');
+		 }else if(ico==502){
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }else if(ico==801){
+		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
+			$('#fondo4').fadeIn()
+			$('#clima').css('background-color','#2d97c7')
+		 }else if(ico==904){
+		 	$('#pollo').attr('src', 'animaciones/904/an.html');
 			$('#fondo1').fadeIn()
-			$('#clima').css('background-color','#02253c')
-	}else{
-		$('#fondo2').fadeIn()
-		$('#clima').css('background-color','#064b86')
-	}
-
-	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='953' || ico=='954' || ico=='955'){
-	ico2a = ico+'d'
-	}else{
-	ico2a = ico
-	}
-	
-	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
-	ico2a = ico+'d'
-	
-		 
+			$('#clima').css('background-color','#be1414')
+		 }else{
+		 	$('#pollo').attr('src', 'animaciones/801d/an.html');
+			$('#fondo6').fadeIn()
+			$('#clima').css('background-color','#3f5b76')
+		 }
 }else{
-	if(ico=='301' || ico=='502' || ico=='520' || ico=='800' || ico=='801' || ico=='802' || ico=='803' || ico=='804' || ico=='952' || ico=='956'){
 	ico2a = ico+'n'
-	}else{
-	ico2a = ico
-	}
-	$('#fondo0, #fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6, #fondo7, #fondo8').fadeOut()
+	$('#fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6').fadeOut()
+	$('#fondo5').fadeIn()
+	$('#clima').css('background-color','#022f4b')
 	
-	
-	if(ico=='904'){
-		$('#fondo7').fadeIn()
-		$('#clima').css('background-color','#be1414')
-	}else if(ico=='950'){
-		$('#fondo0').fadeIn()
-		$('#clima').css('background-color','#080808')
-	}else{
-		$('#fondo1').fadeIn()
-		$('#clima').css('background-color','#02253c')
-	}
-	$('#pollo').attr('src', 'animaciones/'+ico2a+'/an.html');
-	ico2a = ico+'n'	
+		 if(ico==202){
+		 	$('#pollo').attr('src', 'animaciones/202/an.html');
+		 }else if(ico==212){
+		 	$('#pollo').attr('src', 'animaciones/212/an.html');
+		 }else if(ico==502){
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }else if(ico==800){
+		 	$('#pollo').attr('src', 'animaciones/800n/an.html');
+		 }else if(ico==801){
+		 	$('#pollo').attr('src', 'animaciones/801n/an.html');
+		 }else if(ico==904){
+		 	$('#pollo').attr('src', 'animaciones/904/an.html');
+		 }else{
+		 	$('#pollo').attr('src', 'animaciones/502/an.html');
+		 }
 }
 
 
