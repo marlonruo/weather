@@ -88,6 +88,7 @@ cadena = data.weather[0].icon
 
 
 if(horasA >= horasM && horasA <= horasT){
+	$('#fondo0, #fondo1, #fondo2, #fondo3, #fondo4, #fondo5, #fondo6, #fondo7, #fondo8').fadeOut()
 	
 	if(ico=='211' || ico=='221' || ico=='521' || ico=='522' || ico=='602' || ico=='701' || ico=='711' || ico=='721'){
 		$('#fondo4').fadeIn()

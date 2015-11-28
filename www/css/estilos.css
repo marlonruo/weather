@@ -24,36 +24,70 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background-color: #25AAE1;
+}
+#contenedor {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden
+}
+#todo {
+	position: absolute;
+	width: 100%;
+	height: 87%;
+}
+#canvas {
+	background-color: #25AAE1;
+	left: 50%;
+	top: 50%;
+	margin-left: -375px;
+	margin-top: -270px;
+	position: absolute
+}
+#fondo {
+	width: 100%;
+	height: 115%;
+	position: absolute
+}
+#loadd {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #25AAE1;
+	overflow: hidden;
 }
 .texto1 {
 	position: absolute;
 	color: #014c64;
 	text-align: center;
 	font-family: 'OpenSansBold', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .texto2 {
 	position: absolute;
 	color: #fff;
 	text-align: center;
 	font-family: 'OpenSansLight', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .texto3 {
 	position: absolute;
 	color: #fff;
 	text-align: center;
 	font-family: 'OpenSansRegula', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .texto4 {
 	position: absolute;
 	color: #fff;
 	text-align: center;
 	font-family: 'simplifica', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 #clima {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+#intro {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -84,9 +118,8 @@ body {
 	color: #FFF;
 	top: 20%;
 	text-transform: uppercase;
-	font-size:11px;
+	font-size: 11px;
 }
-
 .dias2 {
 	width: 16%;
 	height: 100%;
@@ -97,75 +130,88 @@ body {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	color: #FFF;
 	text-transform: uppercase;
-	font-size:10px;
+	font-size: 10px;
+}
+.globito1 {
+	position: absolute;
+	background-image: url(../imagenes/globito.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	top: 0px;
+	text-align: center;
+	width: 3.8%;
+	height: 7%
+}
+.globito2 {
+	position: absolute;
+	background-image: url(../imagenes/globito.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	top: 0px;
+	text-align: center;
+	width: 3.8%;
+	height: 7%
+}
+.globito3 {
+	position: absolute;
+	background-image: url(../imagenes/globito.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	top: 0px;
+	text-align: center;
+	width: 3.8%;
+	height: 7%
+}
+.globito4 {
+	position: absolute;
+	background-image: url(../imagenes/globito.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	top: 0px;
+	text-align: center;
+	width: 3.8%;
+	height: 7%
+}
+.globito5 {
+	position: absolute;
+	background-image: url(../imagenes/globito.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	top: 0px;
+	text-align: center;
+	width: 3.8%;
+	height: 7%
+}
+.globito_texto {
+	position: absolute;
+	width: 220px;
+	text-align: center;
+	bottom: -50%;
+	color: #FFFFFF;
+	margin-left: -75px;
+	font-family: OpenSansLight;
+	font-size: 30px;
+}
+.mapas {
+	position: relative;
+	float: left;
+	background-image: url(../imagenes/mapa.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat
 }
 
-
-.globito1{
+.negro{
+	background:url(../imagenes/negro.png) no-repeat;
+	width:638px;
+	height:86px;
 	position:absolute;
-	background-image:url(../imagenes/globito.svg);
-	background-size:100% auto;
-	background-repeat:no-repeat;
-	top:0px;
+	top:2%;
+	left:55%;
+	margin-left:-318px;
+	font-size:36px;
 	text-align:center;
-	width:3.8%;
-	height:7%
-	}
-.globito2{
-	position:absolute;
-	background-image:url(../imagenes/globito.svg);
-	background-size:100% auto;
-	background-repeat:no-repeat;
-	top:0px;
-	text-align:center;
-	width:3.8%;
-	height:7%
-	}
-.globito3{
-	position:absolute;
-	background-image:url(../imagenes/globito.svg);
-	background-size:100% auto;
-	background-repeat:no-repeat;
-	top:0px;
-	text-align:center;
-	width:3.8%;
-	height:7%
-	}
-.globito4{
-	position:absolute;
-	background-image:url(../imagenes/globito.svg);
-	background-size:100% auto;
-	background-repeat:no-repeat;
-	top:0px;
-	text-align:center;
-	width:3.8%;
-	height:7%
-	}
-.globito5{
-	position:absolute;
-	background-image:url(../imagenes/globito.svg);
-	background-size:100% auto;
-	background-repeat:no-repeat;
-	top:0px;
-	text-align:center;
-	width:3.8%;
-	height:7%
-	}
-
-	.globito_texto{
-		position:absolute;
-		width:200%;
-		text-align:center;
-		bottom:-50%;
-		color:#FFFFFF;
-		margin-left:-50%;
-		font-family:OpenSansLight;
-		font-size:14px;
-	}
-.mapas{
-	position:relative;
-	float:left;
-	background-image:url(../imagenes/mapa.jpg);
-	background-size:100% 100%;
-	background-repeat:no-repeat
-	}
+	padding-top:17px;
+	color:#FFFFFF;
+	font-family: OpenSansLight;
+	line-height:33px;
+}

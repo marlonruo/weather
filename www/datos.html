@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+
+<script>
+
+var Result1 = $.getJSON("http://localhost:8080/weather/ciudades.json", "",
+    function (data1)
+    {
+		 
+alert ("pollo")
+var icoa = data1.weather[0].id
+var cadena = data1.weather[0].icon;
+
+alert(icoa)
+if(cadena.indexOf('n') == -1){
+	var ico2z = icoa+'d'
+}else{
+	var ico2z = icoa+'n'
+}
+		 ico1= ico2z
+		 
+		 total++
+		 if(total==19){
+			infi()
+		}
+		 
+    });
+	
+	
+	
+</script>
+</body>
+</html>
