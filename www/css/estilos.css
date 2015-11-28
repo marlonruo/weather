@@ -184,13 +184,13 @@ body {
 }
 .globito_texto {
 	position: absolute;
-	width: 220px;
+	width: 180px;
 	text-align: center;
 	bottom: -50%;
 	color: #FFFFFF;
-	margin-left: -75px;
+	margin-left: -72px;
 	font-family: OpenSansLight;
-	font-size: 30px;
+	font-size: 18px;
 }
 .mapas {
 	position: relative;
@@ -202,16 +202,17 @@ body {
 
 .negro{
 	background:url(../imagenes/negro.png) no-repeat;
-	width:638px;
-	height:86px;
+	background-size:100%;
+	width:300px;
+	height:10%;
 	position:absolute;
 	top:2%;
 	left:55%;
-	margin-left:-318px;
-	font-size:36px;
+	margin-left:-150px;
+	font-size:19px;
 	text-align:center;
-	padding-top:17px;
+	padding-top:6px;
 	color:#FFFFFF;
 	font-family: OpenSansLight;
-	line-height:33px;
+	line-height:18px;
 }

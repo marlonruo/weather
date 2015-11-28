@@ -32,7 +32,8 @@
 <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
 
-<meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi, width=750">
+<meta name="viewport" content="width=375, user-scalable=no, target-densitydpi=device-dpi"/>
+
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Pixel Weather</title>
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
@@ -60,10 +61,9 @@ $(document).ready(function(){
 
             //e.preventDefault();
             $("#ciudades").html("no");
-            $.get("http://marlonruo.com/jj/leer.php", {}, function(data) {
+            $.get("http://pixelweather.com/leer.php", {}, function(data) {
                 $("#ciudades").html(data);
          	})
-
 });
 
 var canvas, stage, exportRoot;
@@ -82,15 +82,14 @@ function init() {
 </script>
 
 
-	<script>
-  
-    </script>
-
 </head>
 
 <body>
 <div id="loadd">
 	<canvas id="canvas" width="750" height="540"></canvas>
+    <script>
+    	$('#canvas').transit({scale: '.5'}, 0)
+    </script>
 </div>
 
 <div id="contenedor" style="display:none">
@@ -109,7 +108,7 @@ function init() {
             
             <div id="mapa"><!--mapa-->
             
-            	<div id="ciudades">hola1,950d,hola2,200d,hola3,500n</div>
+            	<div id="ciudades"></div>
             
         		<div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
           			<div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px"> </div>
@@ -117,34 +116,36 @@ function init() {
         <script type="text/javascript">
 	var parte
 	function infi(){
+
 		
 	parte = document.getElementById('ciudades').innerHTML.split(',')
 		
 	var $window = $(window);
+	var width = $window.width();
 	var height = $window.height();
 	
     var ancho= height * 1.5
 	var alto= height
 	
-	$('#climas1').html('LA<br><span style="font-size:30px">'+parte[0]+'</span>')
-	$('#climas2').html('Honolulu<br><span style="font-size:30px">'+parte[2]+'</span>')	
-	$('#climas3').html('México<br><span style="font-size:30px">'+parte[4]+'</span>')
-	$('#climas4').html('New York<br><span style="font-size:30px">'+parte[6]+'</span>')
-	$('#climas5').html('Bogota<br><span style="font-size:30px">'+parte[8]+'</span>')
-	$('#climas6').html('Sao Paulo<br><span style="font-size:30px">'+parte[10]+'</span>')
-	$('#climas7').html('Paris<br><span style="font-size:30px">'+parte[12]+'</span>')
-	$('#climas8').html('Cairo<br><span style="font-size:30px">'+parte[14]+'</span>')
-	$('#climas9').html('Johannesburg<br><span style="font-size:30px">'+parte[16]+'</span>')
-	$('#climas10').html('Moscow<br><span style="font-size:30px">'+parte[18]+'</span>')
-	$('#climas11').html('New Delhi<br><span style="font-size:30px">'+parte[20]+'</span>')
-	$('#climas12').html('Tokio<br><span style="font-size:30px">'+parte[22]+'</span>')
-	$('#climas13').html('Sidney<br><span style="font-size:30px">'+parte[24]+'</span>')
-	$('#climas14').html('Tanana<br><span style="font-size:30px">'+parte[26]+'</span>')
-	$('#climas15').html('Ushuaia<br><span style="font-size:30px">'+parte[28]+'</span>')
-	$('#climas16').html('Lisboa<br><span style="font-size:30px">'+parte[30]+'</span>')
-	$('#climas17').html('Niamey<br><span style="font-size:30px">'+parte[32]+'</span>')
-	$('#climas18').html('Hong Kong<br><span style="font-size:30px">'+parte[34]+'</span>')
-	$('#climas19').html('Nuuk<br><span style="font-size:30px">'+parte[36]+'</span>')
+	$('#climas1').html('LA<br><span style="font-size:15px">'+parte[0]+'</span>')
+	$('#climas2').html('Honolulu<br><span style="font-size:15px">'+parte[2]+'</span>')	
+	$('#climas3').html('México<br><span style="font-size:15px">'+parte[4]+'</span>')
+	$('#climas4').html('New York<br><span style="font-size:15px">'+parte[6]+'</span>')
+	$('#climas5').html('Bogota<br><span style="font-size:15px">'+parte[8]+'</span>')
+	$('#climas6').html('Sao Paulo<br><span style="font-size:15px">'+parte[10]+'</span>')
+	$('#climas7').html('Paris<br><span style="font-size:15px">'+parte[12]+'</span>')
+	$('#climas8').html('Cairo<br><span style="font-size:15px">'+parte[14]+'</span>')
+	$('#climas9').html('Johannesburg<br><span style="font-size:15px">'+parte[16]+'</span>')
+	$('#climas10').html('Moscow<br><span style="font-size:15px">'+parte[18]+'</span>')
+	$('#climas11').html('New Delhi<br><span style="font-size:15px">'+parte[20]+'</span>')
+	$('#climas12').html('Tokio<br><span style="font-size:15px">'+parte[22]+'</span>')
+	$('#climas13').html('Sidney<br><span style="font-size:15px">'+parte[24]+'</span>')
+	$('#climas14').html('Tanana<br><span style="font-size:15px">'+parte[26]+'</span>')
+	$('#climas15').html('Ushuaia<br><span style="font-size:15px">'+parte[28]+'</span>')
+	$('#climas16').html('Lisboa<br><span style="font-size:15px">'+parte[30]+'</span>')
+	$('#climas17').html('Niamey<br><span style="font-size:15px">'+parte[32]+'</span>')
+	$('#climas18').html('Hong Kong<br><span style="font-size:15px">'+parte[34]+'</span>')
+	$('#climas19').html('Nuuk<br><span style="font-size:15px">'+parte[36]+'</span>')
 	
 	var ico1 = parte[1];
 	var ico2 = parte[3];
@@ -165,6 +166,10 @@ function init() {
 	var ico17 = parte[33];
 	var ico18 = parte[35];
 	var ico19 = parte[37];
+	
+	if(document.getElementById('ciudades').innerHTML=="no"){
+		ico1='950d'; ico2='950d'; ico3='950d'; ico4='950d'; ico5='950d'; ico6='950d'; ico7='950d'; ico8='950d'; ico9='950d'; ico10='950d'; ico11='950d'; ico12='950d'; ico13='950d'; ico14='950d'; ico15='950d'; ico16='950d'; ico17='950d'; ico18='950d'; ico19='950d'
+	}
 	
   
     var $ibMainWrapper = $('#ib-main-wrapper');
@@ -269,97 +274,97 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <script>           
 function clim1(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas1').stop().delay(300).fadeIn(800)
+	$('#climas1').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim2(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas2').stop().delay(300).fadeIn(800)
+	$('#climas2').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim3(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas3').stop().delay(300).fadeIn(800)
+	$('#climas3').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim4(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas4').stop().delay(300).fadeIn(800)
+	$('#climas4').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim5(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas5').stop().delay(300).fadeIn(800)
+	$('#climas5').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim6(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas6').stop().delay(300).fadeIn(800)
+	$('#climas6').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim7(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas7').stop().delay(300).fadeIn(800)
+	$('#climas7').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim8(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas8').stop().delay(300).fadeIn(800)
+	$('#climas8').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim9(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas9').stop().delay(300).fadeIn(800)
+	$('#climas9').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim10(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas10').stop().delay(300).fadeIn(800)
+	$('#climas10').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim11(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas11').stop().delay(300).fadeIn(800)
+	$('#climas11').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim12(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas12').stop().delay(300).fadeIn(800)
+	$('#climas12').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim13(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas13').stop().delay(300).fadeIn(800)
+	$('#climas13').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim14(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas14').stop().delay(300).fadeIn(800)
+	$('#climas14').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim15(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas15').stop().delay(300).fadeIn(800)
+	$('#climas15').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim16(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas16').stop().delay(300).fadeIn(800)
+	$('#climas16').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim17(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas17').stop().delay(300).fadeIn(800)
+	$('#climas17').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim18(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas18').stop().delay(300).fadeIn(800)
+	$('#climas18').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 function clim19(){
 	$('.negro').stop().fadeOut(200)
-	$('#climas19').stop().delay(300).fadeIn(800)
+	$('#climas19').fadeIn(400)
 	$('.negro').delay(2000).fadeOut(400)
 }
 </script>
@@ -369,9 +374,9 @@ function clim19(){
       
       <div id="intro" style="background-color:#ff6600" style="text-align:center">
       		<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
-      		<img src="imagenes/welcome.png" style="top:27%; position:absolute; margin-left:50%; left:-203px"/> 
-            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
-            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
+      		<img src="imagenes/welcome.png" style="top:27%; position:absolute; margin-left:20%; width:60%;"/> 
+            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; margin-left:20%; cursor:pointer; width:60%;"/> 
+            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; margin-left:20%; cursor:pointer; width:60%;"/> 
             
             </div>
       
