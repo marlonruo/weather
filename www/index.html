@@ -32,8 +32,7 @@
 <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
 
-<meta name="viewport" content="width=375, user-scalable=no"/>
-
+<meta name="viewport" content="width=750, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Pixel Weather</title>
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
@@ -123,30 +122,31 @@ function init() {
 	var $window = $(window);
 	var width = $window.width();
 	var height = $window.height();
-	alert(width)
+	
+	alert (width)
 	
     var ancho= height * 1.5
 	var alto= height
 	
-	$('#climas1').html('LA<br><span style="font-size:15px">'+parte[0]+'</span>')
-	$('#climas2').html('Honolulu<br><span style="font-size:15px">'+parte[2]+'</span>')	
-	$('#climas3').html('México<br><span style="font-size:15px">'+parte[4]+'</span>')
-	$('#climas4').html('New York<br><span style="font-size:15px">'+parte[6]+'</span>')
-	$('#climas5').html('Bogota<br><span style="font-size:15px">'+parte[8]+'</span>')
-	$('#climas6').html('Sao Paulo<br><span style="font-size:15px">'+parte[10]+'</span>')
-	$('#climas7').html('Paris<br><span style="font-size:15px">'+parte[12]+'</span>')
-	$('#climas8').html('Cairo<br><span style="font-size:15px">'+parte[14]+'</span>')
-	$('#climas9').html('Johannesburg<br><span style="font-size:15px">'+parte[16]+'</span>')
-	$('#climas10').html('Moscow<br><span style="font-size:15px">'+parte[18]+'</span>')
-	$('#climas11').html('New Delhi<br><span style="font-size:15px">'+parte[20]+'</span>')
-	$('#climas12').html('Tokio<br><span style="font-size:15px">'+parte[22]+'</span>')
-	$('#climas13').html('Sidney<br><span style="font-size:15px">'+parte[24]+'</span>')
-	$('#climas14').html('Tanana<br><span style="font-size:15px">'+parte[26]+'</span>')
-	$('#climas15').html('Ushuaia<br><span style="font-size:15px">'+parte[28]+'</span>')
-	$('#climas16').html('Lisboa<br><span style="font-size:15px">'+parte[30]+'</span>')
-	$('#climas17').html('Niamey<br><span style="font-size:15px">'+parte[32]+'</span>')
-	$('#climas18').html('Hong Kong<br><span style="font-size:15px">'+parte[34]+'</span>')
-	$('#climas19').html('Nuuk<br><span style="font-size:15px">'+parte[36]+'</span>')
+	$('#climas1').html('LA<br><span style="font-size:30px">'+parte[0]+'</span>')
+	$('#climas2').html('Honolulu<br><span style="font-size:30px">'+parte[2]+'</span>')	
+	$('#climas3').html('México<br><span style="font-size:30px">'+parte[4]+'</span>')
+	$('#climas4').html('New York<br><span style="font-size:30px">'+parte[6]+'</span>')
+	$('#climas5').html('Bogota<br><span style="font-size:30px">'+parte[8]+'</span>')
+	$('#climas6').html('Sao Paulo<br><span style="font-size:30px">'+parte[10]+'</span>')
+	$('#climas7').html('Paris<br><span style="font-size:30px">'+parte[12]+'</span>')
+	$('#climas8').html('Cairo<br><span style="font-size:30px">'+parte[14]+'</span>')
+	$('#climas9').html('Johannesburg<br><span style="font-size:30px">'+parte[16]+'</span>')
+	$('#climas10').html('Moscow<br><span style="font-size:30px">'+parte[18]+'</span>')
+	$('#climas11').html('New Delhi<br><span style="font-size:30px">'+parte[20]+'</span>')
+	$('#climas12').html('Tokio<br><span style="font-size:30px">'+parte[22]+'</span>')
+	$('#climas13').html('Sidney<br><span style="font-size:30px">'+parte[24]+'</span>')
+	$('#climas14').html('Tanana<br><span style="font-size:30px">'+parte[26]+'</span>')
+	$('#climas15').html('Ushuaia<br><span style="font-size:30px">'+parte[28]+'</span>')
+	$('#climas16').html('Lisboa<br><span style="font-size:30px">'+parte[30]+'</span>')
+	$('#climas17').html('Niamey<br><span style="font-size:30px">'+parte[32]+'</span>')
+	$('#climas18').html('Hong Kong<br><span style="font-size:30px">'+parte[34]+'</span>')
+	$('#climas19').html('Nuuk<br><span style="font-size:30px">'+parte[36]+'</span>')
 	
 	var ico1 = parte[1];
 	var ico2 = parte[3];
@@ -375,9 +375,9 @@ function clim19(){
       
       <div id="intro" style="background-color:#ff6600" style="text-align:center">
       		<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
-      		<img src="imagenes/welcome.png" style="top:27%; position:absolute; margin-left:20%; width:60%;"/> 
-            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; margin-left:20%; cursor:pointer; width:60%;"/> 
-            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; margin-left:20%; cursor:pointer; width:60%;"/> 
+      		<img src="imagenes/welcome.png" style="top:27%; position:absolute; margin-left:50%; left:-203px"/> 
+            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
+            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
             
             </div>
       
