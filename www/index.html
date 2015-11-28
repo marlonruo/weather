@@ -56,6 +56,14 @@ $(document).ready(function(){
 	$('#contenedor').delay(3000).fadeIn(800); 
 	$('#loadd').delay(3000).fadeOut(800);
 	inicio() 
+	
+
+            //e.preventDefault();
+            $("#ciudades").html("no");
+            $.get("http://marlonruo.com/jj/leer.php", {}, function(data) {
+                $("#ciudades").html(data);
+         	})
+
 });
 
 var canvas, stage, exportRoot;
@@ -75,13 +83,7 @@ function init() {
 
 
 	<script>
-    $(document).ready(function() {
-            e.preventDefault();
-            $("#ciudades").html("no");
-            $.get("http://marlonruo.com/jj/leer.php", {}, function(data) {
-                $("#ciudades").html(data);
-            })
-    });
+  
     </script>
 
 </head>
@@ -107,7 +109,7 @@ function init() {
             
             <div id="mapa"><!--mapa-->
             
-            	<div id="ciudades" style="display:none">hola1,950d,hola2,200d,hola3,500n</div>
+            	<div id="ciudades">hola1,950d,hola2,200d,hola3,500n</div>
             
         		<div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
           			<div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px"> </div>
@@ -163,30 +165,6 @@ function init() {
 	var ico17 = parte[33];
 	var ico18 = parte[35];
 	var ico19 = parte[37];
-	
-	if(document.getElementById('ciudades').innerHTML=='no'){
-		ico1='950d'
-		ico2='950d'
-		ico3='950d'
-		ico4='950d'
-		ico5='950d'
-		ico6='950d'
-		ico7='950d'
-		ico8='950d'
-		ico9='950d'
-		ico10='950d'
-		ico11='950d'
-		ico12='950d'
-		ico13='950d'
-		ico14='950d'
-		ico15='950d'
-		ico16='950d'
-		ico17='950d'
-		ico18='950d'
-		ico19='950d'
-	}
-
-	
 	
   
     var $ibMainWrapper = $('#ib-main-wrapper');
