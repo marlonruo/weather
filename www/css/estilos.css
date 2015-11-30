@@ -182,16 +182,16 @@ body {
 	width: 3.8%;
 	height: 7%
 }
-.globito_texto {
-	position: absolute;
-	width: 220px;
-	text-align: center;
-	bottom: -50%;
-	color: #FFFFFF;
-	margin-left: -75px;
-	font-family: OpenSansLight;
-	font-size: 30px;
-}
+.globito_texto{
+		position:absolute;
+		width:600%;
+		text-align:center;
+		bottom:-50%;
+		color:#FFFFFF;
+		margin-left:-250%;
+		font-family:OpenSansLight;
+		font-size:14px;
+	}
 .mapas {
 	position: relative;
 	float: left;
@@ -201,17 +201,21 @@ body {
 }
 
 .negro{
-	background:url(../imagenes/negro.png) no-repeat;
-	width:638px;
-	height:86px;
-	position:absolute;
-	top:2%;
-	left:55%;
-	margin-left:-318px;
-	font-size:36px;
+	font-size:20px;
 	text-align:center;
-	padding-top:17px;
 	color:#FFFFFF;
 	font-family: OpenSansLight;
-	line-height:33px;
+	line-height:17px;
+}
+
+p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	font-family: OpenSansLight;
+	color:#FFFFFF;
+	text-align:center
 }

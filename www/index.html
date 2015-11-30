@@ -32,7 +32,7 @@
 <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
 
-<meta name="viewport" content="width=750, user-scalable=no">
+<meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi">
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Pixel Weather</title>
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
@@ -51,9 +51,13 @@
 
 <script>
 $(document).ready(function(){
+	
+	
+	
 	init()
-	$('#contenedor').hide();
-	$('#contenedor').delay(3000).fadeIn(800); 
+	$('#contenedor').css('visibility','hidden');
+	setTimeout("$('#contenedor').css('visibility','visible')", 3000)
+	$('#contenedor').delay(3000).animate({opacity:1}, 800)
 	$('#loadd').delay(3000).fadeOut(800);
 	inicio() 
 	
@@ -91,7 +95,7 @@ function init() {
     </script>
 </div>
 
-<div id="contenedor" style="display:none">
+<div id="contenedor" style="visibility:hidden; opacity:0.0">
   <div id="fondo">
   	  <div id="todo"><!--todo-->
   
@@ -107,7 +111,7 @@ function init() {
             
             <div id="mapa"><!--mapa-->
             
-            	<div id="ciudades"></div>
+            	<div id="ciudades" style="display:none"></div>
             
         		<div class="ib-main-wrapper jumbotron" id="ib-main-wrapper" style="cursor: move; margin:0px; padding:0px;" tabindex="0">
           			<div class="ib-main ui-draggable" id="wall" style="position: relative; cursor: move; top: 0px; left: -3802.40625px; height: 500px; margin:0px; padding:0px"> </div>
@@ -123,30 +127,29 @@ function init() {
 	var width = $window.width();
 	var height = $window.height();
 	
-	alert (width)
 	
     var ancho= height * 1.5
 	var alto= height
 	
-	$('#climas1').html('LA<br><span style="font-size:30px">'+parte[0]+'</span>')
-	$('#climas2').html('Honolulu<br><span style="font-size:30px">'+parte[2]+'</span>')	
-	$('#climas3').html('México<br><span style="font-size:30px">'+parte[4]+'</span>')
-	$('#climas4').html('New York<br><span style="font-size:30px">'+parte[6]+'</span>')
-	$('#climas5').html('Bogota<br><span style="font-size:30px">'+parte[8]+'</span>')
-	$('#climas6').html('Sao Paulo<br><span style="font-size:30px">'+parte[10]+'</span>')
-	$('#climas7').html('Paris<br><span style="font-size:30px">'+parte[12]+'</span>')
-	$('#climas8').html('Cairo<br><span style="font-size:30px">'+parte[14]+'</span>')
-	$('#climas9').html('Johannesburg<br><span style="font-size:30px">'+parte[16]+'</span>')
-	$('#climas10').html('Moscow<br><span style="font-size:30px">'+parte[18]+'</span>')
-	$('#climas11').html('New Delhi<br><span style="font-size:30px">'+parte[20]+'</span>')
-	$('#climas12').html('Tokio<br><span style="font-size:30px">'+parte[22]+'</span>')
-	$('#climas13').html('Sidney<br><span style="font-size:30px">'+parte[24]+'</span>')
-	$('#climas14').html('Tanana<br><span style="font-size:30px">'+parte[26]+'</span>')
-	$('#climas15').html('Ushuaia<br><span style="font-size:30px">'+parte[28]+'</span>')
-	$('#climas16').html('Lisboa<br><span style="font-size:30px">'+parte[30]+'</span>')
-	$('#climas17').html('Niamey<br><span style="font-size:30px">'+parte[32]+'</span>')
-	$('#climas18').html('Hong Kong<br><span style="font-size:30px">'+parte[34]+'</span>')
-	$('#climas19').html('Nuuk<br><span style="font-size:30px">'+parte[36]+'</span>')
+	$('#climas1').html('<p>LA<br><span style="font-size:15px">'+parte[0]+'</span></p>')
+	$('#climas2').html('<p>Honolulu<br><span style="font-size:15px">'+parte[2]+'</span></p>')	
+	$('#climas3').html('<p>México<br><span style="font-size:15px">'+parte[4]+'</span></p>')
+	$('#climas4').html('<p>New York<br><span style="font-size:15px">'+parte[6]+'</span></p>')
+	$('#climas5').html('<p>Bogota<br><span style="font-size:15px">'+parte[8]+'</span></p>')
+	$('#climas6').html('<p>Sao Paulo<br><span style="font-size:15px">'+parte[10]+'</span></p>')
+	$('#climas7').html('<p>Paris<br><span style="font-size:15px">'+parte[12]+'</span></p>')
+	$('#climas8').html('<p>Cairo<br><span style="font-size:15px">'+parte[14]+'</span></p>')
+	$('#climas9').html('<p>Johannesburg<br><span style="font-size:15px">'+parte[16]+'</span></p>')
+	$('#climas10').html('<p>Moscow<br><span style="font-size:15px">'+parte[18]+'</span></p>')
+	$('#climas11').html('<p>New Delhi<br><span style="font-size:15px">'+parte[20]+'</span></p>')
+	$('#climas12').html('<p>Tokio<br><span style="font-size:15px">'+parte[22]+'</span></p>')
+	$('#climas13').html('<p>Sidney<br><span style="font-size:15px">'+parte[24]+'</span></p>')
+	$('#climas14').html('<p>Tanana<br><span style="font-size:15px">'+parte[26]+'</span></p>')
+	$('#climas15').html('<p>Ushuaia<br><span style="font-size:15px">'+parte[28]+'</span></p>')
+	$('#climas16').html('<p>Lisboa<br><span style="font-size:15px">'+parte[30]+'</span></p>')
+	$('#climas17').html('<p>Niamey<br><span style="font-size:15px">'+parte[32]+'</span></p>')
+	$('#climas18').html('<p>Hong Kong<br><span style="font-size:15px">'+parte[34]+'</span></p>')
+	$('#climas19').html('<p>Nuuk<br><span style="font-size:15px">'+parte[36]+'</span></p>')
 	
 	var ico1 = parte[1];
 	var ico2 = parte[3];
@@ -252,133 +255,242 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 	
     </script> 
     
-    		<div id="climas1" class="negro" style="display:none"></div>
-            <div id="climas2" class="negro" style="display:none"></div>
-            <div id="climas3" class="negro" style="display:none"></div>
-            <div id="climas4" class="negro" style="display:none"></div>
-            <div id="climas5" class="negro" style="display:none"></div>
-            <div id="climas6" class="negro" style="display:none"></div>
-            <div id="climas7" class="negro" style="display:none"></div>
-            <div id="climas8" class="negro" style="display:none"></div>
-            <div id="climas9" class="negro" style="display:none"></div>
-            <div id="climas10" class="negro" style="display:none"></div>
-            <div id="climas11" class="negro" style="display:none"></div>
-            <div id="climas12" class="negro" style="display:none"></div>
-            <div id="climas13" class="negro" style="display:none"></div>
-            <div id="climas14" class="negro" style="display:none"></div>
-            <div id="climas15" class="negro" style="display:none"></div>
-            <div id="climas16" class="negro" style="display:none"></div>
-            <div id="climas17" class="negro" style="display:none"></div>
-            <div id="climas18" class="negro" style="display:none"></div>
-            <div id="climas19" class="negro" style="display:none"></div>
+    		<img id="negro" src="imagenes/negro.png" style="position:absolute; top:3%; left:55%; height:8%; display:none"/>
             
-<script>           
+            <div id="climas1" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%; display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas2" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas3" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas4" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas5" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas6" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas7" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas8" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas9" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas10" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas11" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas12" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas13" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas14" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas15" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas16" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas17" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%; display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas18" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+            
+            <div id="climas19" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
+            	<p</p>
+            </div>
+
+            
+<script>
+	
+
+	       
 function clim1(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas1').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas1, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
+	var mitad_n = $('#negro').width()
+	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
 function clim2(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas2').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas2, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
+	var mitad_n = $('#negro').width()
+	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
 function clim3(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas3').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas3, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
+	var mitad_n = $('#negro').width()
+	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
 function clim4(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas4').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas4, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
+	var mitad_n = $('#negro').width()
+	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
 function clim5(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas5').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas5, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
+	var mitad_n = $('#negro').width()
+	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
 function clim6(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas6').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas6, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim7(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas7').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas7, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim8(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas8').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas8, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim9(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas9').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas9, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim10(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas10').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas10, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim11(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas11').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas11, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim12(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas12').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas12, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim13(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas13').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas13, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim14(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas14').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas14, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim15(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas15').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas15, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim16(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas16').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas16, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim17(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas17').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas17, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim18(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas18').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas18, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 function clim19(){
-	$('.negro').stop().fadeOut(200)
-	$('#climas19').fadeIn(400)
-	$('.negro').delay(2000).fadeOut(400)
+	var negro_alto = $("#negro").width()
+	$('.negro').css('width', negro_alto+'px')
+	$('.negro, #negro').stop().hide()
+	$('#climas19, #negro').stop().show()
+	$('.negro, #negro').delay(2000).fadeOut(400)
 }
 </script>
       </div><!--fin mapa-->
       
 
       
-      <div id="intro" style="background-color:#ff6600" style="text-align:center">
+      	<div id="intro" style="background-color:#ff6600" style="text-align:center">
       		<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
-      		<img src="imagenes/welcome.png" style="top:27%; position:absolute; margin-left:50%; left:-203px"/> 
-            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
-            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; margin-left:50%; left:-200px; cursor:pointer"/> 
-            
+      		<img id="wel" src="imagenes/welcome.png" style="top:27%; position:absolute; height:10%; left:50%"/> 
+            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; height:6.5%; width:auto; cursor:pointer; left:50%"/> 
+            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; height:6.5%; cursor:pointer; left:50%"/> 
             </div>
       
       
@@ -442,7 +554,13 @@ function clim19(){
 			
 			
 			function inicio(){
-				$('#pollo').transit({scale: '.55'}, 0);
+				var mitad = $('#find').width()
+				$('#find').css('margin-left',(mitad*-.5)+'px')
+				$('#wel').css('margin-left',(mitad*-.5)+'px')
+				$('#search').css('margin-left',(mitad*-.5)+'px')
+				
+				
+				$('#pollo').transit({scale: '.50'}, 0);
 				$('#pollo').css('opacity','0.0')
 				$('#pollo').animate({opacity:'1'}, 800);
 				
@@ -496,7 +614,7 @@ function clim19(){
       </div><!--fin todo-->
   
   </div>
-</div>
+
 
 
 </body>
