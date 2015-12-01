@@ -516,9 +516,12 @@ function clim19(){
       
       	<div id="intro" style="background-color:#ff6600" style="text-align:center">
       		<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
-      		<img id="wel" src="imagenes/welcome.png" style="top:27%; position:absolute; height:10%; left:50%"/> 
-            <img id="find" src="imagenes/find.png" style="top:44%; position:absolute; height:6.5%; width:auto; cursor:pointer; left:50%"/> 
-            <img id="search" src="imagenes/search.png" style="top:52%; position:absolute; height:6.5%; cursor:pointer; left:50%"/> 
+            <div style="position:absolute; width:100%; top:0%; height:100%; text-align:center">
+            	<img id="wel" src="imagenes/welcome.png" style="height:10%; margin-top:40%"/>
+                <img id="find" src="imagenes/find.png" style="margin-top:10%; height:6.5%; cursor:pointer"/> 
+                <img id="search" src="imagenes/search.png" style="margin-top:2%; height:6.5%; cursor:pointer"/>  
+            </div>
+            
             
             </div>
       
@@ -532,11 +535,6 @@ function clim19(){
       
             
       <script>
-	  
-	  		var mitad = $('#find').width()
-			$('#find').css('margin-left',(mitad*-.5)+'px')
-			$('#wel').css('margin-left',(mitad*-.5)+'px')
-			$('#search').css('margin-left',(mitad*-.5)+'px')
 	  
       		var lugar=1
 			
