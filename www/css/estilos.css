@@ -80,6 +80,7 @@ body {
 	color: #fff;
 	text-align: center;
 	font-family: 'simplifica', Arial;
+	text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.3);
 }
 #clima {
 	width: 100%;
@@ -114,7 +115,6 @@ body {
 	float: left;
 	text-align: center;
 	font-family: 'OpenSansRegula', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	color: #FFF;
 	top: 20%;
 	text-transform: uppercase;
@@ -127,9 +127,8 @@ body {
 	float: left;
 	text-align: center;
 	font-family: 'OpenSansRegula', Arial;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	color: #FFF;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-size: 10px;
 }
 .globito1 {
