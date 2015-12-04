@@ -46,7 +46,7 @@ var app = {
 function onSuccess(position) {
 	
 
-    
+    //$('#ubi').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
 	navigator.geolocation.clearWatch(watchID);
@@ -56,8 +56,8 @@ function onSuccess(position) {
 		
 		lat = position.coords.latitude
 		lon = position.coords.longitude
-		
-		$('#ubi').html(position.coords.latitude, position.coords.longitude)
+		$('#ubi').css('font-size','8px')
+		$('#ubi').html(lat+','+lat)
 			
 	var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data)
@@ -182,7 +182,7 @@ if(horasA >= horasM && horasA <= horasT){
 
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.png');
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg#svgView(preserveAspectRatio(xMidYMin meet))');
 		 $('#pollo').css('opacity','0.0')
 		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
 		 
@@ -214,7 +214,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon1 = icon1+'n'
 		}
-		$('#ico1').attr('src', 'iconos/'+icon1+'.png');
+		$('#ico1').attr('src', 'iconos/'+icon1+'.svg');
 		
 		
 		
@@ -236,7 +236,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon2 = icon2+'n'
 		}
-		$('#ico2').attr('src', 'iconos/'+icon2+'.png');
+		$('#ico2').attr('src', 'iconos/'+icon2+'.svg');
 		
 		
 		
@@ -257,7 +257,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon3 = icon3+'n'
 		}
-		$('#ico3').attr('src', 'iconos/'+icon3+'.png');
+		$('#ico3').attr('src', 'iconos/'+icon3+'.svg');
 		
 		
 		
@@ -278,7 +278,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon4 = icon4+'n'
 		}
-		$('#ico4').attr('src', 'iconos/'+icon4+'.png');
+		$('#ico4').attr('src', 'iconos/'+icon4+'.svg');
 		
 		
 		
@@ -301,7 +301,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon5 = icon5+'n'
 		}
-		$('#ico5').attr('src', 'iconos/'+icon5+'.png');
+		$('#ico5').attr('src', 'iconos/'+icon5+'.svg');
 		
 		
 		
@@ -323,7 +323,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon6 = icon6+'n'
 		}
-		$('#ico6').attr('src', 'iconos/'+icon6+'.png');
+		$('#ico6').attr('src', 'iconos/'+icon6+'.svg');
 		
     });
 	
@@ -348,37 +348,37 @@ weekday[6] = "SAT";
         var date1 = new Date(milliseconds1);
 		var n1 = weekday[date1.getDay()];
 		$('#dia1').html(n1)
-		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.png');
+		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.svg');
 		
 		var milliseconds2 = dataDia.list[1].dt * 1000;
         var date2 = new Date(milliseconds2);
 		var n2 = weekday[date2.getDay()];
 		$('#dia2').html(n2)
-		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.png');
+		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.svg');
 		
 		var milliseconds3 = dataDia.list[2].dt * 1000;
         var date3 = new Date(milliseconds3);
 		var n3 = weekday[date3.getDay()];
 		$('#dia3').html(n3)
-		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.png');
+		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.svg');
 		
 		var milliseconds4 = dataDia.list[3].dt * 1000;
         var date4 = new Date(milliseconds4);
 		var n4 = weekday[date4.getDay()];
 		$('#dia4').html(n4)
-		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.png');
+		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.svg');
 		
 		var milliseconds5 = dataDia.list[4].dt * 1000;
         var date5 = new Date(milliseconds5);
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
-		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.png');
+		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
 		
 		var milliseconds6 = dataDia.list[5].dt * 1000;
         var date6 = new Date(milliseconds6);
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
-		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.png');
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
     });
 						
 }
