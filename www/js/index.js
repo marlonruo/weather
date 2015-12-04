@@ -56,10 +56,12 @@ function onSuccess(position) {
 		
 		lat = position.coords.latitude
 		lon = position.coords.longitude
-		$('#ubi').css('font-size','8px')
+		$('#ubi').css('font-size','10px')
 		$('#ubi').html(lat+','+lat)
+		
+		DocReady()
 			
-	var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
+	/*var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data)
     {
 		grados = data.main.temp
@@ -379,7 +381,7 @@ weekday[6] = "SAT";
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
 		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
-    });
+    });*/
 						
 }
 
