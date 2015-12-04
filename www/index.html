@@ -306,7 +306,7 @@ if(horasA >= horasM && horasA <= horasT){
 }
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg');
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.png');
 		 $('#pollo').css('opacity','0.0')
 		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
     });
@@ -335,7 +335,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon1 = icon1+'n'
 		}
-		$('#ico1').attr('src', 'iconos/'+icon1+'.svg');
+		$('#ico1').attr('src', 'iconos/'+icon1+'.png');
 		
 		
 		
@@ -361,7 +361,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon2 = icon2+'n'
 		}
-		$('#ico2').attr('src', 'iconos/'+icon2+'.svg');
+		$('#ico2').attr('src', 'iconos/'+icon2+'.png');
 		
 		
 		
@@ -387,7 +387,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon3 = icon3+'n'
 		}
-		$('#ico3').attr('src', 'iconos/'+icon3+'.svg');
+		$('#ico3').attr('src', 'iconos/'+icon3+'.png');
 		
 		
 		
@@ -412,7 +412,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon4 = icon4+'n'
 		}
-		$('#ico4').attr('src', 'iconos/'+icon4+'.svg');
+		$('#ico4').attr('src', 'iconos/'+icon4+'.png');
 		
 		
 		
@@ -439,7 +439,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon5 = icon5+'n'
 		}
-		$('#ico5').attr('src', 'iconos/'+icon5+'.svg');
+		$('#ico5').attr('src', 'iconos/'+icon5+'.png');
 		
 		
 		
@@ -464,7 +464,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon6 = icon6+'n'
 		}
-		$('#ico6').attr('src', 'iconos/'+icon6+'.svg');
+		$('#ico6').attr('src', 'iconos/'+icon6+'.png');
 		
     });
 	
@@ -489,37 +489,37 @@ weekday[6] = "SAT";
         var date1 = new Date(milliseconds1);
 		var n1 = weekday[date1.getDay()];
 		$('#dia1').html(n1)
-		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.svg');
+		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.png');
 		
 		var milliseconds2 = dataDia.list[1].dt * 1000;
         var date2 = new Date(milliseconds2);
 		var n2 = weekday[date2.getDay()];
 		$('#dia2').html(n2)
-		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.svg');
+		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.png');
 		
 		var milliseconds3 = dataDia.list[2].dt * 1000;
         var date3 = new Date(milliseconds3);
 		var n3 = weekday[date3.getDay()];
 		$('#dia3').html(n3)
-		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.svg');
+		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.png');
 		
 		var milliseconds4 = dataDia.list[3].dt * 1000;
         var date4 = new Date(milliseconds4);
 		var n4 = weekday[date4.getDay()];
 		$('#dia4').html(n4)
-		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.svg');
+		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.png');
 		
 		var milliseconds5 = dataDia.list[4].dt * 1000;
         var date5 = new Date(milliseconds5);
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
-		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
+		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.png');
 		
 		var milliseconds6 = dataDia.list[5].dt * 1000;
         var date6 = new Date(milliseconds6);
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
-		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.png');
     });
 }
 
@@ -553,16 +553,14 @@ weekday[6] = "SAT";
             
             <div id="opciones" style="visibility:hidden"> <!--opciones-->
         	
-            	<img src="imagenes/buscar.png" style="position:absolute; cursor:pointer; height:7%; top:11%"/> 
+            
                 
-                <div style="top:19%; width:80%; height:1px; background-color:rgba(255,255,255,.2); position:absolute; left:5%"></div>
-                
-                <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:21%"/> 
-            	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:29%; visibility:hidden"/> 
-            	<img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:29%"/> 
-            	<img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:37%"/> 
-            	<img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:45%"/> 
-            	<img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:53%"/>
+                <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:17%"/> 
+            	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:25%; visibility:hidden"/> 
+            	<img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:25%"/> 
+            	<img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:33%"/> 
+            	<img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:41%"/> 
+            	<img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:49%"/>
         		<div id="u1" style="position:absolute; top:29%; height:7%; width:100%; cursor:pointer"></div>
         <script>
 		var cen=0
@@ -1104,18 +1102,99 @@ function clim19(){
 
       
       	<div id="intro" style="background-color:#ff6600" style="text-align:center">
-      		<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
-            <div style="position:absolute; width:100%; top:31%; height:50%; text-align:center;">
-            	<div style="width:100%; height:20%">
-                <img id="wel" src="imagenes/welcome.png" style="height:100%"/>
+      			<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
+                
+                <div id="botones" style="position:absolute; width:100%; height:100%">
+                    <div style="position:absolute; width:100%; top:31%; height:8%">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img id="wel" src="imagenes/welcome.png" style="height:100%"/>
+                        </div>
+                    </div>
+                    
+                    <div style="width:100%; height:5.5%; top:44%; position:absolute">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img id="find" src="imagenes/find.png" style="height:100%; cursor:pointer"/> 
+                        </div>
+                    </div>
+                    
+                    <div style="width:100%; height:5.5%; top:51%; position:absolute">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img id="search" src="imagenes/search.png" style="height:100%; cursor:pointer"/> 
+                        </div>
+                    </div>
                 </div>
-                <div style="width:100%; height:13%; margin-top:10%">
-                <img id="find" src="imagenes/find.png" style="height:100%; cursor:pointer"/> 
+                
+                
+                <div id="grra" style="position:absolute; width:100%; height:100%; display:none">
+                    <div style="width:100%; height:5%; top:60%; position:absolute">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img id="chose" src="imagenes/chose.png" style="height:100%"/> 
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="grra1" style="width:100%; height:10%; top:65%; position:absolute">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img src="imagenes/grados1.png" style="height:100%"/> 
+                        </div>
+                    </div>
+                    
+                    <div id="grra2" style="width:100%; height:10%; top:65%; position:absolute; display:none">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img src="imagenes/grados2.png" style="height:100%"/> 
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="grados2" style="position:absolute; top:65%; left:30%; height:10%; width:20%; cursor:pointer"></div>
+                    <div id="grados1" style="position:absolute; top:65%; left:50%; height:10%; width:20%; cursor:pointer"></div>
+                     
                 </div>
-                <div style="width:100%; height:13%; margin-top:2%">
-                <img id="search" src="imagenes/search.png" style="margin-top:2%; height:100%; cursor:pointer"/> 
-                </div> 
-            </div>  
+                
+                
+                <div id="busca" style="position:absolute; width:100%; height:100%; display:none">
+                	<div style="position:absolute; width:100%; top:5%; height:5.2%">
+                        <div style="width:100%; height:100%; text-align:center;">
+                            <img id="barra" src="imagenes/barra.png" style="height:100%"/>
+                        </div>
+                	</div>
+                    <input type="text" name="country" id="autocomplete-ajax" style="z-index: 2;"/>
+                    <input type="text" name="country" id="autocomplete-ajax-x" disabled="disabled" style="color: #CCC; z-index: 1"/>
+                </div>
+                
+                <script>
+					$('#grados1').click(function(){
+						$('#grra1').fadeOut()
+						$('#grra2').fadeIn()
+						if(seleccion==2){
+							$('#botones, #grra').delay(500).fadeOut()
+							$('#busca').fadeIn()
+							var ba= $('#barra').width()
+							$('#autocomplete-ajax, #autocomplete-ajax-x').css('width', (ba*.62)+'px')
+							$('#autocomplete-ajax, #autocomplete-ajax-x').css('margin-left', (ba*-.25)+'px')
+							
+						}else if(seleccion==1){
+							$('#intro').fadeOut()
+							$('#clima').show()
+						}
+						infi()
+					})
+					$('#grados2').click(function(){
+						$('#grra2').fadeOut()
+						$('#grra1').fadeIn()
+						if(seleccion==2){
+							$('#botones, #grra').delay(500).fadeOut()
+							$('#busca').fadeIn()
+							var ba= $('#barra').width()
+							$('#autocomplete-ajax, #autocomplete-ajax-x').css('width', (ba*.62)+'px')
+							$('#autocomplete-ajax, #autocomplete-ajax-x').css('margin-left', (ba*-.25)+'px')
+						}else if(seleccion==1){
+							$('#intro').fadeOut()
+							$('#clima').show()
+						}
+						infi()
+					})
+                </script>
        </div><!--fin intro-->
             
             
@@ -1134,20 +1213,33 @@ function clim19(){
       <script type="text/javascript" src="js/app.js"></script> 
       <script type="text/javascript" src="js/index.js"></script> 
       
+      <script type="text/javascript" src="scripts/jquery.mockjax.js"></script>
+      <script type="text/javascript" src="src/jquery.autocomplete.js"></script>
+      <script type="text/javascript" src="scripts/countries.js"></script>
+      <script type="text/javascript" src="scripts/demo.js"></script>
+      
+      
             
       <script>
 	  
       		var lugar=1
-			
+			var seleccion=0
 			$('#find').click(function(){
-				$('#intro').fadeOut()
-				$('#clima').show()
+				seleccion=1
+				$('#find, #search').animate({opacity:.3}, 800)
+				$('#grra').fadeIn()
+				//$('#intro').fadeOut()
+				//$('#clima').show()
 				infi()
+				
 			})
 			
 			$('#search').click(function(){
-				$('#intro').fadeOut()
-				infi()
+				seleccion=2
+				$('#find, #search').animate({opacity:.3}, 800)
+				$('#grra').fadeIn()
+				//$('#botones').fadeOut()
+				//infi()
 			})
 			
 			
@@ -1238,8 +1330,6 @@ function clim19(){
 				});
 			
 			}
-
-//
 
 
 			app.initialize();

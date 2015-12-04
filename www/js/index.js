@@ -33,23 +33,35 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
+	},
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+}
 		
-		// onSuccess Callback
-// This method accepts a Position object, which contains the
-// current GPS coordinates
-//
-		// onSuccess Callback
-//   This method accepts a `Position` object, which contains
-//   the current GPS coordinates
-//
+
+
+
+
+
+
 
 function onSuccess(position) {
 	
 
-    $('#ubi').hide()
-	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
+    	//$('#ubi').hide()
+		var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
-	navigator.geolocation.clearWatch(watchID);
+		navigator.geolocation.clearWatch(watchID);
 		
 		localStorage.setItem("latitud", position.coords.latitude);
 		localStorage.setItem("longitude", position.coords.longitude);
@@ -180,7 +192,7 @@ if(horasA >= horasM && horasA <= horasT){
 
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg#svgView(preserveAspectRatio(xMidYMin meet))');
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.png');
 		 $('#pollo').css('opacity','0.0')
 		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
 		 
@@ -196,7 +208,7 @@ if(horasA >= horasM && horasA <= horasT){
     function (dataHora)
     {
 		var hor1 = formatTime(dataHora.list[0].dt);
-		$('#hora1').html(hor1)
+		$('#hora1').html('Next')
 		grados1 = dataHora.list[0].main.temp
 		if(gg==1){
 		 	var gras1 = (grados1 -32)/1.8
@@ -212,12 +224,15 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon1 = icon1+'n'
 		}
-		$('#ico1').attr('src', 'iconos/'+icon1+'.svg');
+		$('#ico1').attr('src', 'iconos/'+icon1+'.png');
 		
 		
 		
 		
 		var hor2 = formatTime(dataHora.list[1].dt);
+		hor = hor2
+		cambiar();
+		hor2=hor
 		$('#hora2').html(hor2)
 		grados2 = dataHora.list[1].main.temp
 		if(gg==1){
@@ -234,11 +249,14 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon2 = icon2+'n'
 		}
-		$('#ico2').attr('src', 'iconos/'+icon2+'.svg');
+		$('#ico2').attr('src', 'iconos/'+icon2+'.png');
 		
 		
 		
 		var hor3 = formatTime(dataHora.list[2].dt);
+		hor = hor3
+		cambiar();
+		hor3=hor
 		$('#hora3').html(hor3)
 		grados3 = dataHora.list[2].main.temp
 		if(gg==1){
@@ -255,11 +273,14 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon3 = icon3+'n'
 		}
-		$('#ico3').attr('src', 'iconos/'+icon3+'.svg');
+		$('#ico3').attr('src', 'iconos/'+icon3+'.png');
 		
 		
 		
 		var hor4 = formatTime(dataHora.list[3].dt);
+		hor = hor4
+		cambiar();
+		hor4=hor
 		$('#hora4').html(hor4)
 		grados4 = dataHora.list[3].main.temp
 		if(gg==1){
@@ -276,13 +297,16 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon4 = icon4+'n'
 		}
-		$('#ico4').attr('src', 'iconos/'+icon4+'.svg');
+		$('#ico4').attr('src', 'iconos/'+icon4+'.png');
 		
 		
 		
 		
 		
 		var hor5 = formatTime(dataHora.list[4].dt);
+		hor = hor5
+		cambiar();
+		hor5=hor
 		$('#hora5').html(hor5)
 		grados5 = dataHora.list[4].main.temp
 		if(gg==1){
@@ -299,12 +323,15 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon5 = icon5+'n'
 		}
-		$('#ico5').attr('src', 'iconos/'+icon5+'.svg');
+		$('#ico5').attr('src', 'iconos/'+icon5+'.png');
 		
 		
 		
 		
 		var hor6 = formatTime(dataHora.list[5].dt);
+		hor = hor6
+		cambiar();
+		hor6=hor
 		$('#hora6').html(hor6)
 		grados6 = dataHora.list[5].main.temp
 		if(gg==1){
@@ -321,7 +348,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon6 = icon6+'n'
 		}
-		$('#ico6').attr('src', 'iconos/'+icon6+'.svg');
+		$('#ico6').attr('src', 'iconos/'+icon6+'.png');
 		
     });
 	
@@ -346,65 +373,53 @@ weekday[6] = "SAT";
         var date1 = new Date(milliseconds1);
 		var n1 = weekday[date1.getDay()];
 		$('#dia1').html(n1)
-		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.svg');
+		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.png');
 		
 		var milliseconds2 = dataDia.list[1].dt * 1000;
         var date2 = new Date(milliseconds2);
 		var n2 = weekday[date2.getDay()];
 		$('#dia2').html(n2)
-		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.svg');
+		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.png');
 		
 		var milliseconds3 = dataDia.list[2].dt * 1000;
         var date3 = new Date(milliseconds3);
 		var n3 = weekday[date3.getDay()];
 		$('#dia3').html(n3)
-		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.svg');
+		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.png');
 		
 		var milliseconds4 = dataDia.list[3].dt * 1000;
         var date4 = new Date(milliseconds4);
 		var n4 = weekday[date4.getDay()];
 		$('#dia4').html(n4)
-		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.svg');
+		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.png');
 		
 		var milliseconds5 = dataDia.list[4].dt * 1000;
         var date5 = new Date(milliseconds5);
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
-		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
+		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.png');
 		
 		var milliseconds6 = dataDia.list[5].dt * 1000;
         var date6 = new Date(milliseconds6);
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
-		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.png');
     });
 						
 }
 
-// onError Callback receives a PositionError object
-//
+
+
+
+
 function onError(error) {
     
 }
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
 
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
  
-};
 
 
 
