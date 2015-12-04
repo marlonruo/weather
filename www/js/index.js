@@ -33,41 +33,31 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
-	},
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-}
 		
-
-
-
-
-
-
+		// onSuccess Callback
+// This method accepts a Position object, which contains the
+// current GPS coordinates
+//
+		// onSuccess Callback
+//   This method accepts a `Position` object, which contains
+//   the current GPS coordinates
+//
 
 function onSuccess(position) {
 	
 
-    	//$('#ubi').hide()
-		var cordenadas = position.coords.latitude+", "+position.coords.longitude				
+    
+	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
-		navigator.geolocation.clearWatch(watchID);
+	navigator.geolocation.clearWatch(watchID);
 		
 		localStorage.setItem("latitud", position.coords.latitude);
 		localStorage.setItem("longitude", position.coords.longitude);
 		
 		lat = position.coords.latitude
 		lon = position.coords.longitude
+		
+		$('#ubi').html(position.coords.latitude, position.coords.longitude)
 			
 	var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data)
@@ -208,7 +198,7 @@ if(horasA >= horasM && horasA <= horasT){
     function (dataHora)
     {
 		var hor1 = formatTime(dataHora.list[0].dt);
-		$('#hora1').html('Next')
+		$('#hora1').html(hor1)
 		grados1 = dataHora.list[0].main.temp
 		if(gg==1){
 		 	var gras1 = (grados1 -32)/1.8
@@ -230,9 +220,6 @@ if(horasA >= horasM && horasA <= horasT){
 		
 		
 		var hor2 = formatTime(dataHora.list[1].dt);
-		hor = hor2
-		cambiar();
-		hor2=hor
 		$('#hora2').html(hor2)
 		grados2 = dataHora.list[1].main.temp
 		if(gg==1){
@@ -254,9 +241,6 @@ if(horasA >= horasM && horasA <= horasT){
 		
 		
 		var hor3 = formatTime(dataHora.list[2].dt);
-		hor = hor3
-		cambiar();
-		hor3=hor
 		$('#hora3').html(hor3)
 		grados3 = dataHora.list[2].main.temp
 		if(gg==1){
@@ -278,9 +262,6 @@ if(horasA >= horasM && horasA <= horasT){
 		
 		
 		var hor4 = formatTime(dataHora.list[3].dt);
-		hor = hor4
-		cambiar();
-		hor4=hor
 		$('#hora4').html(hor4)
 		grados4 = dataHora.list[3].main.temp
 		if(gg==1){
@@ -304,9 +285,6 @@ if(horasA >= horasM && horasA <= horasT){
 		
 		
 		var hor5 = formatTime(dataHora.list[4].dt);
-		hor = hor5
-		cambiar();
-		hor5=hor
 		$('#hora5').html(hor5)
 		grados5 = dataHora.list[4].main.temp
 		if(gg==1){
@@ -329,9 +307,6 @@ if(horasA >= horasM && horasA <= horasT){
 		
 		
 		var hor6 = formatTime(dataHora.list[5].dt);
-		hor = hor6
-		cambiar();
-		hor6=hor
 		$('#hora6').html(hor6)
 		grados6 = dataHora.list[5].main.temp
 		if(gg==1){
@@ -408,18 +383,30 @@ weekday[6] = "SAT";
 						
 }
 
-
-
-
-
+// onError Callback receives a PositionError object
+//
 function onError(error) {
     
 }
 
 // Options: throw an error if no update is received every 30 seconds.
 //
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
 
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
  
+};
 
 
 
