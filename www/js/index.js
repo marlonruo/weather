@@ -57,9 +57,8 @@ function onSuccess(position) {
 		lat = position.coords.latitude
 		lon = position.coords.longitude
 		$('#ubi').css('font-size','10px')
-		$('#ubi').html(lat+','+lat)
-		
-		DocReady()
+		$('#ubi').html(lat+','+lon)
+
 			
 	/*var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data)
