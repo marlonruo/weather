@@ -1510,7 +1510,7 @@ function clim19(){
                 
                 
                 <div id="busca" style="position:absolute; width:100%; height:100%; display:none1">
-                	<div style="position:absolute; width:100%; top:5%; height:5.2%">
+                	<div style="position:absolute; width:100%; top:5%; height:4.9%">
                         <div style="width:100%; height:100%; text-align:center;">
                             <img id="barra" src="imagenes/barra.png" style="height:100%"/>
                           <div id="regresa" style="position:absolute; height:100%; cursor:pointer; left:50%; top:0px"></div>
@@ -1598,19 +1598,19 @@ function clim19(){
             
          	 <div id="gu1" class="texto2" style="width:100%; top:14%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa1" class="pa" style="padding-left:10%"></div>
-           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/>
+           		<img id="borra1" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/>
                 <img  height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/>  
              </div>
              
              <div id="gu2" class="texto2" style="width:100%; top:24%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa2" class="pa" style="padding-left:10%"></div>
-           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+           		<img id="borra2" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
                 <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
              </div>
              
              <div id="gu3" class="texto2" style="width:100%; top:34%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa3" class="pa" style="padding-left:10%"></div>
-           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+           		<img id="borra3" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
                 <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
              </div>
              
@@ -1636,19 +1636,19 @@ function clim19(){
             
       <script>
 
-			if (localStorage.getItem("bola1") !== null) {
+			if (localStorage.getItem("bola1") !== null && localStorage.getItem("bola1")!="") {
 					$('#boll1').show()
 					$('#gu1').show()
 					$('#pa1').html(localStorage.getItem('bola1'))
 					$('#add').css('top', '24%')
 			}
-			if (localStorage.getItem("bola2") !== null) {
+			if (localStorage.getItem("bola2") !== null && localStorage.getItem("bola2")!="") {
 					$('#boll2').show()
 					$('#gu2').show()
 					$('#pa2').html(localStorage.getItem('bola2'))
 					$('#add').css('top', '34%')
 			}
-			if (localStorage.getItem("bola3") !== null) {
+			if (localStorage.getItem("bola3") !== null && localStorage.getItem("bola3")!="") {
 					$('#boll3').show()
 					$('#gu3').show()
 					$('#pa3').html(localStorage.getItem('bola3'))
@@ -1659,20 +1659,20 @@ function clim19(){
 			
 			
 			function guardara (){
-				if (localStorage.getItem("bola1") === null) {
+				if (localStorage.getItem("bola1") === null || localStorage.getItem("bola1")=="") {
 					localStorage.setItem("bola1", document.getElementById('countries').value)
 					$('#boll1').show()
 					$('#gu1').show()
 					$('#pa1').html(localStorage.getItem('bola1'))
 					$('#add').css('top', '24%')
-				}else if (localStorage.getItem("bola2") === null) {
+				}else if (localStorage.getItem("bola2") === null || localStorage.getItem("bola2")=="") {
 					localStorage.setItem("bola2", localStorage.getItem('bola1'))
 					localStorage.setItem("bola1", document.getElementById('countries').value)
 					$('#boll2').show()
 					$('#gu2').show()
 					$('#pa2').html(localStorage.getItem('bola2'))
 					$('#add').css('top', '34%')
-				}else if (localStorage.getItem("bola3") === null) {
+				}else if (localStorage.getItem("bola3") === null || localStorage.getItem("bola3")=="") {
 					localStorage.setItem("bola3", localStorage.getItem('bola2'))
 					localStorage.setItem("bola2", localStorage.getItem('bola1'))
 					localStorage.setItem("bola1", document.getElementById('countries').value)
@@ -1680,13 +1680,98 @@ function clim19(){
 					$('#gu3').show()
 					$('#pa3').html(localStorage.getItem('bola3'))
 					$('#add').css('top', '44%')
+				}else{
+					localStorage.setItem("bola3", localStorage.getItem('bola2'))
+					$('#pa3').html(localStorage.getItem('bola2'))
+					localStorage.setItem("bola2", localStorage.getItem('bola1'))
+					$('#pa2').html(localStorage.getItem('bola1'))
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+					$('#pa1').html(document.getElementById('countries').value)
 				}
 			}
 	  		
 			
-		  
-	  
-	  		$('#ubi').click(function(){
+		  	$('#pa1').click(function(){
+				document.getElementById('countries').value = localStorage.getItem('bola1')
+				$(document).ready(DocReady_ciudad);
+				$('#intro').delay(800).fadeOut()
+				$('#clima').show()
+				$('#guardar').animate({marginTop:'200%'},1000)
+			})
+			$('#pa2').click(function(){
+				document.getElementById('countries').value = localStorage.getItem('bola2')
+				$(document).ready(DocReady_ciudad);
+				$('#intro').delay(800).fadeOut()
+				$('#clima').show()
+				$('#guardar').animate({marginTop:'200%'},1000)
+			})
+			$('#pa3').click(function(){
+				document.getElementById('countries').value = localStorage.getItem('bola3')
+				$(document).ready(DocReady_ciudad);
+				$('#intro').delay(800).fadeOut()
+				$('#clima').show()
+				$('#guardar').animate({marginTop:'200%'},1000)
+			})
+	  		
+			
+			
+			
+			$('#borra3').click(function(){
+				localStorage.setItem("bola3", '')
+				$('#boll3').hide()
+				$('#gu3').hide()
+				$('#pa3').html('')
+				$('#add').css('top', '34%')	
+			})
+			
+			$('#borra2').click(function(){
+				if (localStorage.getItem("bola3") === null || localStorage.getItem("bola3")==""){
+				localStorage.setItem("bola2", '')
+				$('#boll2').hide()
+				$('#gu2').hide()
+				$('#pa2').html('')
+				$('#add').css('top', '24%')	
+				}else{
+				localStorage.setItem("bola2", localStorage.getItem("bola3"))
+				$('#pa2').html(localStorage.getItem('bola3'))
+				$('#boll3').hide()
+				$('#gu3').hide()
+				$('#pa3').html('')
+				$('#add').css('top', '34%')
+				localStorage.setItem("bola3", '')
+				}
+			})
+			
+			
+			$('#borra1').click(function(){
+				if ((localStorage.getItem("bola2") === null || localStorage.getItem("bola2")=="") && (localStorage.getItem("bola3") === null || localStorage.getItem("bola3")=="")){
+					localStorage.setItem("bola1", '')
+					$('#boll1').hide()
+					$('#gu1').hide()
+					$('#pa1').html('')
+					$('#add').css('top', '14%')	
+				}else{
+					if(localStorage.getItem("bola3") !== null && localStorage.getItem("bola3")!=""){
+						localStorage.setItem("bola2", localStorage.getItem("bola3"))
+						$('#boll3').hide()
+						$('#gu3').hide()
+						$('#pa3').html('')
+						$('#add').css('top', '34%')
+						localStorage.setItem("bola3", '')
+					}else if(localStorage.getItem("bola2") !== null && localStorage.getItem("bola2")!=""){
+						localStorage.setItem("bola1", localStorage.getItem("bola2"))
+						$('#boll2').hide()
+						$('#gu2').hide()
+						$('#pa2').html('')
+						$('#add').css('top', '24%')
+						localStorage.setItem("bola2", '')
+					}
+				}
+			})
+	  		
+			
+			
+			$('#ubi').click(function(){
 				$('#guardar').animate({marginTop:'0%'},1000)		
 			})
 			
