@@ -1635,36 +1635,56 @@ function clim19(){
       
             
       <script>
-	  		/*var bola1 = localStorage.getItem('bola1')
-			var bola2 = localStorage.getItem('bola2')
-			var bola3 = localStorage.getItem('bola3')
+
+			if (localStorage.getItem("bola1") !== null) {
+					$('#boll1').show()
+					$('#gu1').show()
+					$('#pa1').html(localStorage.getItem('bola1'))
+					$('#add').css('top', '24%')
+			}
+			if (localStorage.getItem("bola2") !== null) {
+					$('#boll2').show()
+					$('#gu2').show()
+					$('#pa2').html(localStorage.getItem('bola2'))
+					$('#add').css('top', '34%')
+			}
+			if (localStorage.getItem("bola3") !== null) {
+					$('#boll3').show()
+					$('#gu3').show()
+					$('#pa3').html(localStorage.getItem('bola3'))
+					$('#add').css('top', '44%')
+			}
 			
 			
-			if(bola1!="NULL" && bola1!="null" && bola1!=""){
-				$('#boll1').show()
-				$('#gu1').show()
-				$('#pa1').html(localStorage.getItem('bola1'))
-			}
-			if(bola2!="NULL" && bola2!="null" && bola2!=""){
-				$('#boll2').show()
-				$('#gu2').show()
-				$('#pa2').html(localStorage.getItem('bola2'))
-			}
-			if(bola3!="NULL" && bola3!="null" && bola3!=""){
-				$('#boll3').show()
-				$('#gu3').show()
-				$('#pa3').html(localStorage.getItem('bola3'))
-			}*/
+			
 			
 			function guardara (){
+				if (localStorage.getItem("bola1") === null) {
 					localStorage.setItem("bola1", document.getElementById('countries').value)
 					$('#boll1').show()
 					$('#gu1').show()
 					$('#pa1').html(localStorage.getItem('bola1'))
+					$('#add').css('top', '24%')
+				}else if (localStorage.getItem("bola2") === null) {
+					localStorage.setItem("bola2", localStorage.getItem('bola1'))
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+					$('#boll2').show()
+					$('#gu2').show()
+					$('#pa2').html(localStorage.getItem('bola2'))
+					$('#add').css('top', '34%')
+				}else if (localStorage.getItem("bola3") === null) {
+					localStorage.setItem("bola3", localStorage.getItem('bola2'))
+					localStorage.setItem("bola2", localStorage.getItem('bola1'))
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+					$('#boll3').show()
+					$('#gu3').show()
+					$('#pa3').html(localStorage.getItem('bola3'))
+					$('#add').css('top', '44%')
+				}
 			}
 	  		
 			
-	  
+		  
 	  
 	  		$('#ubi').click(function(){
 				$('#guardar').animate({marginTop:'0%'},1000)		
@@ -1709,8 +1729,9 @@ function clim19(){
 							
 							$('#regresa').css('margin-left', (ba*-.5)+'px')
 							$('#regresa').css('width', (ba*.1)+'px')
-							document.getElementById('countries').focus() 
+							$('#countries').focus().select();
 				} 
+				
 				
 			$('#regresa').click(function(){
 				seleccion=2

@@ -7,10 +7,10 @@
 		versionCode = "1.7" 
         version   = "1.7">
 
-    <name>Pixel Weather</name>
+    <name>PixelWeather</name>
 
     <description>
-        Pixel Weather
+        PixelWeather
     </description>
 
     <author href="http://www.marlonruo.com" email="marlon_ru@hotmail.com">
