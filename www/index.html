@@ -1546,7 +1546,7 @@ function clim19(){
 					$(document).ready(DocReady_ciudad);
 					$('#intro').delay(800).fadeOut()
 					$('#clima').show()
-					guardar()
+					guardara()
 				}
 			});
 		});
@@ -1556,7 +1556,7 @@ function clim19(){
 				$(document).ready(DocReady_ciudad);
 				$('#intro').delay(800).fadeOut()
 				$('#clima').show()
-				guardar()
+				guardara()
 			}
 		});
 				
@@ -1619,8 +1619,7 @@ function clim19(){
             	<div class="pa" style="padding-left:10%">+ Add current location</div>
             </div>
             
-            
-            <div id="bola1"></div>
+           
             
        </div>     
             
@@ -1636,7 +1635,7 @@ function clim19(){
       
             
       <script>
-	  		var bola1 = localStorage.getItem('bola1')
+	  		/*var bola1 = localStorage.getItem('bola1')
 			var bola2 = localStorage.getItem('bola2')
 			var bola3 = localStorage.getItem('bola3')
 			
@@ -1655,21 +1654,16 @@ function clim19(){
 				$('#boll3').show()
 				$('#gu3').show()
 				$('#pa3').html(localStorage.getItem('bola3'))
-			}
+			}*/
 			
-			function guardar (){
-				if(bola1==""){
+			function guardara (){
 					localStorage.setItem("bola1", document.getElementById('countries').value)
-				}else if(bola2=""){
-					localStorage.setItem("bola2", bola1)
-					localStorage.setItem("bola1", document.getElementById('countries').value)
-				}else if(bola3=""){
-					localStorage.setItem("bola3", bola2)
-					localStorage.setItem("bola2", bola1)
-					localStorage.setItem("bola1", document.getElementById('countries').value)
-				}
+					$('#boll1').show()
+					$('#gu1').show()
+					$('#pa1').html(localStorage.getItem('bola1'))
 			}
 	  		
+			
 	  
 	  
 	  		$('#ubi').click(function(){
