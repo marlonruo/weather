@@ -108,6 +108,7 @@ function init() {
     		return time;
         }
 		
+	
 
 var meses = new Array ("JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
 var diasSemana = new Array("SUN","MON","TUE","WED","THU","FRI","SAT");
@@ -194,8 +195,10 @@ var ttem
 
 function DocReady_latitud()
 {
+		
+		
 		 
-    var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=19.428471&lon=-99.127663&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
+    var Result = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=imperial&APPID=6a6a4073a3225ae9aafe7b996562e827", "",
     function (data)
     {
 		grados = data.main.temp
@@ -665,6 +668,11 @@ if(horasA >= horasM && horasA <= horasT){
     function (dataHora)
     {
 		var hor1 = formatTime(dataHora.list[0].dt);
+		
+		
+		//var d = new Date(dataHora.list[0].dt);
+
+
 		$('#hora1').html('Next')
 		grados1 = dataHora.list[0].main.temp
 		if(gg==1){
@@ -699,6 +707,7 @@ if(horasA >= horasM && horasA <= horasT){
 			var gras2 = grados2
 		}
 		$('#gra2').html(Math.round(gras2)+'°')
+		
 		hor2 = hor2.split(':')
 		var ho2= (parseInt(hor2[0])*60) + parseInt(hor2[1]) 
 		var icon2=dataHora.list[1].weather[0].id
@@ -1412,8 +1421,11 @@ function clim19(){
         
         
         <div id="ubi" class="texto2" style="top:12%; left:13%; font-weight:500; visibility:hidden; text-align:center; width:72%; height:2.5%">
-   	    <img src="imagenes/puntos.png" style="height:100%"/> 
-        </div>
+   	   	 <img id="u1" src="imagenes/ubi.png" height="100%"/> 
+         <img id="boll1" src="imagenes/bolita.png" height="100%" style="display:none"/>
+         <img id="boll2" src="imagenes/bolita.png" height="100%" style="display:none"/>
+         <img id="boll3" src="imagenes/bolita.png" height="100%" style="display:none"/> 
+         </div>
         
         <div style="position:absolute; width:100%; height:12%; top:16%">
           <div class="dias2"> <span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;">Next</span> <span id="gra1" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico1" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px"/> </div>
@@ -1449,16 +1461,18 @@ function clim19(){
 
       
       	<div id="intro" style="background-color:#ff6600" style="text-align:center">
-      			<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/> 
+      			<img src="imagenes/fondo_6.png" height="100%" style="position:absolute"/>
                 
-                <div id="botones" style="position:absolute; width:100%; height:100%">
-                    <div style="position:absolute; width:100%; top:31%; height:8%">
+                
+        <div id="wel" style="position:absolute; width:100%; top:31%; height:8%">
                         <div style="width:100%; height:100%; text-align:center;">
                             <img id="wel" src="imagenes/welcome.png" style="height:100%"/>
                         </div>
                     </div>
-                    
-                    <div style="width:100%; height:5.5%; top:44%; position:absolute">
+                 
+                
+        <div id="botones" style="position:absolute; width:100%; height:100%; display:none">
+          <div style="width:100%; height:5.5%; top:44%; position:absolute">
                         <div style="width:100%; height:100%; text-align:center;">
                             <img id="find" src="imagenes/find.png" style="height:100%; cursor:pointer"/> 
                         </div>
@@ -1472,50 +1486,53 @@ function clim19(){
                 </div>
                 
                 
-                <div id="grra" style="position:absolute; width:100%; height:100%; display:none">
-                    <div style="width:100%; height:5%; top:60%; position:absolute">
+                <div id="grra" style="position:absolute; width:100%; height:100%;">
+                    
+                    <div id="grra1" style="width:100%; height:10%; top:45%; position:absolute">
                         <div style="width:100%; height:100%; text-align:center;">
-                            <img id="chose" src="imagenes/chose.png" style="height:100%"/> 
+                            <img id="grados1" src="imagenes/grados1.png" style="height:100%; cursor:pointer"/> 
                         </div>
                     </div>
                     
-                    
-                    <div id="grra1" style="width:100%; height:10%; top:65%; position:absolute">
+                    <div id="grra2" style="width:100%; height:10%; top:45%; position:absolute; display:none">
                         <div style="width:100%; height:100%; text-align:center;">
-                            <img src="imagenes/grados1.png" style="height:100%"/> 
+                            <img id="grados2" src="imagenes/grados2.png" style="height:100%; cursor:pointer"/> 
                         </div>
                     </div>
                     
-                    <div id="grra2" style="width:100%; height:10%; top:65%; position:absolute; display:none">
+                  <div style="width:15%; height:6%; top:47%; position:absolute; left:67%">
                         <div style="width:100%; height:100%; text-align:center;">
-                            <img src="imagenes/grados2.png" style="height:100%"/> 
+                            <img id="sig" src="imagenes/sig.png" style="height:100%; cursor:pointer"/> 
                         </div>
                     </div>
-                    
-                    
-                    <div id="grados2" style="position:absolute; top:65%; left:30%; height:10%; width:20%; cursor:pointer"></div>
-                    <div id="grados1" style="position:absolute; top:65%; left:50%; height:10%; width:20%; cursor:pointer"></div>
                      
                 </div>
                 
                 
-                <div id="busca" style="position:absolute; width:100%; height:100%; display:none">
+                <div id="busca" style="position:absolute; width:100%; height:100%; display:none1">
                 	<div style="position:absolute; width:100%; top:5%; height:5.2%">
                         <div style="width:100%; height:100%; text-align:center;">
                             <img id="barra" src="imagenes/barra.png" style="height:100%"/>
+                          <div id="regresa" style="position:absolute; height:100%; cursor:pointer; left:50%; top:0px"></div>
                         </div>
                 	</div>
                     <input type="text" name="countries" id="countries" style="z-index: 2; left:50%; top:5%; position:absolute; border:none; background:none"/>
-                </div>
+                    
+                    
+        </div>      
                 
-                <script>
+        <script src="js/data.js"></script>   
+                
+        <script>
+				
+				$('#intro, #wel').show()
+				$('#grra').show()
+				$('#botones').hide()
+				$('#clima').hide()
+				$('#busca').hide()
 				
 				
-		var data = [
-			"Alabama, AL",
-			"Alaska, Ak",
-			"California, Ca"
-		];
+		
 		$(function() {
 			$("#countries").autocomplete({
 				source: data,
@@ -1529,6 +1546,7 @@ function clim19(){
 					$(document).ready(DocReady_ciudad);
 					$('#intro').delay(800).fadeOut()
 					$('#clima').show()
+					guardar()
 				}
 			});
 		});
@@ -1538,28 +1556,22 @@ function clim19(){
 				$(document).ready(DocReady_ciudad);
 				$('#intro').delay(800).fadeOut()
 				$('#clima').show()
+				guardar()
 			}
 		});
 				
 				
+					
 				
+					$('#sig').click(function(){
+						$('#grra').fadeOut()
+						$('#botones').fadeIn()
+					})
+					
+					
 					$('#grados1').click(function(){
 						$('#grra1').fadeOut()
 						$('#grra2').fadeIn()
-						if(seleccion==2){
-							$('#botones, #grra').delay(500).fadeOut()
-							$('#busca').fadeIn()
-							var ba= $('#barra').width()
-							var bah= $('#barra').height()
-							$('#countries').css('height', (bah-3)+'px')
-							$('#countries').css('width', (ba*.65)+'px')
-							$('#countries').css('margin-left', (ba*-.35)+'px')
-							$('#countries').css('padding-left', (ba*.1)+'px')
-							
-						}else if(seleccion==1){
-							$('#intro').fadeOut()
-							$('#clima').show()
-						}
 						infi()
 						gg=1
 						localStorage.setItem("grados", '1');
@@ -1567,20 +1579,6 @@ function clim19(){
 					$('#grados2').click(function(){
 						$('#grra2').fadeOut()
 						$('#grra1').fadeIn()
-						if(seleccion==2){
-							$('#botones, #grra').delay(500).fadeOut()
-							$('#busca').fadeIn()
-							var ba= $('#barra').width()
-							var bah= $('#barra').height()
-							$('#countries').css('height', (bah-3)+'px')
-							$('#countries').css('width', (ba*.65)+'px')
-							$('#countries').css('margin-left', (ba*-.25)+'px')
-							$('#countries').css('margin-left', (ba*-.35)+'px')
-							$('#countries').css('padding-left', (ba*.1)+'px')
-						}else if(seleccion==1){
-							$('#intro').fadeOut()
-							$('#clima').show()
-						}
 						infi()
 						gg=0
 						localStorage.setItem("grados", '0');
@@ -1591,6 +1589,40 @@ function clim19(){
             
             
             
+       <div id="guardar" style="position:absolute; width:100%; height:89%; top:11%; background-color:#374d61; margin-top:200%;">
+           	<img src="imagenes/fondo_guar.png" height="100%"/> 
+            
+            <div class="texto1" style="width:100%; top:2%; text-align:center; color:#FFFFFF">Save Locations</div>
+            <div class="texto2" style="width:100%; top:7%; text-align:center; color:#FFFFFF; font-size:11px">+ Add current location</div>
+            
+            
+         	 <div id="gu1" class="texto2" style="width:100%; top:14%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
+            	<div id="pa1" class="pa" style="padding-left:10%"></div>
+           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/>
+                <img  height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/>  
+             </div>
+             
+             <div id="gu2" class="texto2" style="width:100%; top:24%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
+            	<div id="pa2" class="pa" style="padding-left:10%"></div>
+           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+                <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
+             </div>
+             
+             <div id="gu3" class="texto2" style="width:100%; top:34%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
+            	<div id="pa3" class="pa" style="padding-left:10%"></div>
+           		<img src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+                <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
+             </div>
+             
+             
+            <div id="add" class="texto2" style="width:100%; top:44%; text-align:left; color:#FFFFFF; font-size:11px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer">
+            	<div class="pa" style="padding-left:10%">+ Add current location</div>
+            </div>
+            
+            
+            <div id="bola1"></div>
+            
+       </div>     
             
             
             
@@ -1604,26 +1636,92 @@ function clim19(){
       
             
       <script>
+	  		var bola1 = localStorage.getItem('bola1')
+			var bola2 = localStorage.getItem('bola2')
+			var bola3 = localStorage.getItem('bola3')
+			
+			
+			if(bola1!="NULL" && bola1!="null" && bola1!=""){
+				$('#boll1').show()
+				$('#gu1').show()
+				$('#pa1').html(localStorage.getItem('bola1'))
+			}
+			if(bola2!="NULL" && bola2!="null" && bola2!=""){
+				$('#boll2').show()
+				$('#gu2').show()
+				$('#pa2').html(localStorage.getItem('bola2'))
+			}
+			if(bola3!="NULL" && bola3!="null" && bola3!=""){
+				$('#boll3').show()
+				$('#gu3').show()
+				$('#pa3').html(localStorage.getItem('bola3'))
+			}
+			
+			function guardar (){
+				if(bola1==""){
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+				}else if(bola2=""){
+					localStorage.setItem("bola2", bola1)
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+				}else if(bola3=""){
+					localStorage.setItem("bola3", bola2)
+					localStorage.setItem("bola2", bola1)
+					localStorage.setItem("bola1", document.getElementById('countries').value)
+				}
+			}
+	  		
+	  
+	  
+	  		$('#ubi').click(function(){
+				$('#guardar').animate({marginTop:'0%'},1000)		
+			})
+			
+			$('#add').click(function(){
+				$('#guardar').animate({marginTop:'200%'},1000)
+				$('#busca').delay(500).fadeIn()
+				$('#intro').delay(500).fadeIn()
+				$('#clima').delay(800).fadeOut()
+				setTimeout('anncho()', 501)
+			})
 	  		
       		var lugar=1
 			var seleccion=0
 			$('#find').click(function(){
 				$(document).ready(DocReady_latitud);
 				seleccion=1
-				$('#find, #search').animate({opacity:.3}, 800)
-				$('#grra').fadeIn()
-				//$('#intro').fadeOut()
-				//$('#clima').show()
-				infi()
+				$('#wel').fadeOut()
+				$('#botones').fadeOut()
+				$('#intro').fadeOut()
+				$('#clima').show()
 				
 			})
 			
 			$('#search').click(function(){
 				seleccion=2
-				$('#find, #search').animate({opacity:.3}, 800)
-				$('#grra').fadeIn()
-				//$('#botones').fadeOut()
-				//infi()
+							$('#botones, #wel').delay(500).fadeOut()
+							$('#busca').delay(500).fadeIn()
+							setTimeout('anncho()', 501)
+							
+			})
+			   
+			   function anncho(){
+							var ba= $('#barra').width()
+							var bah= $('#barra').height()
+							$('#countries').css('height', (bah-3)+'px')
+							$('#countries').css('width', (ba*.59)+'px')
+							$('#countries').css('margin-left', (ba*-.27)+'px')
+							$('#countries').css('padding-left', (ba*.05)+'px') 
+							
+							
+							$('#regresa').css('margin-left', (ba*-.5)+'px')
+							$('#regresa').css('width', (ba*.1)+'px')
+							document.getElementById('countries').focus() 
+				} 
+				
+			$('#regresa').click(function(){
+				seleccion=2
+							$('#botones, #wel').fadeIn()
+							$('#busca').fadeOut()			
 			})
 			
 			
