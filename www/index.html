@@ -904,7 +904,7 @@ weekday[6] = "SAT";
   
   			
             
-            
+            <div style="width:100%; height:24px; position:absolute; z-index:1000; top:0px; left:0px; margin-top:-24px; background-image:url(imagenes/cuadro.png); background-size:auto 100%"> <img id="refre" src="imagenes/refresh_icon.svg" style="position:absolute; left:50%; margin-left:-50px; bottom:0px; margin-bottom:40px;" width="12px"/> <img src="imagenes/refresh_text.svg" style="position:absolute; left:50%; margin-left:-30px; bottom:0px; margin-bottom:40px;" width="70px"/> </div>
             
             
             <!--//////////////////////////////////////////-->
@@ -1572,14 +1572,12 @@ function clim19(){
 					$('#grados1').click(function(){
 						$('#grra1').fadeOut()
 						$('#grra2').fadeIn()
-						infi()
 						gg=1
 						localStorage.setItem("grados", '1');
 					})
 					$('#grados2').click(function(){
 						$('#grra2').fadeOut()
 						$('#grra1').fadeIn()
-						infi()
 						gg=0
 						localStorage.setItem("grados", '0');
 					})
@@ -1590,33 +1588,35 @@ function clim19(){
             
             
        <div id="guardar" style="position:absolute; width:100%; height:89%; top:11%; background-color:#374d61; margin-top:200%;">
-           	<img src="imagenes/fondo_guar.png" height="100%"/> 
+           	<div id="cier" style="position:absolute; width:100%; height:11%; top:-11%; cursor:pointer"></div>
+            
+            <img src="imagenes/fondo_guar.png" height="100%"/> 
             
             <div class="texto1" style="width:100%; top:2%; text-align:center; color:#FFFFFF">Save Locations</div>
             <div class="texto2" style="width:100%; top:7%; text-align:center; color:#FFFFFF; font-size:11px">+ Add current location</div>
             
             
          	 <div id="gu1" class="texto2" style="width:100%; top:14%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
-            	<div id="pa1" class="pa" style="padding-left:10%"></div>
-           		<img id="borra1" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/>
+            	<div id="pa1" class="pa" style="margin-left:15%"></div>
+           		<img id="borra1" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:3%; top:50%; margin-top:-11px;"/>
                 <img  height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/>  
              </div>
              
              <div id="gu2" class="texto2" style="width:100%; top:24%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
-            	<div id="pa2" class="pa" style="padding-left:10%"></div>
-           		<img id="borra2" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+            	<div id="pa2" class="pa" style="margin-left:15%"></div>
+           		<img id="borra2" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:3%; top:50%; margin-top:-11px;"/> 
                 <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
              </div>
              
              <div id="gu3" class="texto2" style="width:100%; top:34%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
-            	<div id="pa3" class="pa" style="padding-left:10%"></div>
-           		<img id="borra3" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:2%; top:50%; margin-top:-11px;"/> 
+            	<div id="pa3" class="pa" style="margin-left:15%"></div>
+           		<img id="borra3" src="imagenes/borrar.png" width="22" height="22" style="position:absolute; left:3%; top:50%; margin-top:-11px;"/> 
                 <img height="30" style="position:absolute; right:2%; top:50%; margin-top:-15px;"/> 
              </div>
              
              
-            <div id="add" class="texto2" style="width:100%; top:44%; text-align:left; color:#FFFFFF; font-size:11px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer">
-            	<div class="pa" style="padding-left:10%">+ Add current location</div>
+            <div id="add_a" class="texto2" style="width:100%; top:44%; text-align:left; color:#FFFFFF; font-size:11px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer">
+            	<div id="add" class="pa" style="padding-left:10%">+ Add current location</div>
             </div>
             
            
@@ -1635,24 +1635,31 @@ function clim19(){
       
             
       <script>
+	  
+	  		if (localStorage.getItem("grados") !== null && localStorage.getItem("grados")!="") {
+					$('#grra').hide()
+					$('#botones').show()
+			}
+	  
+	  
 
 			if (localStorage.getItem("bola1") !== null && localStorage.getItem("bola1")!="") {
 					$('#boll1').show()
 					$('#gu1').show()
 					$('#pa1').html(localStorage.getItem('bola1'))
-					$('#add').css('top', '24%')
+					$('#add_a').css('top', '24%')
 			}
 			if (localStorage.getItem("bola2") !== null && localStorage.getItem("bola2")!="") {
 					$('#boll2').show()
 					$('#gu2').show()
 					$('#pa2').html(localStorage.getItem('bola2'))
-					$('#add').css('top', '34%')
+					$('#add_a').css('top', '34%')
 			}
 			if (localStorage.getItem("bola3") !== null && localStorage.getItem("bola3")!="") {
 					$('#boll3').show()
 					$('#gu3').show()
 					$('#pa3').html(localStorage.getItem('bola3'))
-					$('#add').css('top', '44%')
+					$('#add_a').css('top', '44%')
 			}
 			
 			
@@ -1664,22 +1671,25 @@ function clim19(){
 					$('#boll1').show()
 					$('#gu1').show()
 					$('#pa1').html(localStorage.getItem('bola1'))
-					$('#add').css('top', '24%')
+					$('#add_a').css('top', '24%')
 				}else if (localStorage.getItem("bola2") === null || localStorage.getItem("bola2")=="") {
 					localStorage.setItem("bola2", localStorage.getItem('bola1'))
 					localStorage.setItem("bola1", document.getElementById('countries').value)
 					$('#boll2').show()
 					$('#gu2').show()
+					$('#pa1').html(localStorage.getItem('bola1'))
 					$('#pa2').html(localStorage.getItem('bola2'))
-					$('#add').css('top', '34%')
+					$('#add_a').css('top', '34%')
 				}else if (localStorage.getItem("bola3") === null || localStorage.getItem("bola3")=="") {
 					localStorage.setItem("bola3", localStorage.getItem('bola2'))
 					localStorage.setItem("bola2", localStorage.getItem('bola1'))
 					localStorage.setItem("bola1", document.getElementById('countries').value)
 					$('#boll3').show()
 					$('#gu3').show()
+					$('#pa1').html(localStorage.getItem('bola1'))
+					$('#pa2').html(localStorage.getItem('bola2'))
 					$('#pa3').html(localStorage.getItem('bola3'))
-					$('#add').css('top', '44%')
+					$('#add_a').css('top', '44%')
 				}else{
 					localStorage.setItem("bola3", localStorage.getItem('bola2'))
 					$('#pa3').html(localStorage.getItem('bola2'))
@@ -1721,7 +1731,7 @@ function clim19(){
 				$('#boll3').hide()
 				$('#gu3').hide()
 				$('#pa3').html('')
-				$('#add').css('top', '34%')	
+				$('#add_a').css('top', '34%')	
 			})
 			
 			$('#borra2').click(function(){
@@ -1730,14 +1740,14 @@ function clim19(){
 				$('#boll2').hide()
 				$('#gu2').hide()
 				$('#pa2').html('')
-				$('#add').css('top', '24%')	
+				$('#add_a').css('top', '24%')	
 				}else{
 				localStorage.setItem("bola2", localStorage.getItem("bola3"))
 				$('#pa2').html(localStorage.getItem('bola3'))
 				$('#boll3').hide()
 				$('#gu3').hide()
 				$('#pa3').html('')
-				$('#add').css('top', '34%')
+				$('#add_a').css('top', '34%')
 				localStorage.setItem("bola3", '')
 				}
 			})
@@ -1749,27 +1759,31 @@ function clim19(){
 					$('#boll1').hide()
 					$('#gu1').hide()
 					$('#pa1').html('')
-					$('#add').css('top', '14%')	
+					$('#add_a').css('top', '14%')	
 				}else{
 					if(localStorage.getItem("bola3") !== null && localStorage.getItem("bola3")!=""){
 						localStorage.setItem("bola2", localStorage.getItem("bola3"))
 						$('#boll3').hide()
 						$('#gu3').hide()
 						$('#pa3').html('')
-						$('#add').css('top', '34%')
+						$('#add_a').css('top', '34%')
 						localStorage.setItem("bola3", '')
 					}else if(localStorage.getItem("bola2") !== null && localStorage.getItem("bola2")!=""){
 						localStorage.setItem("bola1", localStorage.getItem("bola2"))
 						$('#boll2').hide()
 						$('#gu2').hide()
 						$('#pa2').html('')
-						$('#add').css('top', '24%')
+						$('#add_a').css('top', '24%')
 						localStorage.setItem("bola2", '')
 					}
 				}
 			})
 	  		
 			
+			
+			$('#cier').click(function(){
+				$('#guardar').animate({marginTop:'200%'},1000)		
+			})
 			
 			$('#ubi').click(function(){
 				$('#guardar').animate({marginTop:'0%'},1000)		
@@ -1792,14 +1806,16 @@ function clim19(){
 				$('#botones').fadeOut()
 				$('#intro').fadeOut()
 				$('#clima').show()
+				infi()
 				
 			})
 			
 			$('#search').click(function(){
 				seleccion=2
-							$('#botones, #wel').delay(500).fadeOut()
-							$('#busca').delay(500).fadeIn()
-							setTimeout('anncho()', 501)
+				$('#botones, #wel').delay(500).fadeOut()
+				$('#busca').delay(500).fadeIn()
+				setTimeout('anncho()', 501)
+				infi()
 							
 			})
 			   
@@ -1819,7 +1835,7 @@ function clim19(){
 				
 				
 			$('#regresa').click(function(){
-				seleccion=2
+							seleccion=0
 							$('#botones, #wel').fadeIn()
 							$('#busca').fadeOut()			
 			})
@@ -1913,6 +1929,44 @@ function clim19(){
 			
 			}
       </script> 
+      
+      
+      
+       <script>
+	   
+	    var arriba
+		var una = 0
+		sabera2a()
+		function sabera2a(){
+			arriba = document.getElementById("todo").offsetTop
+			if(arriba>=20 && una == 0){
+				una=1
+				if(seleccion==1){
+					$(document).ready(DocReady_latitud);
+				}else if(seleccion==2){
+					$(document).ready(DocReady_ciudad);
+				}
+			}
+			setTimeout('sabera2a()', 2000)
+		}
+	   
+	   
+		$(function() {
+           $( "#todo").draggable({ containment: '#fondo', revert: "valid",
+		  	start: function() {
+				//$('#puntos1, #puntos2').css('visibility','visible')
+          	},stop: function() {
+				 una=0
+        	}
+		  });
+		      
+		   $( "#fondo" ).droppable({tolerance: "touch",drop: function( event, ui ) {}});
+        });
+		
+		
+		
+		
+	  </script>
       
       
       <script type="text/javascript" src="cordova.js"></script> 
