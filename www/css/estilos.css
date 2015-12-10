@@ -80,7 +80,6 @@ body {
 	color: #fff;
 	text-align: center;
 	font-family: 'simplifica', Arial;
-	text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.3);
 }
 #clima {
 	width: 100%;
@@ -269,6 +268,7 @@ p {
 	font-family: OpenSansLight;
 	top:20px;
 	width:250px;
+	z-index:100
 }
 .ui-menu .ui-menu-item {
 	margin: 0;
@@ -277,7 +277,8 @@ p {
 	background:none;
 	height:40px;
 	line-height:40px;
-	border-bottom:1px solid rgba(0,0,0,.1)
+	border-bottom:1px solid rgba(0,0,0,.1);
+	z-index:100
 }
 
 
