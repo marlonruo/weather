@@ -69,6 +69,13 @@ body {
 	text-align: center;
 	font-family: 'OpenSansLight', Arial;
 }
+.texto2a {
+	position:relative;
+	float:left;
+	color: #fff;
+	text-align: center;
+	font-family: 'OpenSansLight', Arial;
+}
 .texto3 {
 	position: absolute;
 	color: #fff;

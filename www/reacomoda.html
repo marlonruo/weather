@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<!--
+
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+
+<meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi">
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<title>Pixel Weather</title>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js"></script>
+    
+    
+<script src="js/ui.touch.punch.js"></script>
+<script src="js/transit.js"></script>
+<script src="js/easing.js"></script>
+<script type="text/javascript" src="js/jquery.infinitedrag-extscope.js"></script>
+<script src="bootstrap.min.js"></script>
+
+<script src="animaciones/eas.js"></script>
+<script src="animaciones/twe.js"></script>
+<script src="animaciones/mov.js"></script>
+<script src="animaciones/000.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	
+	
+	init()
+	$('#contenedor').css('visibility','hidden');
+	setTimeout("$('#contenedor').css('visibility','visible')", 3000)
+	$('#contenedor').delay(3000).animate({opacity:1}, 800)
+	$('#loadd').delay(3000).fadeOut(800);
+	inicio() 
+	
+
+            //e.preventDefault();
+            $("#ciudades").html("no");
+            $.get("http://pixelweather.com/leer.php", {}, function(data) {
+                $("#ciudades").html(data);
+         	})
+});
+
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib._000();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+
+</head>
+
+<body>
+<div style="width:100%; position:relative; float:left"><div id="bo5" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa5" style="width:80%; position:relative; float:left">a5</div></div>
+<div style="width:100%; position:relative; float:left"><div id="bo4" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa4" style="width:80%; position:relative; float:left">a4</div></div>
+<div style="width:100%; position:relative; float:left"><div id="bo3" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa3" style="width:80%; position:relative; float:left">a3</div></div>
+<div style="width:100%; position:relative; float:left"><div id="bo2" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa2" style="width:80%; position:relative; float:left">a2</div></div>
+<div style="width:100%; position:relative; float:left"><div id="bo1" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa1" style="width:80%; position:relative; float:left">a1</div></div>
+<div style="width:100%; position:relative; float:left"><div id="bo0" class="bo" style="width:20%; position:relative; float:left">borra</div><div id="pa1" style="width:80%; position:relative; float:left">a0</div></div>
+<div id="rea" style="width:100%; cursor:pointer">reacomoda</div>
+<div id="ag" style="width:100%; cursor:pointer">agre</div>
+<div id="atras" style="width:100%; cursor:pointer">atras</div>
+<div id="adelante" style="width:100%; cursor:pointer">adelate</div>
+
+
+<script>
+var clim=0
+
+$('#atras').click(function(){
+		if(clim<num_climas){
+			clim++
+		}else{
+			clim=0
+		}
+		$('#atras').html(clim)
+		$('.bo').css('background','none')
+		$('#bo' + clim).css('background-color','rgba(175,44,46,1.00)')
+})
+$('#adelante').click(function(){
+		if(clim>0){
+			clim--
+		}else{
+			clim = num_climas
+		}
+		$('#atras').html(clim)
+		$('.bo').css('background','none')
+		$('#bo' + clim).css('background-color','rgba(175,44,46,1.00)')
+})
+
+
+var num_climas=5
+$('#bo1').click(function(){
+	$('#pa1').html('0')
+	num_climas--
+	reacomoda()
+})
+$('#bo2').click(function(){
+	$('#pa2').html('0')
+	num_climas--
+	reacomoda()
+})
+$('#bo3').click(function(){
+	$('#pa3').html('0')
+	num_climas--
+	reacomoda()
+})
+$('#bo4').click(function(){
+	$('#pa4').html('0')
+	num_climas--
+	reacomoda()
+})
+$('#bo5').click(function(){
+	$('#pa5').html('0')
+	num_climas--
+	reacomoda()
+})
+
+$('#rea').click(function(){
+	reacomoda()
+})
+
+$('#ag').click(function(){
+	if(document.getElementById('pa5').innerHTML=='0'){
+		$('#pa5').html('nuevo1')
+	}
+	num_climas++
+	reacomoda()
+})
+
+
+function reacomoda(){
+	if(document.getElementById('pa1').innerHTML=='0'){
+		if(document.getElementById('pa2').innerHTML!='0'){
+			$('#pa1').html(document.getElementById('pa2').innerHTML)
+			$('#pa2').html('0')
+		}else if(document.getElementById('pa3').innerHTML!='0'){
+			$('#pa1').html(document.getElementById('pa3').innerHTML)
+			$('#pa3').html('0')
+		}else if(document.getElementById('pa4').innerHTML!='0'){
+			$('#pa1').html(document.getElementById('pa4').innerHTML)
+			$('#pa4').html('0')
+		}else if(document.getElementById('pa5').innerHTML!='0'){
+			$('#pa1').html(document.getElementById('pa5').innerHTML)
+			$('#pa5').html('0')
+		}
+	}
+	
+	if(document.getElementById('pa2').innerHTML=='0'){
+		if(document.getElementById('pa3').innerHTML!='0'){
+			$('#pa2').html(document.getElementById('pa3').innerHTML)
+			$('#pa3').html('0')
+		}else if(document.getElementById('pa4').innerHTML!='0'){
+			$('#pa2').html(document.getElementById('pa4').innerHTML)
+			$('#pa4').html('0')
+		}else if(document.getElementById('pa5').innerHTML!='0'){
+			$('#pa2').html(document.getElementById('pa5').innerHTML)
+			$('#pa5').html('0')
+		}
+	}
+	
+	if(document.getElementById('pa3').innerHTML=='0'){
+		if(document.getElementById('pa4').innerHTML!='0'){
+			$('#pa3').html(document.getElementById('pa4').innerHTML)
+			$('#pa4').html('0')
+		}else if(document.getElementById('pa5').innerHTML!='0'){
+			$('#pa3').html(document.getElementById('pa5').innerHTML)
+			$('#pa5').html('0')
+		}
+	}
+	
+	if(document.getElementById('pa4').innerHTML=='0'){
+		if(document.getElementById('pa5').innerHTML!='0'){
+			$('#pa4').html(document.getElementById('pa5').innerHTML)
+			$('#pa5').html('0')
+		}
+	}
+	
+	
+	if(document.getElementById('pa5').innerHTML=='0'){
+		$('#pa5').hide()
+	}else{
+		$('#pa5').show()
+	}
+	if(document.getElementById('pa4').innerHTML=='0'){
+		$('#pa4').hide()
+	}else{
+		$('#pa4').show()
+	}
+	if(document.getElementById('pa3').innerHTML=='0'){
+		$('#pa3').hide()
+	}else{
+		$('#pa3').show()
+	}
+	if(document.getElementById('pa2').innerHTML=='0'){
+		$('#pa2').hide()
+	}else{
+		$('#pa2').show()
+	}
+	if(document.getElementById('pa1').innerHTML=='0'){
+		$('#pa1').hide()
+	}else{
+		$('#pa1').show()
+	}
+	
+	
+}
+</script>
+
+
+</body>
+</html>
