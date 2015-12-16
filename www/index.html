@@ -207,8 +207,12 @@ function DocReady_latitud()
 		}else{
 			gras = grados
 		}
+		
+		var cadena = data.name
+		subCadena = cadena.substring(0, 24);
+		
 		nombre_ciudad = data.name
-		$('#tt1').html(data.name)
+		$('#tt1').html(subCadena)
 		$('#tt2').html(fecha+", "+data.weather[0].description)
 		$('#grados').html(Math.round(gras)+'°')	
 		
@@ -313,9 +317,7 @@ if(horasA >= horasM && horasA <= horasT){
 }
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.png');
-		 $('#pollo').css('opacity','0.0')
-		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg');
     });
 	
 	
@@ -342,7 +344,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon1 = icon1+'n'
 		}
-		$('#ico1').attr('src', 'iconos/'+icon1+'.png');
+		$('#ico1').attr('src', 'iconos/'+icon1+'.svg');
 		
 		
 		
@@ -368,7 +370,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon2 = icon2+'n'
 		}
-		$('#ico2').attr('src', 'iconos/'+icon2+'.png');
+		$('#ico2').attr('src', 'iconos/'+icon2+'.svg');
 		
 		
 		
@@ -396,7 +398,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon3 = icon3+'n'
 		}
-		$('#ico3').attr('src', 'iconos/'+icon3+'.png');
+		$('#ico3').attr('src', 'iconos/'+icon3+'.svg');
 		
 		
 		
@@ -421,7 +423,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon4 = icon4+'n'
 		}
-		$('#ico4').attr('src', 'iconos/'+icon4+'.png');
+		$('#ico4').attr('src', 'iconos/'+icon4+'.svg');
 		
 		
 		
@@ -448,7 +450,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon5 = icon5+'n'
 		}
-		$('#ico5').attr('src', 'iconos/'+icon5+'.png');
+		$('#ico5').attr('src', 'iconos/'+icon5+'.svg');
 		
 		
 		
@@ -473,7 +475,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon6 = icon6+'n'
 		}
-		$('#ico6').attr('src', 'iconos/'+icon6+'.png');
+		$('#ico6').attr('src', 'iconos/'+icon6+'.svg');
 		
     });
 	
@@ -498,37 +500,37 @@ weekday[6] = "SAT";
         var date1 = new Date(milliseconds1);
 		var n1 = weekday[date1.getDay()];
 		$('#dia1').html(n1)
-		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.png');
+		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.svg');
 		
 		var milliseconds2 = dataDia.list[1].dt * 1000;
         var date2 = new Date(milliseconds2);
 		var n2 = weekday[date2.getDay()];
 		$('#dia2').html(n2)
-		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.png');
+		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.svg');
 		
 		var milliseconds3 = dataDia.list[2].dt * 1000;
         var date3 = new Date(milliseconds3);
 		var n3 = weekday[date3.getDay()];
 		$('#dia3').html(n3)
-		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.png');
+		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.svg');
 		
 		var milliseconds4 = dataDia.list[3].dt * 1000;
         var date4 = new Date(milliseconds4);
 		var n4 = weekday[date4.getDay()];
 		$('#dia4').html(n4)
-		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.png');
+		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.svg');
 		
 		var milliseconds5 = dataDia.list[4].dt * 1000;
         var date5 = new Date(milliseconds5);
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
-		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.png');
+		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
 		
 		var milliseconds6 = dataDia.list[5].dt * 1000;
         var date6 = new Date(milliseconds6);
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
-		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.png');
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
     });
 }
 
@@ -547,7 +549,11 @@ function DocReady_ciudad()
 			gras = grados
 		}
 		//document.getElementById('countries').value = data.name
-		$('#tt1').html(data.name)
+		
+		var cadena = data.name
+		subCadena = cadena.substring(0, 24);
+		
+		$('#tt1').html(subCadena)
 		nombre_ciudad = data.name
 		$('#tt2').html(fecha+", "+data.weather[0].description)
 		$('#grados').html(Math.round(gras)+'°')	
@@ -653,9 +659,7 @@ if(horasA >= horasM && horasA <= horasT){
 }
 
 
-		 $('#icono').attr('src', 'iconos/'+ico2a+'.png');
-		 $('#pollo').css('opacity','0.0')
-		 $('#pollo').delay(1000).animate({opacity:'1'}, 800);
+		 $('#icono').attr('src', 'iconos/'+ico2a+'.svg');
 		 if(gu==1){
 			 guardara2()
 			 gu=0
@@ -670,9 +674,7 @@ if(horasA >= horasM && horasA <= horasT){
 		var hor1 = formatTime(dataHora.list[0].dt);
 		
 		
-		//var d = new Date(dataHora.list[0].dt);
-
-
+		
 		$('#hora1').html('Next')
 		grados1 = dataHora.list[0].main.temp
 		if(gg==1){
@@ -689,7 +691,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon1 = icon1+'n'
 		}
-		$('#ico1').attr('src', 'iconos/'+icon1+'.png');
+		$('#ico1').attr('src', 'iconos/'+icon1+'.svg');
 		
 		
 		
@@ -698,6 +700,7 @@ if(horasA >= horasM && horasA <= horasT){
 		hor = hor2
 		cambiar();
 		horaa2=hor
+		
 		
 		$('#hora2').html(horaa2)
 		grados2 = dataHora.list[1].main.temp
@@ -716,7 +719,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon2 = icon2+'n'
 		}
-		$('#ico2').attr('src', 'iconos/'+icon2+'.png');
+		$('#ico2').attr('src', 'iconos/'+icon2+'.svg');
 		
 		
 		
@@ -742,7 +745,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon3 = icon3+'n'
 		}
-		$('#ico3').attr('src', 'iconos/'+icon3+'.png');
+		$('#ico3').attr('src', 'iconos/'+icon3+'.svg');
 		
 		
 		
@@ -767,7 +770,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon4 = icon4+'n'
 		}
-		$('#ico4').attr('src', 'iconos/'+icon4+'.png');
+		$('#ico4').attr('src', 'iconos/'+icon4+'.svg');
 		
 		
 		
@@ -794,7 +797,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon5 = icon5+'n'
 		}
-		$('#ico5').attr('src', 'iconos/'+icon5+'.png');
+		$('#ico5').attr('src', 'iconos/'+icon5+'.svg');
 		
 		
 		
@@ -819,7 +822,7 @@ if(horasA >= horasM && horasA <= horasT){
 		}else{
 			icon6 = icon6+'n'
 		}
-		$('#ico6').attr('src', 'iconos/'+icon6+'.png');
+		$('#ico6').attr('src', 'iconos/'+icon6+'.svg');
 		
     });
 	
@@ -844,37 +847,37 @@ weekday[6] = "SAT";
         var date1 = new Date(milliseconds1);
 		var n1 = weekday[date1.getDay()];
 		$('#dia1').html(n1)
-		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.png');
+		$('#ic1').attr('src', 'iconos/'+dataDia.list[0].weather[0].id+'d.svg');
 		
 		var milliseconds2 = dataDia.list[1].dt * 1000;
         var date2 = new Date(milliseconds2);
 		var n2 = weekday[date2.getDay()];
 		$('#dia2').html(n2)
-		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.png');
+		$('#ic2').attr('src', 'iconos/'+dataDia.list[1].weather[0].id+'d.svg');
 		
 		var milliseconds3 = dataDia.list[2].dt * 1000;
         var date3 = new Date(milliseconds3);
 		var n3 = weekday[date3.getDay()];
 		$('#dia3').html(n3)
-		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.png');
+		$('#ic3').attr('src', 'iconos/'+dataDia.list[2].weather[0].id+'d.svg');
 		
 		var milliseconds4 = dataDia.list[3].dt * 1000;
         var date4 = new Date(milliseconds4);
 		var n4 = weekday[date4.getDay()];
 		$('#dia4').html(n4)
-		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.png');
+		$('#ic4').attr('src', 'iconos/'+dataDia.list[3].weather[0].id+'d.svg');
 		
 		var milliseconds5 = dataDia.list[4].dt * 1000;
         var date5 = new Date(milliseconds5);
 		var n5 = weekday[date5.getDay()];
 		$('#dia5').html(n5)
-		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.png');
+		$('#ic5').attr('src', 'iconos/'+dataDia.list[4].weather[0].id+'d.svg');
 		
 		var milliseconds6 = dataDia.list[5].dt * 1000;
         var date6 = new Date(milliseconds6);
 		var n6 = weekday[date6.getDay()];
 		$('#dia6').html(n6)
-		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.png');
+		$('#ic6').attr('src', 'iconos/'+dataDia.list[5].weather[0].id+'d.svg');
     });
 }
 
@@ -914,12 +917,12 @@ weekday[6] = "SAT";
         	
             
                 
-                <img src="imagenes/send.png" style="position:absolute; cursor:pointer; height:7%; top:17%"/> 
-            	<img id="un1" src="imagenes/units.png" style="position:absolute; cursor:pointer; height:7%; top:25%; visibility:hidden"/> 
-            	<img id="un2" src="imagenes/units2.png" style="position:absolute; cursor:pointer; height:7%; top:25%"/> 
-            	<img src="imagenes/share.png" style="position:absolute; cursor:pointer; height:7%; top:33%"/> 
-            	<img src="imagenes/rate.png" style="position:absolute; cursor:pointer; height:7%; top:41%"/> 
-            	<img src="imagenes/privacy.png" style="position:absolute; cursor:pointer; height:7%; top:49%"/>
+                <img src="imagenes/send.svg" style="position:absolute; cursor:pointer; height:7%; top:17%"/> 
+            	<img id="un1" src="imagenes/units.svg" style="position:absolute; cursor:pointer; height:7%; top:25%; visibility:hidden"/> 
+            	<img id="un2" src="imagenes/units2.svg" style="position:absolute; cursor:pointer; height:7%; top:25%"/> 
+            	<img src="imagenes/share.svg" style="position:absolute; cursor:pointer; height:7%; top:33%"/> 
+            	<img src="imagenes/rate.svg" style="position:absolute; cursor:pointer; height:7%; top:41%"/> 
+            	<img src="imagenes/privacy.svg" style="position:absolute; cursor:pointer; height:7%; top:49%"/>
         		<div id="u1" style="position:absolute; top:25%; height:7%; width:100%; cursor:pointer"></div>
         <script>
 		var cen=0
@@ -983,7 +986,7 @@ weekday[6] = "SAT";
 		})
 		
     </script> 
-        		<img src="imagenes/data.png" style="position:absolute; cursor:pointer; height:11%; top:84%; margin-left:-24px; left:47%;"/> 
+        		<img src="imagenes/data.svg" style="position:absolute; cursor:pointer; height:13%; top:84%; margin-left:-30px; left:47%;"/> 
         		<img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> 
         
         	</div><!--fin opciones-->
@@ -1067,7 +1070,7 @@ weekday[6] = "SAT";
     var tile_height = alto; 
     var easing = false;
 
-    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%" onClick="clim1()"><img class="icono1" src="iconos/'+ico1+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:7%; top:43.5%" onClick="clim2()"><img id="icono2" src="iconos/'+ico2+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Honolulu</div></div><div class="globito3" style="left:19%; top:42%" onClick="clim3()"><img id="icono3" src="iconos/'+ico3+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%" onClick="clim4()"><img id="icono4" src="iconos/'+ico4+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:26%; top:47%" onClick="clim5()"><img id="icono5" src="iconos/'+ico5+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Bogota</div></div><div class="globito1" style="left:32%; top:60%" onClick="clim6()"><img id="icono6" src="iconos/'+ico6+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%" onClick="clim7()"><img id="icono7" src="iconos/'+ico7+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%" onClick="clim8()"><img id="icono8" src="iconos/'+ico8+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%" onClick="clim9()"><img id="icono9" src="iconos/'+ico9+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%" onClick="clim10()"><img id="icono10" src="iconos/'+ico10+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%" onClick="clim11()"><img id="icono11" src="iconos/'+ico11+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">New Delhi</div></div><div class="globito2" style="left:81%; top:35%" onClick="clim12()"><img id="icono12" src="iconos/'+ico12+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%" onClick="clim13()"><img id="icono13" src="iconos/'+ico13+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div><div class="globito4" style="left:5%; top:20%" onClick="clim14()"><img id="icono14" src="iconos/'+ico14+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Tanana</div></div><div class="globito5" style="left:26.5%; top:74.5%" onClick="clim15()"><img id="icono14" src="iconos/'+ico15+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t14" class="globito_texto">Ushuaia</div></div><div class="globito5" style="left:43.2%; top:33.5%" onClick="clim16()"><img id="icono14" src="iconos/'+ico16+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Lisboa</div></div><div class="globito1" style="left:45.5%; top:44%" onClick="clim17()"><img id="icono14" src="iconos/'+ico17+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Niamey</div></div><div class="globito2" style="left:75%; top:40%" onClick="clim18()"><img id="icono14" src="iconos/'+ico18+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Hong Kong</div></div><div class="globito3" style="left:31%; top:16%" onClick="clim19()"><img id="icono14" src="iconos/'+ico19+'.png" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Nuuk</div></div>'
+    var img1 = '<img alt="" class="focal-point up-6" src="imagenes/mapa.png" style="width:100%"><div class="globito1" style="left:14%; top:35%" onClick="clim1()"><img class="icono1" src="iconos/'+ico1+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t1" class="globito_texto">LA</div></div><div class="globito2" style="left:7%; top:43.5%" onClick="clim2()"><img id="icono2" src="iconos/'+ico2+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t2" class="globito_texto">Honolulu</div></div><div class="globito3" style="left:19%; top:42%" onClick="clim3()"><img id="icono3" src="iconos/'+ico3+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t3" class="globito_texto">México</div></div><div class="globito4" style="left:25%; top:33%" onClick="clim4()"><img id="icono4" src="iconos/'+ico4+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t4" class="globito_texto">New York</div></div><div class="globito5" style="left:26%; top:47%" onClick="clim5()"><img id="icono5" src="iconos/'+ico5+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t5" class="globito_texto">Bogota</div></div><div class="globito1" style="left:32%; top:60%" onClick="clim6()"><img id="icono6" src="iconos/'+ico6+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t6" class="globito_texto">Sao Paulo</div></div><div class="globito2" style="left:47%; top:30%" onClick="clim7()"><img id="icono7" src="iconos/'+ico7+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t7" class="globito_texto">Paris</div></div><div class="globito3" style="left:53%; top:40%" onClick="clim8()"><img id="icono8" src="iconos/'+ico8+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t8" class="globito_texto">Cairo</div></div><div class="globito4" style="left:52%; top:62%" onClick="clim9()"><img id="icono9" src="iconos/'+ico9+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t9" class="globito_texto">Johannesburg</div></div><div class="globito5" style="left:57%; top:27%" onClick="clim10()"><img id="icono10" src="iconos/'+ico10+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t10" class="globito_texto">Moscow</div></div><div class="globito1" style="left:65%; top:36%" onClick="clim11()"><img id="icono11" src="iconos/'+ico11+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t11" class="globito_texto">New Delhi</div></div><div class="globito2" style="left:81%; top:35%" onClick="clim12()"><img id="icono12" src="iconos/'+ico12+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t12" class="globito_texto">Tokio</div></div><div class="globito3" style="left:85%; top:65%" onClick="clim13()"><img id="icono13" src="iconos/'+ico13+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Sidney</div></div><div class="globito4" style="left:5%; top:20%" onClick="clim14()"><img id="icono14" src="iconos/'+ico14+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Tanana</div></div><div class="globito5" style="left:26.5%; top:74.5%" onClick="clim15()"><img id="icono14" src="iconos/'+ico15+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t14" class="globito_texto">Ushuaia</div></div><div class="globito5" style="left:43.2%; top:33.5%" onClick="clim16()"><img id="icono14" src="iconos/'+ico16+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Lisboa</div></div><div class="globito1" style="left:45.5%; top:44%" onClick="clim17()"><img id="icono14" src="iconos/'+ico17+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Niamey</div></div><div class="globito2" style="left:75%; top:40%" onClick="clim18()"><img id="icono14" src="iconos/'+ico18+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Hong Kong</div></div><div class="globito3" style="left:31%; top:16%" onClick="clim19()"><img id="icono14" src="iconos/'+ico19+'.svg" width="70%" style="position:absolute; top:13%; left:15%"/><div id="t13" class="globito_texto">Nuuk</div></div>'
     var images = [img1];
 
    /*
@@ -1227,7 +1230,7 @@ function clim1(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas1, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1236,7 +1239,7 @@ function clim2(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas2, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1245,7 +1248,7 @@ function clim3(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas3, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1254,7 +1257,7 @@ function clim4(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas4, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1263,7 +1266,7 @@ function clim5(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas5, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1272,7 +1275,7 @@ function clim6(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas6, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1281,7 +1284,7 @@ function clim7(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas7, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1290,7 +1293,7 @@ function clim8(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas8, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1299,7 +1302,7 @@ function clim9(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas9, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1308,7 +1311,7 @@ function clim10(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas10, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1317,7 +1320,7 @@ function clim11(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas11, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1326,7 +1329,7 @@ function clim12(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas12, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1335,7 +1338,7 @@ function clim13(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas13, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1344,7 +1347,7 @@ function clim14(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas14, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1353,7 +1356,7 @@ function clim15(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas15, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1362,7 +1365,7 @@ function clim16(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas16, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1371,7 +1374,7 @@ function clim17(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas17, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1380,7 +1383,7 @@ function clim18(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas18, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1389,7 +1392,7 @@ function clim19(){
 	$('.negro').css('width', negro_alto+'px')
 	$('.negro, #negro').stop().hide()
 	$('#climas19, #negro').stop().show()
-	$('.negro, #negro').delay(2000).fadeOut(400)
+	$('.negro, #negro').stop().delay(2000).fadeOut(400)
 	var mitad_n = $('#negro').width()
 	$('#negro, .negro').css('margin-left',(mitad_n*-.5)+'px')
 }
@@ -1423,7 +1426,7 @@ function clim19(){
         <img id="fondo8" src="imagenes/fondo_8.png" height="100%" style="position:absolute; display:none"/>
         
         <div id="tt0" class="texto2" style="top:0.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:left"></div>
-        <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:center"></div>
+        <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:center; overflow:hidden"></div>
         <div id="tt2" class="texto2" style="top:8%; left:14%; font-weight:500; visibility:hidden; text-align:center; width:72%"></div>
         
         
@@ -1449,13 +1452,16 @@ function clim19(){
           <div class="dias2"> <span id="hora6" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra6" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico6" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
         </div>
 
-        <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-380px; overflow:hidden; visibility:hidden; margin-bottom:-152px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
+        <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-380px; overflow:hidden; visibility:hidden; margin-bottom:-153px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
+        
+        <iframe src="preload/preload.html" id="pre" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-380px; overflow:hidden; visibility:hidden; top:55%; margin-top:-250px; opacity:0" scrolling="no" onload="this.style.visibility='visible';"></iframe> 
+        
         <div style="width:100%; height:80%; position:absolute; top:20%"></div>
-        <img id="menu" src="imagenes/menu.png" style="position:absolute; top:6%; left:5%; height:3%; cursor:pointer; visibility:hidden"/> <img id="mundo" src="imagenes/mundo.png" style="position:absolute; top:5.5%; right:5%; height:4%; cursor:pointer; visibility:hidden"/>
+        <img id="menu" src="imagenes/menu.png" style="position:absolute; top:6%; left:5%; height:3%; cursor:pointer; visibility:hidden"/> <img id="mundo" src="imagenes/mundo.svg" style="position:absolute; top:5.5%; right:5%; height:4%; cursor:pointer; visibility:hidden"/>
         <div id="menu1" style="position:absolute; left:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
         <div id="mundo1" style="position:absolute; right:0%; top:2%; height:11%; width:70px; cursor:pointer"></div>
-        <div id="grados" class="texto4" style="top:28%; left:14%; color:#ffffcc"></div>
-        <img id="icono" style="position:absolute; right:14%; top:30%; height:18%"/>
+        <div id="grados" class="texto4" style="top:29%; left:14%; color:#ffffcc"></div>
+        <img id="icono" style="position:absolute; right:13%; top:30%; height:18%"/>
         <div style="position:absolute; width:100%; height:10%; top:90%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
           <div class="dias" style="font-size:10px;"> <span id="dia1" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic1" height="65%" style="position:absolute; top:34%; left:50%; margin-left:-13px;"/> </div>
           <div class="dias" style="font-size:11px;"> <span id="dia2" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic2" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
@@ -1465,8 +1471,8 @@ function clim19(){
           <div class="dias" style="font-size:9px;"> <span id="dia6" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img id="ic6" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
         </div>
         <div id="arrastra" style="position:absolute; width:80%; height:70%; top:18%; left:10%; color:#FFDD00; text-align:center">
-        <img id="lee" src="imagenes/swipeLeft.png" width="150px" style="position:absolute; top:50%; left:50%; margin-left:-75px; display:none"/> 
-        <img id="rii" src="imagenes/swipeRight.png" width="150px" style="position:absolute; top:50%; left:50%; margin-left:-75px; display:none"/> 
+        <img id="lee" src="imagenes/swipeLeft.svg" width="80px" style="position:absolute; top:52%; left:50%; margin-left:-40px; display:none"/> 
+        <img id="rii" src="imagenes/swipeRight.svg" width="80px" style="position:absolute; top:52%; left:50%; margin-left:-40px; display:none"/> 
         </div>
         
       </div><!--fin clima-->
@@ -1483,6 +1489,12 @@ function clim19(){
 	  
 	  
 	  function ir_clima(){
+		  		$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
+		  
 		  		if(clim==0){
 					$(document).ready(DocReady_latitud);
 					$('#uu1').attr('src', 'imagenes/ubi2.png');
@@ -1550,8 +1562,11 @@ function clim19(){
           	},
         	stop: function() {
                 clearTimeout(sab)
+				if(arrastrado=='izquierda' || arrastrado=='derecha' || arrastrado=='abajo'){
 				ir_clima()
 				arrastrado = ""
+				}
+				$('#clima').css('top','0px')
         	}
 		  });
 		  
@@ -1576,27 +1591,31 @@ function clim19(){
 							arrastrado = "abajo"
 							bloo=1
 						}
-					}else if(izq_arr<=-15){
-						if(bloo==0){
-							if(clim<num_climas){
-								clim++
-							}else{
-								clim=0
+					}else if(izq_arr<=-10){
+						if(num_climas>=1){
+							if(bloo==0){
+								if(clim<num_climas){
+									clim++
+								}else{
+									clim=0
+								}
+								arrastrado = "izquierda"
+								bloo=1
+								$('#lee').stop().fadeIn(800)
 							}
-							arrastrado = "izquierda"
-							bloo=1
-							$('#lee').stop().fadeIn(1000)
 						}
-					}else if(izq_arr>=15){
-						if(bloo==0){
-							if(clim>0){
-								clim--
-							}else{
-								clim = num_climas
+					}else if(izq_arr>=10){
+						if(num_climas>=1){
+							if(bloo==0){
+								if(clim>0){
+									clim--
+								}else{
+									clim = num_climas
+								}
+								arrastrado = "derecha"
+								bloo=1
+								$('#rii').stop().fadeIn(800)
 							}
-							arrastrado = "derecha"
-							bloo=1
-							$('#rii').stop().fadeIn(1000)
 						}
 					}else{
 						bloo=0
@@ -1607,7 +1626,7 @@ function clim19(){
       </script>
       
       
-      
+      	
 
       
       	<div id="intro" style="background-color:#ff6600" style="text-align:center">
@@ -1627,7 +1646,7 @@ function clim19(){
                     
           			<div style="width:100%; height:7%; top:80%; position:absolute">
                         <div style="width:100%; height:100%; text-align:center;">
-                            <img id="find" src="imagenes/find.png" style="height:100%; cursor:pointer"/> 
+                            <img id="find" src="imagenes/find.svg" style="height:100%; cursor:pointer"/> 
                         </div>
                     </div>
                     
@@ -1669,7 +1688,7 @@ function clim19(){
              <div id="busca2" style="position:absolute; width:100%; height:4.6%; top:5%; z-index:5">
                 	<div style="position:absolute; width:100%; height:100%">
                         <div style="width:100%; height:100%; text-align:center;">
-                            <img id="barra2" src="imagenes/barra2.png" style="height:100%"/>
+                            <img id="barra2" src="imagenes/barra2.svg" style="height:100%"/>
                           <div id="regresa2" style="position:absolute; height:100%; cursor:pointer; left:50%; top:0px"></div>
                           <div id="agrega" style="position:absolute; height:100%; cursor:pointer; left:50%; top:0px;"></div>
                         </div>
@@ -1731,7 +1750,15 @@ function clim19(){
             <div id="oscuro" style="position:absolute; width:100%; height:100%; background-color:rgba(0,0,0,.7); z-index:1; top:0px; left:0px; display:none"></div>
             <img id="alerta" src="imagenes/alerta.png" width="80%" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); display:none; z-index:2"/>
          
-       </div>     
+       </div>  
+       
+       
+
+       
+       
+       				<script>
+                    	$('#pre').transit({scale: '.4'}, 0);
+                    </script> 
             
 
       <script src="js/data.js"></script>           
@@ -1817,6 +1844,11 @@ function clim19(){
 					$(this).val(ui.item.label);
 				},
 				select: function(event, ui) {
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
 					event.preventDefault();
 					$(this).val(ui.item.label);
 					countr = ui.item.label
@@ -1841,6 +1873,12 @@ function clim19(){
 		
 		$("#countries2").keyup(function (e) {
 			if (e.keyCode == 13) {
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
+				
 					countr = document.getElementById('countries2').value
 					$("#countries2").blur()
 					$('#intro').delay(800).fadeOut()
@@ -1851,6 +1889,8 @@ function clim19(){
 					$('#borra1, #borra2, #borra3, #borra4, #borra5').fadeOut()
 					$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
 					$('#add').fadeOut()
+					
+					
 
 			}
 		});
@@ -1860,7 +1900,14 @@ function clim19(){
 				if (localStorage.getItem("grados") != null && localStorage.getItem("grados")!="") {
 						$('#grra').hide()
 						$('#botones').show()
-						$(document).ready(DocReady_latitud);
+						
+						$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+						$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+						
+						$('#pre').stop().animate({opacity:'1'},0)
+						$('#pre').stop().delay(800).animate({opacity:'0'},500)
+						
+						setTimeout('$(document).ready(DocReady_latitud)', 800);
 						seleccion=1
 						$('#wel').fadeOut()
 						$('#botones').fadeOut()
@@ -1888,7 +1935,7 @@ function clim19(){
 						$('#boll1').show()
 						$('#gu1').show()
 						$('#pa1').html(localStorage.getItem('bola1'))
-						$('#ccc1').attr('src', 'iconos/'+localStorage.getItem('ico1')+'.png');
+						$('#ccc1').attr('src', 'iconos/'+localStorage.getItem('ico1')+'.svg');
 						num_climas=1
 						localStorage.setItem("num_climas", num_climas)
 				}else{
@@ -1901,7 +1948,7 @@ function clim19(){
 						$('#boll2').show()
 						$('#gu2').show()
 						$('#pa2').html(localStorage.getItem('bola2'))
-						$('#ccc2').attr('src', 'iconos/'+localStorage.getItem('ico2')+'.png');
+						$('#ccc2').attr('src', 'iconos/'+localStorage.getItem('ico2')+'.svg');
 						num_climas=2
 						localStorage.setItem("num_climas", num_climas)
 				}else{
@@ -1914,7 +1961,7 @@ function clim19(){
 						$('#boll3').show()
 						$('#gu3').show()
 						$('#pa3').html(localStorage.getItem('bola3'))
-						$('#ccc3').attr('src', 'iconos/'+localStorage.getItem('ico3')+'.png');
+						$('#ccc3').attr('src', 'iconos/'+localStorage.getItem('ico3')+'.svg');
 						num_climas=3
 						localStorage.setItem("num_climas", num_climas)
 				}else{
@@ -1927,7 +1974,7 @@ function clim19(){
 						$('#boll4').show()
 						$('#gu4').show()
 						$('#pa4').html(localStorage.getItem('bola4'))
-						$('#ccc4').attr('src', 'iconos/'+localStorage.getItem('ico4')+'.png');
+						$('#ccc4').attr('src', 'iconos/'+localStorage.getItem('ico4')+'.svg');
 						num_climas=4
 						localStorage.setItem("num_climas", num_climas)
 				}else{
@@ -1940,7 +1987,7 @@ function clim19(){
 						$('#boll5').show()
 						$('#gu5').show()
 						$('#pa5').html(localStorage.getItem('bola5'))
-						$('#ccc5').attr('src', 'iconos/'+localStorage.getItem('ico5')+'.png');
+						$('#ccc5').attr('src', 'iconos/'+localStorage.getItem('ico5')+'.svg');
 						num_climas=5
 						localStorage.setItem("num_climas", num_climas)
 				}else{
@@ -1964,7 +2011,7 @@ function clim19(){
 					$('#pa5').html(localStorage.getItem('bola5'))
 					
 					localStorage.setItem("ico5", ico2a)
-					$('#ccc5').attr('src', 'iconos/'+ico2a+'.png');
+					$('#ccc5').attr('src', 'iconos/'+ico2a+'.svg');
 				}
 				document.getElementById('countries2').value=""
 				
@@ -2125,6 +2172,14 @@ function clim19(){
 				$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
 				
 				
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
+				
+				
+				
 				$('#uu1').attr('src', 'imagenes/ubi.png');
 				$('#boll1').attr('src', 'imagenes/bolita2.png');
 				$('#boll2').attr('src', 'imagenes/bolita.png');
@@ -2135,6 +2190,8 @@ function clim19(){
 				clim = 1
 				edi=0
 				$('#edi').html('Edit')
+				
+				
 			})
 			$('#pa2').click(function(){
 				countr = localStorage.getItem('bola2')
@@ -2144,6 +2201,12 @@ function clim19(){
 				$('#guardar').animate({marginTop:'200%'},1000)
 				$('#borra1, #borra2, #borra3, #borra4, #borra5').fadeOut()
 				$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
+				
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
 				
 				$('#uu1').attr('src', 'imagenes/ubi.png');
 				$('#boll1').attr('src', 'imagenes/bolita.png');
@@ -2163,6 +2226,12 @@ function clim19(){
 				$('#guardar').animate({marginTop:'200%'},1000)
 				$('#borra1, #borra2, #borra3, #borra4, #borra5').fadeOut()
 				$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
+				
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
 				
 				$('#uu1').attr('src', 'imagenes/ubi.png');
 				$('#boll1').attr('src', 'imagenes/bolita.png');
@@ -2185,6 +2254,12 @@ function clim19(){
 				$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
 				clim = 4
 				
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
+				
 				$('#uu1').attr('src', 'imagenes/ubi.png');
 				$('#boll1').attr('src', 'imagenes/bolita.png');
 				$('#boll2').attr('src', 'imagenes/bolita.png');
@@ -2204,6 +2279,12 @@ function clim19(){
 				$('#borra1, #borra2, #borra3, #borra4, #borra5').fadeOut()
 				$('#pa1, #pa2, #pa3, #pa4, #pa5').animate({marginLeft:'10%'}, 800)
 				clim = 5
+				
+				$('#grados, #icono, #pollo').stop().animate({opacity:'0'},0)
+				$('#grados, #icono, #pollo').stop().delay(1500).animate({opacity:'1'},800)
+				
+				$('#pre').stop().animate({opacity:'1'},0)
+				$('#pre').stop().delay(800).animate({opacity:'0'},500)
 				
 				$('#uu1').attr('src', 'imagenes/ubi.png');
 				$('#boll1').attr('src', 'imagenes/bolita.png');
@@ -2369,11 +2450,11 @@ function clim19(){
 				if(lugar==1){
 					$('#mundo1').css('height','100%')
 					$('.globito1, .globito2, .globito3, .globito4, .globito5').animate({marginTop:'-120%'}, 0);
-					$('.globito1').delay(800).animate({marginTop:'0%'}, 1500, 'easeOutBounce');
-					$('.globito2').delay(1100).animate({marginTop:'0%'}, 1500, 'easeOutBounce');
-					$('.globito3').delay(1400).animate({marginTop:'0%'}, 1500, 'easeOutBounce');
-					$('.globito4').delay(1700).animate({marginTop:'0%'}, 1500, 'easeOutBounce');
-					$('.globito5').delay(2000).animate({marginTop:'0%'}, 1500, 'easeOutBounce');
+					$('.globito1').delay(800).animate({marginTop:'0%'}, 2200, 'easeOutBounce');
+					$('.globito2').delay(1300).animate({marginTop:'0%'}, 2200, 'easeOutBounce');
+					$('.globito3').delay(1800).animate({marginTop:'0%'}, 2200, 'easeOutBounce');
+					$('.globito4').delay(2300).animate({marginTop:'0%'}, 2200, 'easeOutBounce');
+					$('.globito5').delay(2800).animate({marginTop:'0%'}, 2200, 'easeOutBounce');
 					
 					$('#clima').animate({left:'-90%'}, 800);
 					$('#mundo').animate({right:'2%'}, 800);
@@ -2395,8 +2476,7 @@ function clim19(){
 				
 				
 				$('#pollo').transit({scale: '.45'}, 0);
-				$('#pollo').css('opacity','0.0')
-				$('#pollo').animate({opacity:'1'}, 800);
+				
 				
 				setTimeout("$('#tt1').css('visibility', 'visible')", 800)
 				setTimeout("$('#ubi').css('visibility', 'visible')", 800)
