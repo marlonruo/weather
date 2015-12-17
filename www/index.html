@@ -209,7 +209,7 @@ function DocReady_latitud()
 		}
 		
 		var cadena = data.name
-		subCadena = cadena.substring(0, 24);
+		subCadena = cadena.substring(0, 20);
 		
 		nombre_ciudad = data.name
 		$('#tt1').html(subCadena)
@@ -551,7 +551,7 @@ function DocReady_ciudad()
 		//document.getElementById('countries').value = data.name
 		
 		var cadena = data.name
-		subCadena = cadena.substring(0, 24);
+		subCadena = cadena.substring(0, 20);
 		
 		$('#tt1').html(subCadena)
 		nombre_ciudad = data.name
@@ -1015,28 +1015,29 @@ weekday[6] = "SAT";
 	var height = $window.height();
 	
 	
+	
     var ancho= height * 1.5
 	var alto= height
 	
-	$('#climas1').html('<p>LA<br><span style="font-size:15px">'+parte[0]+'</span></p>')
-	$('#climas2').html('<p>Honolulu<br><span style="font-size:15px">'+parte[2]+'</span></p>')	
-	$('#climas3').html('<p>México<br><span style="font-size:15px">'+parte[4]+'</span></p>')
-	$('#climas4').html('<p>New York<br><span style="font-size:15px">'+parte[6]+'</span></p>')
-	$('#climas5').html('<p>Bogota<br><span style="font-size:15px">'+parte[8]+'</span></p>')
-	$('#climas6').html('<p>Sao Paulo<br><span style="font-size:15px">'+parte[10]+'</span></p>')
-	$('#climas7').html('<p>Paris<br><span style="font-size:15px">'+parte[12]+'</span></p>')
-	$('#climas8').html('<p>Cairo<br><span style="font-size:15px">'+parte[14]+'</span></p>')
-	$('#climas9').html('<p>Johannesburg<br><span style="font-size:15px">'+parte[16]+'</span></p>')
-	$('#climas10').html('<p>Moscow<br><span style="font-size:15px">'+parte[18]+'</span></p>')
-	$('#climas11').html('<p>New Delhi<br><span style="font-size:15px">'+parte[20]+'</span></p>')
-	$('#climas12').html('<p>Tokio<br><span style="font-size:15px">'+parte[22]+'</span></p>')
-	$('#climas13').html('<p>Sidney<br><span style="font-size:15px">'+parte[24]+'</span></p>')
-	$('#climas14').html('<p>Tanana<br><span style="font-size:15px">'+parte[26]+'</span></p>')
-	$('#climas15').html('<p>Ushuaia<br><span style="font-size:15px">'+parte[28]+'</span></p>')
-	$('#climas16').html('<p>Lisboa<br><span style="font-size:15px">'+parte[30]+'</span></p>')
-	$('#climas17').html('<p>Niamey<br><span style="font-size:15px">'+parte[32]+'</span></p>')
-	$('#climas18').html('<p>Hong Kong<br><span style="font-size:15px">'+parte[34]+'</span></p>')
-	$('#climas19').html('<p>Nuuk<br><span style="font-size:15px">'+parte[36]+'</span></p>')
+	$('#climas1').html('<p>LA<br><span style="font-size:'+parr+'px">'+parte[0]+'</span></p>')
+	$('#climas2').html('<p>Honolulu<br><span style="font-size:'+parr+'px">'+parte[2]+'</span></p>')	
+	$('#climas3').html('<p>México<br><span style="font-size:'+parr+'px">'+parte[4]+'</span></p>')
+	$('#climas4').html('<p>New York<br><span style="font-size:'+parr+'px">'+parte[6]+'</span></p>')
+	$('#climas5').html('<p>Bogota<br><span style="font-size:'+parr+'px">'+parte[8]+'</span></p>')
+	$('#climas6').html('<p>Sao Paulo<br><span style="font-size:'+parr+'px">'+parte[10]+'</span></p>')
+	$('#climas7').html('<p>Paris<br><span style="font-size:'+parr+'px">'+parte[12]+'</span></p>')
+	$('#climas8').html('<p>Cairo<br><span style="font-size:'+parr+'px">'+parte[14]+'</span></p>')
+	$('#climas9').html('<p>Johannesburg<br><span style="font-size:'+parr+'px">'+parte[16]+'</span></p>')
+	$('#climas10').html('<p>Moscow<br><span style="font-size:'+parr+'px">'+parte[18]+'</span></p>')
+	$('#climas11').html('<p>New Delhi<br><span style="font-size:'+parr+'px">'+parte[20]+'</span></p>')
+	$('#climas12').html('<p>Tokio<br><span style="font-size:'+parr+'px">'+parte[22]+'</span></p>')
+	$('#climas13').html('<p>Sidney<br><span style="font-size:'+parr+'px">'+parte[24]+'</span></p>')
+	$('#climas14').html('<p>Tanana<br><span style="font-size:'+parr+'px">'+parte[26]+'</span></p>')
+	$('#climas15').html('<p>Ushuaia<br><span style="font-size:'+parr+'px">'+parte[28]+'</span></p>')
+	$('#climas16').html('<p>Lisboa<br><span style="font-size:'+parr+'px">'+parte[30]+'</span></p>')
+	$('#climas17').html('<p>Niamey<br><span style="font-size:'+parr+'px">'+parte[32]+'</span></p>')
+	$('#climas18').html('<p>Hong Kong<br><span style="font-size:'+parr+'px">'+parte[34]+'</span></p>')
+	$('#climas19').html('<p>Nuuk<br><span style="font-size:'+parr+'px">'+parte[36]+'</span></p>')
 	
 	var ico1 = parte[1];
 	var ico2 = parte[3];
@@ -1117,11 +1118,13 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       var container_offset =  $('#ib-main-wrapper').offset();
       $('#go-on').tooltip();
       function direction(){
+		  
 	if( parseInt($( "#wall" ).children('div:first-child').attr('col')) < parseInt($( "#wall" ).children('div:last-child').attr('col')) ){
 	  return ( container_offset.left - ( $( "#wall" ).children('div:last-child').position().left - ( tile_width * ( $( "#wall" ).children('div').length - 3 ) ) ) )+"px" 
 	} else {
 	  return ( container_offset.left - ( $( "#wall" ).children('div:last-child').position().left ) )+"px"
 	}	
+	  
       }      
       $( "#go-on" ).click(function() {
 	$(this).attr("disabled","disabled");
@@ -1137,6 +1140,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 	      $( "#go-on" ).removeAttr("disabled");
 	    });
       });
+	  
 	}
 	
 	
@@ -1145,79 +1149,79 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     		<img id="negro" src="imagenes/negro.png" style="position:absolute; top:3%; left:55%; height:8%; display:none"/>
             
             <div id="climas1" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%; display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas2" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas3" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas4" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas5" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas6" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas7" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas8" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas9" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas10" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas11" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas12" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas13" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas14" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas15" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas16" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas17" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%; display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas18" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
             
             <div id="climas19" class="negro" style="position:absolute; width:100px; height:8%; top:3%; left:55%;  display:none">
-            	<p</p>
+            	<p></p>
             </div>
 
             
@@ -1426,7 +1430,7 @@ function clim19(){
         <img id="fondo8" src="imagenes/fondo_8.png" height="100%" style="position:absolute; display:none"/>
         
         <div id="tt0" class="texto2" style="top:0.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:left"></div>
-        <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:center; overflow:hidden"></div>
+        <div id="tt1" class="texto2" style="top:4.1%; left:14%; font-weight:500; visibility:hidden; text-transform: uppercase; width:72%; text-align:center; overflow:hidden; text-overflow: ellipsis;"></div>
         <div id="tt2" class="texto2" style="top:8%; left:14%; font-weight:500; visibility:hidden; text-align:center; width:72%"></div>
         
         
@@ -1444,12 +1448,12 @@ function clim19(){
         <div id="ubi2" style="left:15%; width:70%; height:15.5%; position:absolute; visibility:hidden;"></div>
         
         <div style="position:absolute; width:100%; height:12%; top:16%">
-          <div class="dias2"> <span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;">Next</span> <span id="gra1" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico1" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px"/> </div>
-          <div class="dias2"> <span id="hora2" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra2" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico2" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
-          <div class="dias2"> <span id="hora3" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra3" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico3" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
-          <div class="dias2"> <span id="hora4" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra4" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico4" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
-          <div class="dias2"> <span id="hora5" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra5" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico5" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
-          <div class="dias2"> <span id="hora6" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra6" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico6" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora1" style="position:absolute; width:100%; text-align:center; left:0px;">Next</span> <span id="gra1" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico1" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px"/> </div>
+          <div class="dias2"> <span id="hora2" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra2" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico2" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora3" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra3" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico3" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora4" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra4" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico4" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora5" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra5" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico5" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
+          <div class="dias2"> <span id="hora6" style="position:absolute; width:100%; text-align:center; left:0px;"></span> <span id="gra6" class="gra" style="position:absolute; width:100%; text-align:center; left:0px; top:25%; color:#ffffcc; font-size:15px;"></span> <img id="ico6" class="ic" height="40%" style="position:absolute; top:55%; left:50%; margin-left:-16px;"/> </div>
         </div>
 
         <iframe id="pollo" width="750" height="550" style="position:absolute; left:50%; border:none; bottom:10%; margin-left:-380px; overflow:hidden; visibility:hidden; margin-bottom:-153px;" scrolling="no" onload="this.style.visibility='visible';"></iframe>
@@ -1463,12 +1467,12 @@ function clim19(){
         <div id="grados" class="texto4" style="top:30%; left:14%; color:#ffffcc"></div>
         <img id="icono" style="position:absolute; right:13%; top:30%; height:18%"/>
         <div style="position:absolute; width:100%; height:10%; top:90%; background-color:rgba(0,0,0,0.2); border-top: 1px solid #FFFFFF;">
-          <div class="dias" style="font-size:10px;"> <span id="dia1" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic1" height="65%" style="position:absolute; top:34%; left:50%; margin-left:-13px;"/> </div>
-          <div class="dias" style="font-size:11px;"> <span id="dia2" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic2" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
-          <div class="dias" style="font-size:11px;"> <span id="dia3" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic3" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
-          <div class="dias" style="font-size:11px;"> <span id="dia4" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img id="ic4" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
-          <div class="dias" style="font-size:9px;"> <span id="dia5" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img id="ic5" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
-          <div class="dias" style="font-size:9px;"> <span id="dia6" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img id="ic6" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:10px;"> <span id="dia1" class="di" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img class="icc" id="ic1" height="65%" style="position:absolute; top:34%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia2" class="di" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img class="icc" id="ic2" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia3" class="di" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img class="icc" id="ic3" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:11px;"> <span id="dia4" class="di" style="position:absolute; width:100%; left:0px; font-size:10px"></span> <img class="icc" id="ic4" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:9px;"> <span id="dia5" class="di" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img class="icc" id="ic5" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
+          <div class="dias" style="font-size:9px;"> <span id="dia6" class="di" style="position:absolute; width:100%; left:0px; font-size:10px;"></span> <img class="icc" id="ic6" height="65%" style="position:absolute; top:35%; left:50%; margin-left:-13px;"/> </div>
         </div>
         <div id="arrastra" style="position:absolute; width:80%; height:70%; top:18%; left:10%; color:#FFDD00; text-align:center">
         <img id="lee" src="imagenes/swipeLeft.svg" width="80px" style="position:absolute; top:52%; left:50%; margin-left:-40px; display:none"/> 
@@ -1706,39 +1710,44 @@ function clim19(){
             
             
             
-			<div class="texto1" style="width:100%; top:12%; text-align:center; color:#e7e39e">Save Locations</div>
+			<div class="texto1 save" style="width:100%; top:12%; text-align:center; color:#e7e39e">Save Locations</div>
             <div class="texto2a" style="width:100%; text-align:center; height:16%"></div>
-            <div id="edi" class="texto2a" style="width:100%; text-align:center; color:#FFFFFF; font-size:13px;">Edit</div>
+            <div id="edi" class="texto2a edi" style="width:100%; text-align:center; color:#FFFFFF; font-size:13px;">Edit</div>
             <div class="texto2a" style="width:100%; text-align:center; height:5%"></div>
             
          	 <div id="gu5" class="texto2a" style="width:100%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none; margin-top:10px">
-            	<div id="pa5" class="pa" style="margin-left:10%"></div>
+            	
            		<img id="borra5" src="imagenes/borrar.png" width="24" height="24" style="position:absolute; left:3%; top:50%; margin-top:-12px; display:none"/>
-                <img id="ccc5"  height="30" style="position:absolute; right:6%; top:50%; margin-top:-15px;"/>  
+                <img id="ccc5"  height="50%" style="position:absolute; right:6%; top:25%;"/> 
+                <div id="pa5" class="pa" style="margin-left:10%;"></div> 
              </div>
              
              <div id="gu4" class="texto2a" style="width:100%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa4" class="pa" style="margin-left:10%"></div>
            		<img id="borra4" src="imagenes/borrar.png" width="24" height="24" style="position:absolute; left:3%; top:50%; margin-top:-12px; display:none"/> 
-                <img id="ccc4" height="30" style="position:absolute; right:6%; top:50%; margin-top:-15px;"/> 
+                <img id="ccc4" height="50%" style="position:absolute; right:6%; top:25%;"/> 
+                <div id="pa4" class="pa" style="margin-left:10%;"></div>
              </div>
              
              <div id="gu3" class="texto2a" style="width:100%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa3" class="pa" style="margin-left:10%"></div>
            		<img id="borra3" src="imagenes/borrar.png" width="24" height="24" style="position:absolute; left:3%; top:50%; margin-top:-12px; display:none"/> 
-                <img id="ccc3" height="30" style="position:absolute; right:6%; top:50%; margin-top:-15px;"/> 
+                <img id="ccc3" height="50%" style="position:absolute; right:6%; top:25%;"/> 
+                <div id="pa3" class="pa" style="margin-left:10%;"></div>
              </div>
              
              <div id="gu2" class="texto2a" style="width:100%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa2" class="pa" style="margin-left:10%"></div>
            		<img id="borra2" src="imagenes/borrar.png" width="24" height="24" style="position:absolute; left:3%; top:50%; margin-top:-12px; display:none"/> 
-                <img id="ccc2" height="30" style="position:absolute; right:6%; top:50%; margin-top:-15px;"/> 
+                <img id="ccc2" height="50%" style="position:absolute; right:6%; top:25%;"/>
+                <div id="pa2" class="pa" style="margin-left:10%;"></div> 
              </div>
              
              <div id="gu1" class="texto2a" style="width:100%; text-align:left; color:#FFFFFF; font-size:13px; height:10%; border-top:1px solid rgba(0,0,0,.23); cursor:pointer; display:none">
             	<div id="pa1" class="pa" style="margin-left:10%"></div>
            		<img id="borra1" src="imagenes/borrar.png" width="24" height="24" style="position:absolute; left:3%; top:50%; margin-top:-12px; display:none"/> 
-                <img id="ccc1" height="30" style="position:absolute; right:6%; top:50%; margin-top:-15px;"/> 
+                <img id="ccc1" height="50%" style="position:absolute; right:6%; top:25%;"/>
+                <div id="pa1" class="pa" style="margin-left:10%;"></div> 
              </div>
              
              
@@ -2500,12 +2509,13 @@ function clim19(){
 				}
 			})
 			
-			
+			var height
+			var width
+			var parr
 			function inicio(){
 			
 				
 				
-				$('#pollo').transit({scale: '.45'}, 0);
 				
 				
 				setTimeout("$('#tt1').css('visibility', 'visible')", 800)
@@ -2517,15 +2527,63 @@ function clim19(){
 			
 
 				var $window = $(window);
-				var width = $window.width();
-				var height = $window.height();
+				width = $window.width();
+				height = $window.height();
+				if(width<='377'){
+					$('#pollo').transit({scale: '.45'}, 0);
+					$('#pollo').css('margin-bottom','-153px')
+					$('.ic').css('margin-left','-18px')
+					$('.icc').css('margin-left','-13px')
+				}else if(width>=378 && width<=428){
+					$('#pollo').transit({scale: '.57'}, 0);
+					$('#pollo').css('margin-bottom','-120px')
+					$('.ic').css('margin-left','-18px')
+					$('.icc').css('margin-left','-16px')
+				}else if(width>=429 && width<=483){
+					$('#pollo').transit({scale: '.65'}, 0);
+					$('#pollo').css('margin-bottom','-98px')
+					$('.ic').css('margin-left','-20px')
+					$('.icc').css('margin-left','-18px')
+				}else if(width>=484 && width<=536){
+					$('#pollo').transit({scale: '.72'}, 0);
+					$('#pollo').css('margin-bottom','-78px')
+					$('.ic').css('margin-left','-22px')
+					$('.icc').css('margin-left','-20px')
+				}else if(width>=537 && width<=603){
+					$('#pollo').transit({scale: '.8'}, 0);
+					$('#pollo').css('margin-bottom','-56px')
+					$('.ic').css('margin-left','-22px')
+					$('.icc').css('margin-left','-20px')
+				}else if(width>=604 && width<=703){
+					$('#pollo').transit({scale: '.94'}, 0);
+					$('#pollo').css('margin-bottom','-20px')
+					$('.ic').css('margin-left','-22px')
+					$('.icc').css('margin-left','-20px')
+				}else if(width>=704){
+					$('#pollo').transit({scale: '1'}, 0);
+					$('#pollo').css('margin-bottom','0px')
+					$('.ic').css('margin-left','-22px')
+					$('.icc').css('margin-left','-20px')
+				}
+				
+				
 				$('#tt0').css('font-size', height/33+'px')
 				$('#tt1').css('font-size', height/33+'px')
 				$('#ubi').css('font-size', height/62+'px')
 				$('#tt2').css('font-size', height/62+'px')
+				$('.dias2').css('font-size', height/62+'px')
+				$('.gra').css('font-size', height/40+'px')
+				$('.di').css('font-size', height/60+'px')
 				$('#grados').css('font-size', height/5+'px')
-				$('.dias').css('font-size', height/55+'px')
+				$('.negro').css('font-size', height/30+'px')
+				$('.negro').css('line-height', height/40+'px')
+				$('.pa').css('font-size', height/55+'px')
+				$('.save').css('font-size', height/40+'px')
+				$('.edi').css('font-size', height/50+'px')
+				parr = height/50
 			
+				
+				
 			
 				/*$(function() {
 					var $window = $(window);

@@ -101,7 +101,6 @@
 				width: _to.width,
 				height: _to.height
 			});
-
 			_to.oncreate($new_tile, i, j);
 		};
 		
@@ -125,9 +124,9 @@
 				(-_to.range_row[1] * _to.height) + viewport_offset.top + viewport_draggable_height,
 				(-_to.range_col[0] * _to.width) + viewport_offset.left,
 				(-_to.range_row[0] * _to.height) + viewport_offset.top,
-			];
-						
+			];	
 			$draggable.draggable("option", "containment", containment);	
+			$('.globito_texto').css('font-size', height/40+'px')
 		};
 		
 		/*var*/ update_tiles = function() {
@@ -147,6 +146,7 @@
 
 			for (var i = visible_left_col; i <= visible_left_col + viewport_cols; i++) {
 				for (var j = visible_top_row; j <= visible_top_row + viewport_rows; j++) {
+					$('.globito_texto').css('font-size', height/40+'px')
 					if (grid[i] === undefined) {
 						grid[i] = {};
 					} else if (grid[i][j] === undefined) {
@@ -161,11 +161,13 @@
 		//-----------------
 		
 		self.draggable = function() {
+			$('.globito_texto').css('font-size', height/40+'px')
 			return $draggable;
 		};
 		
 		self.disabled = function(value) {
 			if (value === undefined) {
+				$('.globito_texto').css('font-size', height/40+'px')
 				return $draggable;
 			}
 			

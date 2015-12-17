@@ -233,7 +233,8 @@ p {
     transform: translate(0%, -50%);
 	font-family: OpenSansLight;
 	color:#FFFFFF;
-	text-align:center
+	width:90%;
+	text-align:left
 }
 
 
