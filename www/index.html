@@ -917,12 +917,13 @@ weekday[6] = "SAT";
         	
             
                 
-                <img src="imagenes/send.svg" style="position:absolute; cursor:pointer; height:7%; top:17%; left:8%"/> 
+                <img src="imagenes/send.svg" style="position:absolute; cursor:pointer; height:7%; top:17%; left:8%" onClick='window.plugins.EmailComposer.showEmailComposerWithCallback(null,"Contact Pixel Weather","Hello:",["info@pixelweather.com"]);'/> 
             	<img id="un1" src="imagenes/units.svg" style="position:absolute; cursor:pointer; height:7%; top:25%; visibility:hidden; left:8%"/> 
             	<img id="un2" src="imagenes/units2.svg" style="position:absolute; cursor:pointer; height:7%; top:25%; left:8%"/> 
-            	<img src="imagenes/share.svg" style="position:absolute; cursor:pointer; height:7%; top:33%; left:8%"/> 
-            	<img src="imagenes/rate.svg" style="position:absolute; cursor:pointer; height:7%; top:41%; left:8%"/> 
-            	<img src="imagenes/privacy.svg" style="position:absolute; cursor:pointer; height:7%; top:49%; left:8%"/>
+            	<img src="imagenes/share.svg" style="position:absolute; cursor:pointer; height:7%; top:33%; left:8%" onclick="window.plugins.socialsharing.share('The weather like never. Over 60 8bit illustrations with accurate forecasts.', 'Pixel Weather', 'http://pixelweather.com/screen.png', 'http://pixelweather.com/')"/> 
+            	<a href="https://itunes.apple.com/mx/app/pixel-weather/id1025234438?l=en&mt=8" target="_blank"><img src="imagenes/rate.svg" style="position:absolute; cursor:pointer; height:7%; top:41%; left:8%"/></a>
+            	<a href="http://pixelweather.com/#privacy" target="_blank"><img src="imagenes/privacy.svg" style="position:absolute; cursor:pointer; height:7%; top:49%; left:8%"/></a>
+                
         		<div id="u1" style="position:absolute; top:25%; height:7%; width:100%; cursor:pointer"></div>
         <script>
 		var cen=0
@@ -2429,7 +2430,6 @@ function clim19(){
       		var lugar=1
 			var seleccion=0
 			$('#find').click(function(){
-				$(document).ready(DocReady_latitud);
 				seleccion=1
 				$('#wel').fadeOut()
 				$('#botones').fadeOut()
@@ -2534,36 +2534,43 @@ function clim19(){
 					$('#pollo').css('margin-bottom','-153px')
 					$('.ic').css('margin-left','-18px')
 					$('.icc').css('margin-left','-13px')
+					$('#tuto').transit({scale: '.38'}, 0);
 				}else if(width>=378 && width<=428){
 					$('#pollo').transit({scale: '.57'}, 0);
 					$('#pollo').css('margin-bottom','-120px')
 					$('.ic').css('margin-left','-18px')
 					$('.icc').css('margin-left','-16px')
+					$('#tuto').transit({scale: '.50'}, 0);
 				}else if(width>=429 && width<=483){
 					$('#pollo').transit({scale: '.65'}, 0);
 					$('#pollo').css('margin-bottom','-98px')
 					$('.ic').css('margin-left','-20px')
 					$('.icc').css('margin-left','-18px')
+					$('#tuto').transit({scale: '.57'}, 0);
 				}else if(width>=484 && width<=536){
 					$('#pollo').transit({scale: '.72'}, 0);
 					$('#pollo').css('margin-bottom','-78px')
 					$('.ic').css('margin-left','-22px')
 					$('.icc').css('margin-left','-20px')
+					$('#tuto').transit({scale: '.65'}, 0);
 				}else if(width>=537 && width<=603){
 					$('#pollo').transit({scale: '.8'}, 0);
 					$('#pollo').css('margin-bottom','-56px')
 					$('.ic').css('margin-left','-22px')
 					$('.icc').css('margin-left','-20px')
+					$('#tuto').transit({scale: '.73'}, 0);
 				}else if(width>=604 && width<=703){
 					$('#pollo').transit({scale: '.94'}, 0);
 					$('#pollo').css('margin-bottom','-20px')
 					$('.ic').css('margin-left','-22px')
 					$('.icc').css('margin-left','-20px')
+					$('#tuto').transit({scale: '.87'}, 0);
 				}else if(width>=704){
 					$('#pollo').transit({scale: '.96'}, 0);
 					$('#pollo').css('margin-bottom','-13px')
 					$('.ic').css('margin-left','-22px')
 					$('.icc').css('margin-left','-20px')
+					$('#tuto').transit({scale: '.89'}, 0);
 				}
 				
 				
@@ -2580,6 +2587,9 @@ function clim19(){
 				$('.pa').css('font-size', height/55+'px')
 				$('.save').css('font-size', height/40+'px')
 				$('.edi').css('font-size', height/50+'px')
+				$("#countries2").css('font-size', height/50+'px')
+				
+				
 				parr = height/50
 			
 				
@@ -2615,6 +2625,8 @@ function clim19(){
 				});*/
 			
 			}
+			
+			
       </script> 
 
       
