@@ -917,7 +917,7 @@ weekday[6] = "SAT";
         	
             
                 
-                <img src="imagenes/send.svg" style="position:absolute; cursor:pointer; height:7%; top:17%; left:8%" onclick="doEmail(); return false;"/> 
+                <img src="imagenes/send.svg" style="position:absolute; cursor:pointer; height:7%; top:17%; left:8%" onClick="email()"/> 
             	<img id="un1" src="imagenes/units.svg" style="position:absolute; cursor:pointer; height:7%; top:25%; visibility:hidden; left:8%"/> 
             	<img id="un2" src="imagenes/units2.svg" style="position:absolute; cursor:pointer; height:7%; top:25%; left:8%"/> 
             	<img src="imagenes/share.svg" style="position:absolute; cursor:pointer; height:7%; top:33%; left:8%" onclick="window.plugins.socialsharing.share('The weather like never. Over 60 8bit illustrations with accurate forecasts.', 'Pixel Weather', 'http://pixelweather.com/screen.png', 'http://pixelweather.com/')"/> 
@@ -926,6 +926,17 @@ weekday[6] = "SAT";
                 
         		<div id="u1" style="position:absolute; top:25%; height:7%; width:100%; cursor:pointer"></div>
         <script>
+		
+function email(){
+
+var link = "mailto: info@pixelweather.com";
+var to="info@pixelweather.com";
+var subj="?subject= Contact Pixel Weather";
+var bod="&body= Hello:";
+window.location.href = "mailto:"+to+subj+bod;
+}
+
+
 		
 		
 $("#rate").click(function(){

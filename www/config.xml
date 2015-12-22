@@ -23,6 +23,12 @@
         permission on your app, which PhoneGap requires.
     -->
 	<access origin="*"/>
+	
+
+<access origin="geo:*" launch-external="yes"/>
+<access origin="mailto:*" launch-external="yes"/>
+
+	
 	<preference name="phonegap-version" value="3.5.0" />
     <preference name="permissions"                value="none"/>
 
@@ -68,7 +74,6 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="org.apache.cordova.statusbar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
-	<gap:plugin name="de.appplant.cordova.plugin.email-composer" />
 	
 
     <!-- Third party plugins -->

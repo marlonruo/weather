@@ -87,8 +87,3 @@ var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHig
 
 
 
-function doEmail() {
-    window.plugins.emailComposer.showEmailComposer("Contact Pixel Weather","Hello:", "['info@pixelweather.com']");
-}
-
-
