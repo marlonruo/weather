@@ -1029,7 +1029,7 @@ $("#privacy").click(function(){
         
         	$('#casita').click(function(){
 				alert("You must enable the Wi-Fi in device settings.");
-           		window.plugins.diagnostic.switchToWifiSettings();
+           		cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
 			})
         </script>
         
