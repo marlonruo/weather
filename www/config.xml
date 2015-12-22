@@ -75,6 +75,8 @@
 	<gap:plugin name="org.apache.cordova.statusbar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	
+	<plugin name="com.developersanddesigners.config_geo_plugin" spec="0.1.19" source="pgb" />
+	
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
