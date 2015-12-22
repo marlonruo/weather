@@ -68,6 +68,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="org.apache.cordova.statusbar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
+	<gap:plugin name="de.appplant.cordova.plugin.email-composer" />
 	
 
     <!-- Third party plugins -->
