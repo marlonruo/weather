@@ -1028,7 +1028,8 @@ $("#privacy").click(function(){
         <script>
         
         	$('#casita').click(function(){
-				cordova.plugins.settings.openSetting("nfc_settings", function(){console.log("opened nfc settings")},function(){console.log("failed to open nfc settings")});
+				alert("You must enable the Wi-Fi in device settings.");
+           		window.plugins.diagnostic.switchToWifiSettings();
 			})
         </script>
         
@@ -2670,21 +2671,6 @@ function clim19(){
 			}
 			
 			
-var exec = require('cordova/exec');
-
-var ConfigGeolocation = {
-    Open: function (successCallback, errorCallback)
-    {
-        cordova.exec(successCallback,
-              errorCallback,
-              "config_geo_plugin",
-              "open",
-              []
-          );
-    }
-}
-
-module.exports = ConfigGeolocation;
 			
 			
       </script> 
