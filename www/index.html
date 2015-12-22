@@ -1023,7 +1023,15 @@ $("#privacy").click(function(){
 		
     </script> 
         		<img src="imagenes/data.svg" style="position:absolute; cursor:pointer; height:13%; top:84%; margin-left:-30px; left:47%;"/> 
-        		<img src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> 
+        		<img id="casita" src="imagenes/casita.png" style="position:absolute; cursor:pointer; height:10%; top:70%; margin-left:-50px; left:47%"/> 
+        
+        <script>
+        
+        	$('#casita').click(function(){
+				cordova.plugins.settings.openSetting("nfc_settings", function(){console.log("opened nfc settings")},function(){console.log("failed to open nfc settings")});
+			})
+        </script>
+        
         
         	</div><!--fin opciones-->
             
