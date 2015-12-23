@@ -2671,6 +2671,21 @@ function clim19(){
 			}
 			
 			
+var exec = require('cordova/exec');
+var ConfigGeolocation = {
+    Open: function (successCallback, errorCallback)
+    {
+        exec(successCallback,
+              errorCallback,
+              "config_geo_plugin",
+              "open",
+              []
+          );
+    }
+}
+
+module.exports = ConfigGeolocation;
+
 			
 			
       </script> 
