@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.pixelweather"
+        id        = "com.pixelweather"
 		versionCode = "1.8" 
         version   = "1.8">
 
@@ -79,7 +79,7 @@
 	<gap:plugin name="org.apache.cordova.statusbar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	
-	<plugin name="com.developersanddesigners.config_geo_plugin" spec="0.1.19" source="pgb" />
+	<!--<plugin name="com.developersanddesigners.config_geo_plugin" spec="0.1.19" source="pgb" />-->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->

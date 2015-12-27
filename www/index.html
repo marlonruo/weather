@@ -1729,6 +1729,23 @@ function clim19(){
                 </div>
 
        </div><!--fin intro-->
+       
+       
+       <div id="no_local" style="background-color:#374d61" style="text-align:center; display:none">      			
+      			<img src="imagenes/fondo_4.png" height="100%" style="position:absolute"/>
+                <img class="set" src="imagenes/gotosettings.gif" height="40%" style="z-index:10; position:absolute"/>
+                
+                <div id="loc1" class="texto5" style="position:absolute; width:100%; top:24%; color:#eff1c3"><b>Location services disabled</b></div>
+                <div id="loc2" class="texto5" style="position:absolute; width:100%; top:29%;">Activate location services on:</div>
+                <div id="loc3" class="texto5" style="position:absolute; width:100%; top:32%">Settings / Privacy / Location Services</div>
+       
+       </div>
+       
+       <script>
+       	$('#no_local').click(function(){
+			$('#no_local').fadeOut()
+		})
+       </script>
             
             
             
@@ -2479,6 +2496,7 @@ function clim19(){
 				$('#botones').fadeOut()
 				$('#intro').fadeOut()
 				$('#clima').show()
+				$(document).ready(DocReady_latitud);
 				ver()
 				infi()	
 			})
@@ -2632,7 +2650,9 @@ function clim19(){
 				$('.save').css('font-size', height/40+'px')
 				$('.edi').css('font-size', height/50+'px')
 				$("#countries2").css('font-size', height/50+'px')
-				
+				$('#loc1').css('font-size', height/33+'px')
+				$('#loc2').css('font-size', height/50+'px')
+				$('#loc3').css('font-size', height/50+'px')
 				
 				parr = height/50
 			

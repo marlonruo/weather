@@ -44,9 +44,10 @@ var app = {
 //
 
 function onSuccess(position) {
+	$('#no_local').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
-	navigator.geolocation.clearWatch(watchID);
+	//navigator.geolocation.clearWatch(watchID);
 		
 		localStorage.setItem("latitud", position.coords.latitude);
 		localStorage.setItem("longitude", position.coords.longitude);
@@ -55,20 +56,18 @@ function onSuccess(position) {
 		lon = position.coords.longitude
 		//$('#ubi').css('font-size','10px')
 		//$('#ubi').html(lat+','+lon)
-		$(document).ready(DocReady_latitud);
+		
 }
 
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-	countr = 'Mexico'
-	$(document).ready(DocReady_ciudad);
-    
+	$('#no_local').show()   
 }
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true});
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {frequency:5000, maximumAge: 5000, enableHighAccuracy: true});
 
     },
     // Update DOM on a Received Event

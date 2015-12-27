@@ -100,6 +100,12 @@ body {
 	position: absolute;
 	overflow: hidden;
 }
+#no_local {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
 #opciones {
 	width: 100%;
 	height: 100%;
@@ -305,4 +311,17 @@ p {
 	padding-left:10px; padding-right:10px;
 }
 
+.texto5 {
+	position: absolute;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: 'OpenSansLight', Arial;
+}
 
+.set {
+    left:50%;
+    top: 60%;
+	-ms-transform: translate(-50%, -50%);
+   	-webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
