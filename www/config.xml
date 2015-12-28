@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.pixelweather"
-		versionCode = "1.8" 
-        version   = "1.8">
+		versionCode = "1.9" 
+        version   = "1.9">
 
     <name>PixelWeather</name>
 
@@ -122,7 +122,7 @@
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
 
-    <string>104</string>
+    <string>105</string>
     </gap:config-file>
 
     <!--
