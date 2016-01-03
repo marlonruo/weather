@@ -47,27 +47,30 @@ function onSuccess(position) {
 	$('#no_local').hide()
 	var cordenadas = position.coords.latitude+", "+position.coords.longitude				
 		
-	//navigator.geolocation.clearWatch(watchID);
+		navigator.geolocation.clearWatch(watchID);
 		
 		localStorage.setItem("latitud", position.coords.latitude);
 		localStorage.setItem("longitude", position.coords.longitude);
 		
 		lat = position.coords.latitude
 		lon = position.coords.longitude
-		//$('#ubi').css('font-size','10px')
-		//$('#ubi').html(lat+','+lon)
-		
+		/*$('#ubi').css('font-size','10px')
+		$('#ubi').html(lat+','+lon+'<br>'+document.getElementById('ubi').innerHTML)*/
 }
 
 // onError Callback receives a PositionError object
 //
-function onError(error) {
-	$('#no_local').show()   
+function onError(error) {				
+    $('#no_local').show()
+	countr = 'mexico'
+	DocReady_ciudad()
 }
 
 // Options: throw an error if no update is received every 30 seconds.
 //
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {frequency:5000, maximumAge: 5000, enableHighAccuracy: true});
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true});
+
+//frequency:10000, maximumAge: 10000,
 
     },
     // Update DOM on a Received Event
@@ -86,21 +89,8 @@ var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {frequency
 
 
 
-
-var exec =  requerir ("cordova / ejecutivo");
-
-var exec = require("cordova/exec");
-
-function NativeSettings() {
-}
-
-NativeSettings.prototype.open = function(onsucess, onfail) {
-	exec(onsucess, onfail, "NativeSettings", "open", []);
-};
-
-NativeSettings.prototype.openSetting = function(settingName, onsucess, onfail) {
-	exec(onsucess, onfail, "NativeSettings", settingName, []);
-};
-
-var NativeSettings = new NativeSettings();
-module.exports = NativeSettings;
+$(document).ready(function(){
+            setTimeout(function(){
+                navigator.splashscreen.hide();
+           },1500);
+        });
